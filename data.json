@@ -1,0 +1,2163 @@
+{
+  "Unexpected":
+  {
+    "pointer explain":
+    {
+      "full":
+      {
+        "text": "<pointer>, [looks at pointer] can you explain this?",
+        "robot": ["look_right", "^start(body_language) ^startSound(<pointer>) ^startSound(can_you_explain_this)"],
+        "flag": ["action", "speech"]
+      },
+      "repeat":
+      {
+        "text": "Can you explain this, [looks at pointer] <pointer>?",
+        "robot": ["^startSound(can_you_explain_this) ^startSound(<pointer>)"],
+        "flag": ["speech"]
+      }
+    },
+    "assistant explain":
+    {
+      "full":
+      {
+        "text": "<assistant>, [looks at assistant] could you please explain this?",
+        "robot": ["look_back", "^startSound(<assistant>) ^startSound(could_you_please_explain_this)"],
+        "flag": ["action", "speech"]
+      },
+      "repeat":
+      {
+        "text": "Could you please explain this, [looks at assistant] <assistant>?",
+        "robot": ["^startSound(could_you_please_explain_this) ^startSound(<assistant>)"],
+        "flag": ["speech"]
+      }
+    },
+    "did not learn":
+    {
+      "full":
+      {
+        "text": "No, [shakes head] I didn’t learn that yet.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[head shaking] I haven't learned that yet.",
+        "robot": ""
+      }
+    },
+    "do not remember":
+    {
+      "full":
+      {
+        "text": "Hmmmmm. [thinking body language] Sorry, [head shaking] I don’t remember.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Sorry, [head shaking] I don’t remember.",
+        "robot": ""
+      }
+    },
+    "do not know":
+    {
+      "full":
+      {
+        "text": "Well. [thinking body language] I don’t think I know this. [disappointed]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[thinking body language] I don’t know this. [disappointed]",
+        "robot": ""
+      }
+    },
+    "thank you":
+    {
+      "full":
+      {
+        "text": "[thank you body movement] Thank you.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[thank you body movement] Thanks.",
+        "robot": ""
+      }
+    },
+    "sorry":
+    {
+      "full":
+      {
+        "text": "Oh! [hands up startled] [sorry body language] I am sorry.",
+        "robot": ""
+      },
+      "repeat": 
+      {
+        "text": "[sorry body language] Sorry!",
+        "robot": ""
+      }
+    },
+    "yes":
+    {
+      "full":
+      {
+        "text": "[nodding] Yes.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[nodding[ Yes.",
+        "robot": ""
+      }
+    },
+    "no":
+    {
+      "full":
+      {
+        "text": "[shaking head] No.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[shaking head] No.",
+        "robot": ""
+      }
+    },
+    "repeat":
+    {
+      "full":
+      {
+        "text": "[Redo previous one] [excited body language] Oh sure!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Redo previous one] [excited body language] Sure!",
+        "robot": ""
+      }
+    }
+  },  
+  "Dog scared":
+  {
+    "initial check":
+    {
+      "full":
+      {
+        "text": "[head turn to dog] <dog> is barking [hands up in the air startled]! [looks to owner] <owner>, [question body language] do you think <dog> needs a break? [question body language] Or I can provide a treat to [looks at dog] <dog> to see if that helps.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<owner>, does [question body language] <dog> need a break? I can provide a treat to [look at dog] <dog>.",
+        "robot": "###not done ^startSound(<owner>/SoundSet), ^startSound(does/SoundSet), ^start(body language), ^startSound (<dog>/SoundSet), ^startSound(need_a_break/SoundSet) ^startSound(I_can_provide_a_treat_to/SoundSet) ^startSound(<dog>/SoundSet)"
+      }
+    },
+    "initial check ok":
+    {
+      "full":
+      {
+        "text": "Ok.",
+        "robot": "",
+        "flag": "speech"
+      },
+      "repeat":
+      {
+        "text": "Ok.",
+        "robot": "",
+        "flag": "speech"
+      }       
+    },
+    "set dispenser":
+    {
+      "full":
+      {
+        "text": "[look to <pointer>] <pointer>, [body language] can you please bring over the dispenser.",
+        "robot": "",
+        "flag": "action"
+      },
+      "repeat":
+      {
+        "text": "[look to <pointer>] <pointer>, [body language] could you bring the dispenser.",
+        "robot": "",
+        "flag": "action"
+      }       
+    },
+    "bring spoon and treat":
+    {
+      "full":
+      {
+        "text": "[thank you body movement] Thank you. [body language] Can you please bring me the spoon and the treat? [hold out hands for spoon].",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[thank you body movement] Thanks. [body language] Could you bring the spoon and the treat? [hold out hands for spoon].",
+        "robot": ""
+      }       
+    },
+    "get spoon and treat":
+    {
+      "full":
+      {
+        "text": "[thank you body movement] Thanks.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[thank you body movement] Thank you.",
+        "robot": ""
+      }       
+    },
+    "dog in position":
+    {
+      "full":
+      {
+        "text": "[looks to owner] <owner>, [body language] please bring <dog> closer to you.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[looks to owner] <owner>, [body language] can you please bring <dog> closer to you.",
+        "robot": ""
+      }
+    },
+    "instruction to owner":
+    {
+      "full":
+      {
+        "text": "[body language] Please only release <dog> after I say 'ok.'",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[body language] Only release <dog> when I say 'ok.'",
+        "robot": ""
+      }       
+    },
+    "show treat":
+    {
+      "full":
+      {
+        "text": "[look at dog] <dog>, look [head dip down looking at treat]! [head look up toward dog] I got a treat for you.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[look at dog] I got a treat for you, <dog>.",
+        "robot": ""
+      }   
+    },
+    "treat ok":
+    {
+      "full":
+      {
+        "text": "[happy body language] Looks like <dog> is fine now. [wave hand] Let’s continue.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[happy body language] <dog> looks fine. [wave hand] Let’s continue now.",
+        "robot": ""
+      }
+    },
+    "break":
+    {
+      "full":
+      {
+        "text": "[body language] Maybe <dog> [looks at dog] need a break.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[looks at dog] <dog> [body language] may need a break.",
+        "robot": ""
+      }
+    },
+    "bait":
+    {
+      "full":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      }
+    },
+    "release dog":
+    {
+      "full":
+      {
+        "text": "Ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Ok.",
+        "robot": ""
+      }
+    }
+  },
+  "instruction":
+  {
+    "bait":
+    {
+      "full":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      }
+    },
+    "release dog":
+    {
+      "full":
+      {
+        "text": "Ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Ok.",
+        "robot": ""
+      }
+    }
+  },
+  "introduction":
+  {
+    "initial_greeting":
+    {
+      "full":
+      {
+        "text": "[nb|waving] Hello. [welcoming hand gesture] Welcome back to the dog lab!",
+        "robot": "Hello"
+      },
+      "repeat":
+      {
+        "text": "[nb|waving] Welcome back to the dog lab!",
+        "robot": "Hello"
+      }
+    },
+    "initial_robot name":
+    {
+      "full":
+      {
+        "text": "[nb|point to self]I am Niffi.",
+        "robot": "I"
+      },
+      "repeat":
+      {
+        "text": "[nb|point to self} My name is Niffi.",
+        "robot": "I"
+      }
+    },
+    "initial_experimenter one name":
+    {
+      "full":
+      {
+        "text": "And [look at and point] this is <pointer>.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[look at and point] this is <pointer>.",
+        "robot": ""
+      }
+    },
+    "initial_experimenter one quiet":
+    {
+      "full":
+      {
+        "text": "[b|stand] She needs to stay quiet [nb|quiet gesture] for now by the design of this study. [b|stand] But she is friendly.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[b|stand] <pointer> needs to stay quiet [nb|quiet gesture] for now.",
+        "robot": ""
+      }
+    },
+    "initial_owner name":
+    {
+      "full":
+      {
+        "text": "[nb|reach out hand questioning gesture] May I have your name? [b|stand].",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[nb|reach out hand questioning gesture] Can you please tell me your name?[b|stand]",
+        "robot": ""
+      }
+    },
+    "initial_dog name":
+    {
+      "full":
+      {
+        "text": "And [looks toward dog] who is this? Could you please let me know [points to dog] your dog’s name?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[looks toward dog] may I have your dog's name?",
+        "robot": ""
+      }
+    },
+    "initial_dog name response":
+    {
+      "full":
+      {
+        "text": "[thank you body language] Thank you.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[thank you body language] Thanks.",
+        "robot": ""
+      }
+    },
+    "initial_dog gender":
+    {
+      "full":
+      {
+        "text": "Is <dog> [point toward dog] [questioning gesture] a girl or a boy?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "What gender is [point toward dog] <dog>?",
+        "robot": ""
+      }
+    },
+    "initial_nice to meet you":
+    {
+      "full":
+      {
+        "text": "Nice to meet you! [welcoming hand gesture]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Glad to meet you! [welcoming hand gesture]",
+        "robot": ""
+      }
+    },
+    "initial_take seat":
+    {
+      "full":
+      {
+        "text": "Please [point toward chair] take a seat.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Feel free to take a seat [point toward chair].",
+        "robot": ""
+      }
+    },
+    "initial_dog anywhere":
+    {
+      "full":
+      {
+        "text": "<dog> can be [gestures toward room] anywhere.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> can move [gestures toward room] anywhere in the room.",
+        "robot": ""
+      }
+    },
+    "robot_first study":
+    {
+      "full":
+      {
+        "text": "[body language] This is the first study I’ve been involved in to work with dogs.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[body language] This is my first study working with dogs.",
+        "robot": ""
+      }
+    },
+    "robot_work with few dogs":
+    {
+      "full":
+      {
+        "text": "We have worked with a few dogs so far, [hold out hands] but I am still relatively new in the dog lab.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "We have already worked with a few dogs, [holds out hands] but I am still new to the lab.",
+        "robot": ""
+      }
+    },
+    "robot_dogs ok with robot":
+    {
+      "full":
+      {
+        "text": "Most dogs I’ve seen are ok with me [point toward self]. But please [holds out hand] let me know if you think <dog> [waves toward dog] gets scared.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please let me [point toward self] know if <dog> gets scared.",
+        "robot": ""
+      }
+    },
+    "robot_start self introduction":
+    {
+      "full":
+      {
+        "text": "[hands up] I will now introduce [point toward self] myself [puts hand down].",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I will introduce [point toward self] myself now [puts hand down].",
+        "robot": ""
+      }
+    },
+    "robot_gender":
+    {
+      "full":
+      {
+        "text": "I [points hand at itself] am a female.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I [points hand at itself] am a female.",
+        "robot": ""
+      }
+    },
+    "robot_adult":
+    {
+      "full":
+      {
+        "text": "[waves hands/body language] And I am an adult!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[waves hands/body language] I am also an adult!",
+        "robot": ""
+      }
+    },
+    "robot_work place":
+    {
+      "full":
+      {
+        "text": "[talking motion] I have worked at the Social Robotics Lab at Yale [wave toward room] for a couple of years.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[talking motion] I work at the Social Robotics Lab at Yale [wave toward room].",
+        "robot": ""
+      }
+    },
+    "robot_focus on current":
+    {
+      "full":
+      {
+        "text": "After this study is done, [talking motion] I can talk more about what studies [point toward self] I was involved in. Let’s now focus on [point down toward floor] this study.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's focus on this study now.",
+        "robot": ""
+      }
+    },
+    "dog_happy to play with dog":
+    {
+      "full":
+      {
+        "text": "I am so excited [excited arm swing] to play with <dog> [holds out hands toward dog] today! ",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I am very excited [excited arm swing] to play with <dog> [holds out hands toward dog] today!",
+        "robot": ""
+      }
+    },
+    "dog_robot ask questions":
+    {
+      "full":
+      {
+        "text": "Before we start, [talking motion] I have a few questions for you [point toward person].",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "May I ask a few questions [point toward person]?",
+        "robot": ""
+      }
+    },
+    "dog_sit":
+    {
+      "full":
+      {
+        "text": "Does <dog> know the command 'sit'?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Does <dog> know 'sit'?",
+        "robot": ""
+      }
+    },
+    "dog_robot ask sit":
+    {
+      "full":
+      {
+        "text": "Can you let <dog> sit?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Can you ask <dog> to sit?",
+        "robot": ""
+      }
+    },
+    "bait_praise":
+    {
+      "full":
+      {
+        "text": "Good <dog gender>!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Good <dog gender>!",
+        "robot": ""
+      }
+    },
+    "dog_robot ask sit again":
+    {
+      "full":
+      {
+        "text": " Let’s try one more time.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's try again.",
+        "robot": ""
+      }
+    },
+    "dog_not sit":
+    {
+      "full":
+      {
+        "text": "That’s fine. Maybe <dog> is shy today! Let’s move on.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That's fine. Let's move on.",
+        "robot": ""
+      }
+    },
+    "dog_does not know sit":
+    {
+      "full":
+      {
+        "text": "That’s totally fine. <dog> doesn’t need to know this command to participate in the study.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That's completely fine. <dog> doesn't need to know 'sit' for this study.",
+        "robot": ""
+      }
+    },
+    "dog_other tricks":
+    {
+      "full":
+      {
+        "text": "Does <dog> do any tricks?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Does <dog> know any tricks?",
+        "robot": ""
+      }
+    },
+    "dog_robot ask to see tricks":
+    {
+      "full":
+      {
+        "text": "I am excited to see that. Could you please show them to me?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Could <dog> show them to me?",
+        "robot": ""
+      }
+    },
+    "dog_robot respond to tricks one":
+    {
+      "full":
+      {
+        "text": "Impressive!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Wow!",
+        "robot": ""
+      }
+    },
+    "dog_robot respond to tricks two":
+    {
+      "full":
+      {
+        "text": "That's great!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Amazing!",
+        "robot": ""
+      }
+    },
+    "dog_robot respond to tricks three":
+    {
+      "full":
+      {
+        "text": "<dog> is so smart!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Incredible!",
+        "robot": ""
+      }
+    },
+    "dog_age":
+    {
+      "full":
+      {
+        "text": "How old is <dog>?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "What age is <dog>?",
+        "robot": ""
+      }
+    },
+    "dog_age reply young":
+    {
+      "full":
+      {
+        "text": "So <dog> is still young.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> is very young",
+        "robot": ""
+      }
+    },
+    "dog_age reply old":
+    {
+      "full":
+      {
+        "text": "Wow, <dog> looks so young.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> still looks very young",
+        "robot": ""
+      }
+    },
+    "dog_breed":
+    {
+      "full":
+      {
+        "text": "What kind of dog is <dog> as in breed?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "What breed is <dog>?",
+        "robot": ""
+      }
+    },
+    "dog_together length":
+    {
+      "full":
+      {
+        "text": "How long have you been with <dog>?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "How many years have you been with <dog>?",
+        "robot": ""
+      }
+    },
+    "dog_together length reply short":
+    {
+      "full":
+      {
+        "text": "That’s not too long, but I believe you will have a great time with <dog>.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Sounds like you two will have many adventures in the future.",
+        "robot": ""
+      }
+    },
+    "dog_together length reply long":
+    {
+      "full":
+      {
+        "text": "You’ve been with each other for quite some time.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That's a really long time. You two must be very close.",
+        "robot": ""
+      }
+    },
+    "dog_other dogs":
+    {
+      "full":
+      {
+        "text": "Do you have other dogs at home?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Do you have any other dogs?",
+        "robot": ""
+      }
+    },
+    "dog_other dogs reply few":
+    {
+      "full":
+      {
+        "text": "It must feel great to be the only child in the family to get all the treat and toys.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Being an only child must be great!",
+        "robot": ""
+      }
+    },
+    "dog_other dogs reply many":
+    {
+      "full":
+      {
+        "text": "It is great to have other dogs to play with at home.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "It must be fun to have so many dog friends at home.",
+        "robot": ""
+      }
+    },
+    "dog_food motivation":
+    {
+      "full":
+      {
+        "text": "Is <dog> food motivated?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Is <dog> motivated by food?",
+        "robot": ""
+      }
+    },
+    "dog_food motivation reply like":
+    {
+      "full":
+      {
+        "text": "That’s great! <dog> will get a lot treats today.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That's great!",
+        "robot": ""
+      }
+    },
+    "dog_food motivation reply dislike":
+    {
+      "full":
+      {
+        "text": "Let’s see what <dog> will do today.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let’s see what <dog> can do today.",
+        "robot": ""
+      }
+    },
+    "dog_previous robot experience":
+    {
+      "full":
+      {
+        "text": "Has <dog> ever interacted with a robot before? Like roomba, or robot toys?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Has <dog> ever interacted with robots before?",
+        "robot": ""
+      }
+    },
+    "dog_previous robot experience reply like":
+    {
+      "full":
+      {
+        "text": "Good know to <dog> loves robots!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Good to know <dog> likes to play with robots!",
+        "robot": ""
+      }
+    },
+    "dog_previous robot experience reply dislike":
+    {
+      "full":
+      {
+        "text": " I hope <dog> will like me then.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I hope <dog> likes me then.",
+        "robot": ""
+      }
+    },
+    "study_start":
+    {
+      "full":
+      {
+        "text": "Now I will explain this study a little bit. [talking motions]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I will explain how this study works [talking motions].",
+        "robot": ""
+      }
+    },
+    "study_exploration":
+    {
+      "full":
+      {
+        "text": "<dog> will have some time to get familiar with this environment, and me! Hopefully <dog> likes me.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> will be able to explore the environment, and me, for a period of time.",
+        "robot": ""
+      }
+    },
+    "study_treat":
+    {
+      "full":
+      {
+        "text": "Afterwards, <dog> will get a treat from me.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "After exploring, I will give <dog> a treat.",
+        "robot": ""
+      }
+    },
+    "study_pointing":
+    {
+      "full":
+      {
+        "text": "In this study, we will explore how dogs understand pointing.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "This study explores how dogs understand pointing.",
+        "robot": ""
+      }
+    },
+    "study_warmup":
+    {
+      "full":
+      {
+        "text": "There will be two warmup sessions, one with me leading and one with <pointer> leading.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "We will have two warmup sessions, one with me and one with <pointer>.",
+        "robot": ""
+      }
+    },
+    "study_test":
+    {
+      "full":
+      {
+        "text": "The warmup sessions will be followed by two testing sessions, also one with me and one with <pointer>.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "We will have two more testing sessions after the warmup sessions.",
+        "robot": ""
+      }
+    },
+    "study_session break":
+    {
+      "full":
+      {
+        "text": "Between each session, you and <dog> will get a quick break in the lobby so we can get set up for the next session.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You and <dog> will get a quick break in the lobby between sessions.",
+        "robot": ""
+      }
+    },
+    "study_request break":
+    {
+      "full":
+      {
+        "text": "Also please let us know at any point if you think <dog> needs a break!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please let us now any time during the sessions if you think <dog> needs a break!",
+        "robot": ""
+      }
+    },
+    "explore_exploration":
+    {
+      "full":
+      {
+        "text": "Now <dog> will have 1 minute to get familiar with this environment.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> will have 1 minute to get familiar with the environment.",
+        "robot": ""
+      }
+    },
+    "explore_dog explore":
+    {
+      "full":
+      {
+        "text": "And feel free to let <dog> explore around the room. [motions out toward room]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Feel free to allow <dog> to explore the room. [motions out toward room]",
+        "robot": ""
+      }
+    },
+    "explore_start":
+    {
+      "full":
+      {
+        "text": "Now let’s start!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's start!",
+        "robot": ""
+      }
+    },
+    "explore_come over":
+    {
+      "full":
+      {
+        "text": " <dog>, come over!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Come over here <dog>!",
+        "robot": ""
+      }
+    },
+    "explore_close one":
+    {
+      "full":
+      {
+        "text": "Hi <dog>!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Hi <dog>!",
+        "robot": ""
+      }
+    },
+    "explore_close two":
+    {
+      "full":
+      {
+        "text": "Hello <dog>!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Hello <dog>!",
+        "robot": ""
+      }
+    },
+    "explore_close three":
+    {
+      "full":
+      {
+        "text": "Hope we can be buddies!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Hope we can be buddies!",
+        "robot": ""
+      }
+    },
+    "explore_close four":
+    {
+      "full":
+      {
+        "text": "How are you!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "How are you!",
+        "robot": ""
+      }
+    },
+    "explore_close five":
+    {
+      "full":
+      {
+        "text": "I am so excited to play with you today!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "I am so excited to play with you today!",
+        "robot": ""
+      }
+    },
+    "bait_start":
+    {
+      "full":
+      {
+        "text": "Time is up! Now I will provide a treat to <dog>.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Exploration time is done! Now I will give <dog> a treat.",
+        "robot": ""
+      }
+    },
+    "bait_dog back":
+    {
+      "full":
+      {
+        "text": "<owner>, please bring <dog> closer to you.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Bring <dog> closer to you please.",
+        "robot": ""
+      }
+    },
+    "bait_get dispenser":
+    {
+      "full":
+      {
+        "text": "[look to <pointer>] <pointer>, can you bring over the dispenser.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[look to <pointer>] bring me the dispenser please, <pointer>.",
+        "robot": ""
+      }
+    },
+    "bait_introduction dispenser":
+    {
+      "full":
+      {
+        "text": "This is the container that we will use in this study to provide <dog> the treat.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "We will use this container to provide <dog> treats.",
+        "robot": ""
+      }
+    },
+    "bait_spoon treat":
+    {
+      "full":
+      {
+        "text": "Thank you. Can you bring me the spoon and the treat?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Can you give me the spoon and treat?",
+        "robot": ""
+      }
+    },
+    "bait_action_get treat":
+    {
+      "full":
+      {
+        "text": "[hold out hands for spoon]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[hold out hands for spoon]",
+        "robot": ""
+      }
+    },
+    "bait_thanks":
+    {
+      "full":
+      {
+        "text": "Thanks.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Thank you.",
+        "robot": ""
+      }
+    },
+    "bait_instruction release":
+    {
+      "full":
+      {
+        "text": "<owner>, Please only release <dog> after I say 'ok.'",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Only release <dog> when I say 'ok.'",
+        "robot": ""
+      }
+    },
+    "bait_action_bait treat":
+    {
+      "full":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Bait]",
+        "robot": ""
+      }
+    },
+    "bait_release":
+    {
+      "full":
+      {
+        "text": "Ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Ok.",
+        "robot": ""
+      }
+    },
+    "transition_lobby":
+    {
+      "full":
+      {
+        "text": "Nice! We will now prepare for the warm-up session. Could you please take <dog> to the lobby?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Can you please take <dog> to the lobby while we prepare for the warm-up session?",
+        "robot": ""
+      }
+    },
+    "transition_lobby explain":
+    {
+      "full":
+      {
+        "text": "There will be a lot of back and forth from this room and the lobby in this study. Sorry about that in advance! Thanks, see you soon! ",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You will be moving between this room and the lobby many times during the study. Sorry in advance! Thanks, see you soon!",
+        "robot": ""
+      }
+    }
+  },
+  "Warmup":
+  {
+    "introduction_welcome back":
+    {
+      "full":
+      {
+        "text": "Hi! Welcome back.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Welcome back!",
+        "robot": ""
+      }
+    },
+    "introduction_seat":
+    {
+      "full":
+      {
+        "text": "Please take a seat.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Take a seat, please.",
+        "robot": ""
+      }
+    },
+    "introduction_dog in square":
+    {
+      "full":
+      {
+        "text": "And please let <dog> sit in the black square.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> can sit in the black square.",
+        "robot": ""
+      }
+    },
+    "introduction_owner head down":
+    {
+      "full":
+      {
+        "text": "Please keep your head down and eyes closed during each trial. Please only look ahead when you hear me say 'ok.'",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please keep your head down and eyes closed during each trial until I say 'ok.'",
+        "robot": ""
+      }
+    },
+    "introduction_release":
+    {
+      "full":
+      {
+        "text": "Remember, when you hear the release command 'ok,' you can let <dog> get a treat.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Only release <dog> when you hear the release command 'ok.'",
+        "robot": ""
+      }
+    },
+    "introduction_encourage":
+    {
+      "full":
+      {
+        "text": "If <dog> hesitates to make a choice after the release command, feel free to give <him/her> a release command of your own, but try not to point or give <dog> a directional hint.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "If <dog> hesitates after I say 'ok,' you can give <him/her> a release command of your own, but try not to point.",
+        "robot": ""
+      }
+    },
+    "introduction_one container at a time":
+    {
+      "full":
+      {
+        "text": "Please let <dog> go back to you after <he/she> gets the treat, and please do not let <dog> go to the other container.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let <dog> return to you after the treat, but don't let <him/her> go to the other container.",
+        "robot": ""
+      }
+    },
+    "introduction_start":
+    {
+      "full":
+      {
+        "text": "Let’s start!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let’s start!",
+        "robot": ""
+      }
+    },
+    "bait_get spoon treat one":
+    {
+      "full":
+      {
+        "text": "<assistant>, I’m ready, please give me the spoon and the treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Give me the spoon and treat please, <assistant>.",
+        "robot": ""
+      }
+    },
+    "bait_get spoon treat two":
+    {
+      "full":
+      {
+        "text": "<assistant>, I’m ready for the spoon and treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Give me the spoon and treat please, <assistant>.",
+        "robot": ""
+      }
+    },
+    "bait_action_show treat":
+    {
+      "full":
+      {
+        "text": "<dog>, look!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog>, look!",
+        "robot": ""
+      }
+    },
+    "bait_action_bait_left":
+    {
+      "full":
+      {
+        "text": "[Bait left]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Bait left]",
+        "robot": ""
+      }
+    },
+    "bait_action_bait_right":
+    {
+      "full":
+      {
+        "text": "[Bait right]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Bait right]",
+        "robot": ""
+      }
+    },
+    "bait_baiting":
+    {
+      "full":
+      {
+        "text": "[Non social sound baiting]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[Non social sound baiting]",
+        "robot": ""
+      }
+    },
+    "bait_release":
+    {
+      "full":
+      {
+        "text": "Ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Ok.",
+        "robot": ""
+      }
+    },
+    "bait_praise_get treat one":
+    {
+      "full":
+      {
+        "text": "Great, you got the treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Good job! You got the treat!",
+        "robot": ""
+      }
+    },
+    "bait_praise_get treat two":
+    {
+      "full":
+      {
+        "text": "Nice, you got both treats!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Great, you got both treats!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat one":
+    {
+      "full":
+      {
+        "text": "You will get it next time.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You will get it next session.",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat two":
+    {
+      "full":
+      {
+        "text": "Hope you will get treat in the next session.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Hope you will get the treat next time.",
+        "robot": ""
+      }
+    },
+    "bait_next":
+    {
+      "full":
+      {
+        "text": "Please take <dog> back for the next trial.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Take <dog> back please for the next trial.",
+        "robot": ""
+      }
+    },
+    "next_trial":
+    {
+      "full":
+      {
+        "text": "Let's move on to the next trial!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's start the next trial!",
+        "robot": ""
+      }
+    },
+    "transition_lobby":
+    {
+      "full":
+      {
+        "text": "<dog> can take another break. <owner>, please take <dog> to the lobby and we will prepare for the next session.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please take <dog> to the lobby so that we can prepare for the next session.",
+        "robot": ""
+      }
+    }
+  },
+  "Testing":
+  {
+    "introduction_seat":
+    {
+      "full":
+      {
+        "text": "Please take a seat.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Take a seat, please.",
+        "robot": ""
+      }
+    },
+    "introduction_square":
+    {
+      "full":
+      {
+        "text": "And please let <dog> sit in the black square.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog> can sit in the black square.",
+        "robot": ""
+      }
+    },
+    "introduction_start":
+    {
+      "full":
+      {
+        "text": "Now we will do the testing trials.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "We will complete the testing trials now.",
+        "robot": ""
+      }
+    },
+    "introduction_eyes close":
+    {
+      "full":
+      {
+        "text": "Please keep your head down and eyes closed during each trial. Please only look ahead when you hear me say 'ok.'",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please keep your head down and eyes closed during each trial until I say 'ok.'",
+        "robot": ""
+      }
+    },
+    "introduction_release_instruction":
+    {
+      "full":
+      {
+        "text": "You will hear more utterances, but still please only release <dog> when you hear the release command 'ok.'",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Remember, only release <dog> when you hear 'ok.'",
+        "robot": ""
+      }
+    },
+    "introduction_back to owner":
+    {
+      "full":
+      {
+        "text": "And let <dog> go back to you after trial",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "After the trial, let <dog> return to you.",
+        "robot": ""
+      }
+    },
+    "introduction_not other container":
+    {
+      "full":
+      {
+        "text": "Please do not let <dog> go to the other container.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Do not let <dog> go to the other container.",
+        "robot": ""
+      }
+    },
+    "introduction_request break":
+    {
+      "full":
+      {
+        "text": "The testing session is longer than the warmup, so please let me know if you think <dog> is tired and needs a break.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please let me know if <dog> needs a break.",
+        "robot": ""
+      }
+    },
+    "introduction_ready":
+    {
+      "full":
+      {
+        "text": "Ready?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Are you ready?",
+        "robot": ""
+      }
+    },
+    "introduction_bait":
+    {
+      "full":
+      {
+        "text": "Please bait.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please bait.",
+        "robot": ""
+      }
+    },
+    "bait_action_point_left":
+    {
+      "full":
+      {
+        "text": "<dog>, look!...ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog>, look!...ok.",
+        "robot": ""
+      }
+    },
+    "bait_action_point_right":
+    {
+      "full":
+      {
+        "text": "<dog>, look!...ok.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<dog>, look!...ok.",
+        "robot": ""
+      }
+    },
+    "bait_bait_praise_get treat one":
+    {
+      "full":
+      {
+        "text": "Great, you got the treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Great, you got the treat!",
+        "robot": ""
+      }
+    },
+    "bait_bait_praise_get treat two":
+    {
+      "full":
+      {
+        "text": "Great!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Great!",
+        "robot": ""
+      }
+    },
+    "bait_bait_praise_get treat three":
+    {
+      "full":
+      {
+        "text": "Good <boy/girl>!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Good <boy/girl>!",
+        "robot": ""
+      }
+    },
+    "Test|bait_bait_praise_get treat four":
+    {
+      "full":
+      {
+        "text": "Yay! You got the yummy treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Yay! You got the yummy treat!",
+        "robot": ""
+      }
+    },
+    "bait_bait_praise_get treat five":
+    {
+      "full":
+      {
+        "text": "Nice choice!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Nice choice!",
+        "robot": ""
+      }
+    },
+    "Test|bait_bait_praise_get treat six":
+    {
+      "full":
+      {
+        "text": "You got the treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You got the treat!",
+        "robot": ""
+      }
+    },
+    "Test|bait_bait_praise_get treat seven":
+    {
+      "full":
+      {
+        "text": "Hope you can get the treat next time as well!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Hope you can get the treat next time as well!",
+        "robot": ""
+      }
+    },
+    "bait_bait_praise_get treat eight":
+    {
+      "full":
+      {
+        "text": "You got all the treats!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You got all the treats!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat one":
+    {
+      "full":
+      {
+        "text": "You will get it next time!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You will get it next time!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat two":
+    {
+      "full":
+      {
+        "text": "The treat is in the other container!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "The treat is in the other container!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat three":
+    {
+      "full":
+      {
+        "text": "That’s ok, you will still have a lot chances to get the treat!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That’s ok, you will still have a lot chances to get the treat!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat four":
+    {
+      "full":
+      {
+        "text": "Let’s try it one more time.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let’s try it one more time.",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat five":
+    {
+      "full":
+      {
+        "text": "You can pay more attention to me next time.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You can pay more attention to me next time.",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat six":
+    {
+      "full":
+      {
+        "text": "That’s okay, try again!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "That’s okay, try again!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat seven":
+    {
+      "full":
+      {
+        "text": "You will get another chance!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You will get another chance!",
+        "robot": ""
+      }
+    },
+    "bait_praise_not get treat eight":
+    {
+      "full":
+      {
+        "text": "Oh, I am so sorry you didn’t get any treat in this session!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Oh, I am so sorry you didn’t get any treat in this session!",
+        "robot": ""
+      }
+    },
+    "check_half way":
+    {
+      "full":
+      {
+        "text": "We are halfway through. Do you think <dog> is having fun?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Is <dog> having fun?",
+        "robot": ""
+      }
+    },
+    "check_break":
+    {
+      "full":
+      {
+        "text": "Do you think <dog> need a break?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Does <dog> need a break?",
+        "robot": ""
+      }
+    },
+    "check_break reply no":
+    {
+      "full":
+      {
+        "text": "Ok, let’s continue. <assistant>, can you check the two dispensers?",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Can you check the two dispensers, <assistant>?",
+        "robot": ""
+      }
+    },
+    "check_break reply yes":
+    {
+      "full":
+      {
+        "text": "Sure. <dog> can have a break now. Please take <dog> to the lobby.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "You can take <dog> to the lobby now.",
+        "robot": ""
+      }
+    },
+    "take_dog_back":
+    {
+      "full":
+      {
+        "text": "Please take <dog> back.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Please take <dog> back.",
+        "robot": ""
+      }
+    },
+    "move on":
+    {
+      "full":
+      {
+        "text": "Great! Let's move on to the next trial.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's start the next trial!",
+        "robot": ""
+      }
+    },
+    "calibration":
+    {
+      "full":
+      {
+        "text": "<assistant>, now let’s do the calibration.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Let's do the calibration now, <assistant>.",
+        "robot": ""
+      }
+    },
+    "transition_lobby":
+    {
+      "full":
+      {
+        "text": "<dog> can take another break. <owner>, please take <dog> to the lobby and we will prepare for the next session.",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Can you please take <dog> to the lobby while we prepare for the next session?",
+        "robot": ""
+      }
+    },
+    "transition_finish":
+    {
+      "full":
+      {
+        "text": "That’s the end of it. Thank you!",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "Thank you so much!",
+        "robot": ""
+      }
+    }
+  },
+  "Test System":
+  {
+    "say owner name":
+    {
+      "full":
+      {
+        "text": "<owner>",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "<owner>",
+        "robot": ""
+      }
+    },
+    "stand":
+    {
+      "full":
+      {
+        "text": "[stand]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[stand]",
+        "robot": ""
+      }
+    },
+    "start idle":
+    {
+      "full":
+      {
+        "text": "[start idle]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[start idle]",
+        "robot": ""
+      }
+    },
+    "stop idle":
+    {
+      "full":
+      {
+        "text": "[stop idle]",
+        "robot": ""
+      },
+      "repeat":
+      {
+        "text": "[stop idle]",
+        "robot": ""
+      }
+    }
+  }
+}
