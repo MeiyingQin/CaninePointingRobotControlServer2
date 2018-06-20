@@ -5,7 +5,7 @@
     {
       "full":
       {
-        "text": "<pointer>, [looks at pointer] can you explain this?",
+        "text": "<pointer>, [looks at pointer] [body language] can you explain [body language] this?",
         "robot": ["look_right", "^start(body_language) ^startSound(<pointer>) ^startSound(can_you_explain_this)"],
         "flag": ["action", "speech"]
       },
@@ -20,7 +20,7 @@
     {
       "full":
       {
-        "text": "<assistant>, [looks at assistant] could you please explain this?",
+        "text": "<assistant>, [looks at assistant] [body language] could you please [body language] explain this?",
         "robot": ["look_back", "^startSound(<assistant>) ^startSound(could_you_please_explain_this)"],
         "flag": ["action", "speech"]
       },
@@ -35,12 +35,12 @@
     {
       "full":
       {
-        "text": "No, [shakes head] I didn’t learn that yet.",
+        "text": "No, [shakes head] [body language] I didn’t learn [body language] that yet.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "[head shaking] I haven't learned that yet.",
+        "text": "I haven't learned that yet.",
         "robot": ""
       }
     },
@@ -48,12 +48,12 @@
     {
       "full":
       {
-        "text": "Hmmmmm. [thinking body language] Sorry, [head shaking] I don’t remember.",
+        "text": "Hmmmmm. [thinking body language] Sorry, [head shaking] I don’t [body language] remember.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Sorry, [head shaking] I don’t remember.",
+        "text": "Sorry, I don’t remember.",
         "robot": ""
       }
     },
@@ -61,12 +61,12 @@
     {
       "full":
       {
-        "text": "Well. [thinking body language] I don’t think I know this. [disappointed]",
+        "text": "[thinking body language] Well. [body language] I don’t think [body language] I know this. [disappointed]",
         "robot": ""
       },
       "repeat":
       {
-        "text": "[thinking body language] I don’t know this. [disappointed]",
+        "text": "I don’t know this.",
         "robot": ""
       }
     },
@@ -79,7 +79,7 @@
       },
       "repeat":
       {
-        "text": "[thank you body movement] Thanks.",
+        "text": "Thanks.",
         "robot": ""
       }
     },
@@ -87,12 +87,12 @@
     {
       "full":
       {
-        "text": "Oh! [hands up startled] [sorry body language] I am sorry.",
+        "text": "[hands up startled] Oh! [sorry body language] I am sorry.",
         "robot": ""
       },
       "repeat": 
       {
-        "text": "[sorry body language] Sorry!",
+        "text": "Sorry!",
         "robot": ""
       }
     },
@@ -105,7 +105,7 @@
       },
       "repeat":
       {
-        "text": "[nodding[ Yes.",
+        "text": "Yes.",
         "robot": ""
       }
     },
@@ -118,7 +118,7 @@
       },
       "repeat":
       {
-        "text": "[shaking head] No.",
+        "text": "No.",
         "robot": ""
       }
     },
@@ -126,12 +126,12 @@
     {
       "full":
       {
-        "text": "[Redo previous one] [excited body language] Oh sure!",
+        "text": "[excited body language] Oh sure! [Redo previous one]",
         "robot": ""
       },
       "repeat":
       {
-        "text": "[Redo previous one] [excited body language] Sure!",
+        "text": "Sure! [Redo previous one]",
         "robot": ""
       }
     }
@@ -142,7 +142,7 @@
     {
       "full":
       {
-        "text": "[head turn to dog] <dog> is barking [hands up in the air startled]! [looks to owner] <owner>, [question body language] do you think <dog> needs a break? [question body language] Or I can provide a treat to [looks at dog] <dog> to see if that helps.",
+        "text": "[head turn to dog] <dog> is barking ! [looks to owner] <owner>, [question body language] do you think [body language] <dog> needs a break? [question body language] Or I can provide [body language] a treat to <dog> [body language] to see if that helps.",
         "robot": ""
       },
       "repeat":
@@ -607,12 +607,12 @@
     {
       "full":
       {
-        "text": "Does <dog> know the command 'sit'?",
+        "text": "Does <dog> [look at dog] know the command 'sit'?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Does <dog> know 'sit'?",
+        "text": "Does <dog> [look at dog] know the command 'sit'?",
         "robot": ""
       }
     },
@@ -620,12 +620,12 @@
     {
       "full":
       {
-        "text": "Can you let <dog> sit?",
+        "text": "Can you [wave toward person] let <dog> [wave toward dog] sit?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Can you ask <dog> to sit?",
+        "text": "Can you [wave toward person] ask <dog> [wave toward dog] to sit?",
         "robot": ""
       }
     },
@@ -633,12 +633,12 @@
     {
       "full":
       {
-        "text": "Good <dog gender>!",
+        "text": "[put hands on knees] Good <dog gender>!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Good <dog gender>!",
+        "text": "[put hands on knees] Good <dog gender>!",
         "robot": ""
       }
     },
@@ -646,12 +646,12 @@
     {
       "full":
       {
-        "text": " Let’s try one more time.",
+        "text": "Let’s try [put one finger up] one more time [wave hands open forward].",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let's try again.",
+        "text": "Let's try again [wave hands open forward].",
         "robot": ""
       }
     },
@@ -659,12 +659,12 @@
     {
       "full":
       {
-        "text": "That’s fine. Maybe <dog> is shy today! Let’s move on.",
+        "text": "That’s fine. [waves hand no big deal] Maybe <dog> is shy today! [holds up hands] Let’s move on [brings back hands].",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That's fine. Let's move on.",
+        "text": "No big deal. [waves hand no big deal] Let's move on.",
         "robot": ""
       }
     },
@@ -672,12 +672,12 @@
     {
       "full":
       {
-        "text": "That’s totally fine. <dog> doesn’t need to know this command to participate in the study.",
+        "text": "That’s totally fine. [waves hand no big deal] [talking motions] <dog> doesn’t need to know this command to participate in the study.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That's completely fine. <dog> doesn't need to know 'sit' for this study.",
+        "text": "That's completely fine. [waves hand no big deal] [talking motions] <dog> doesn't need to know 'sit' for this study.",
         "robot": ""
       }
     },
@@ -685,12 +685,12 @@
     {
       "full":
       {
-        "text": "Does <dog> do any tricks?",
+        "text": "Does <dog> [wave toward dog] do any tricks?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Does <dog> know any tricks?",
+        "text": "Does <dog> [wave toward dog] know any tricks?",
         "robot": ""
       }
     },
@@ -698,12 +698,12 @@
     {
       "full":
       {
-        "text": "I am excited to see that. Could you please show them to me?",
+        "text": "I am excited [excited motion] to see that. Could [wave toward person and dog] you please show them to me?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Could <dog> show them to me?",
+        "text": "Could <dog> [wave toward dog] show them to me?",
         "robot": ""
       }
     },
@@ -711,12 +711,12 @@
     {
       "full":
       {
-        "text": "Impressive!",
+        "text": "[excited gesture] Impressive!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Wow!",
+        "text": "[excited gesture] Wow!",
         "robot": ""
       }
     },
@@ -724,12 +724,12 @@
     {
       "full":
       {
-        "text": "That's great!",
+        "text": "[excited gesture] That's great!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Amazing!",
+        "text": "[excited gesture] Amazing!",
         "robot": ""
       }
     },
@@ -737,12 +737,12 @@
     {
       "full":
       {
-        "text": "<dog> is so smart!",
+        "text": "[excited gesture] <dog> is so smart!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Incredible!",
+        "text": "[excited gesture] Incredible!",
         "robot": ""
       }
     },
@@ -750,12 +750,12 @@
     {
       "full":
       {
-        "text": "How old is <dog>?",
+        "text": "How old is [wave toward dog] <dog>?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "What age is <dog>?",
+        "text": "What age is [wave toward dog] <dog>?",
         "robot": ""
       }
     },
@@ -763,12 +763,12 @@
     {
       "full":
       {
-        "text": "So <dog> is still young.",
+        "text": "So [look toward dog] <dog> is still young.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> is very young",
+        "text": "[look toward dog] <dog> is very young",
         "robot": ""
       }
     },
@@ -776,12 +776,12 @@
     {
       "full":
       {
-        "text": "Wow, <dog> looks so young.",
+        "text": "Wow, [look toward dog] <dog> looks so young.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> still looks very young",
+        "text": "[look toward dog] <dog> still looks very young",
         "robot": ""
       }
     },
@@ -789,12 +789,12 @@
     {
       "full":
       {
-        "text": "What kind of dog is <dog> as in breed?",
+        "text": "What kind of dog is [wave toward dog] <dog> as in breed?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "What breed is <dog>?",
+        "text": "What breed is [wave toward dog] <dog>?",
         "robot": ""
       }
     },
@@ -802,12 +802,12 @@
     {
       "full":
       {
-        "text": "How long have you been with <dog>?",
+        "text": "[questioning hand motion] How long have [wave toward person] you been with [wave toward dog] <dog>?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "How many years have you been with <dog>?",
+        "text": "[questioning hand motion] How many years have [wave toward person] you been with [wave toward dog] <dog>?",
         "robot": ""
       }
     },
@@ -815,12 +815,12 @@
     {
       "full":
       {
-        "text": "That’s not too long, but I believe you will have a great time with <dog>.",
+        "text": "That’s not too long [shrug], but I believe [point to person] you will have a great time with [point to dog] <dog>.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Sounds like you two will have many adventures in the future.",
+        "text": "Sounds like you two [wave toward dog and person] will have [happy arm swing] many adventures in the future.",
         "robot": ""
       }
     },
@@ -828,12 +828,12 @@
     {
       "full":
       {
-        "text": "You’ve been with each other for quite some time.",
+        "text": "[wave toward person and dog] You’ve been with each other for quite some time.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That's a really long time. You two must be very close.",
+        "text": "That's a really long time. [wave toward person and dog] You two must be very close.",
         "robot": ""
       }
     },
@@ -841,12 +841,12 @@
     {
       "full":
       {
-        "text": "Do you have other dogs at home?",
+        "text": "Do [point at person] you have other dogs at home?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Do you have any other dogs?",
+        "text": "Do [point at person] you have any other dogs?",
         "robot": ""
       }
     },
@@ -854,12 +854,12 @@
     {
       "full":
       {
-        "text": "It must feel great to be the only child in the family to get all the treat and toys.",
+        "text": "[look at dog] It must feel great [happy hand gesture] to be the only child in the family to get all the treat and toys.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Being an only child must be great!",
+        "text": "[look at dog] Being an only child must be great! [happy hand gesture]",
         "robot": ""
       }
     },
@@ -867,12 +867,12 @@
     {
       "full":
       {
-        "text": "It is great to have other dogs to play with at home.",
+        "text": "It is great [happy hand gesture] to have other dogs to play with at home.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "It must be fun to have so many dog friends at home.",
+        "text": "It must be fun [happy hand gesture] to have so many dog friends at home.",
         "robot": ""
       }
     },
@@ -880,12 +880,12 @@
     {
       "full":
       {
-        "text": "Is <dog> food motivated?",
+        "text": "Is [wave toward dog] <dog> food motivated?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Is <dog> motivated by food?",
+        "text": "Is [wave toward dog] <dog> motivated by food?",
         "robot": ""
       }
     },
@@ -893,12 +893,12 @@
     {
       "full":
       {
-        "text": "That’s great! <dog> will get a lot treats today.",
+        "text": "That’s great! [happy hand gesture] <dog> will get a lot of treats today.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That's great!",
+        "text": "<dog> will get a lot of treats today[happy hand gesture]!",
         "robot": ""
       }
     },
@@ -906,12 +906,12 @@
     {
       "full":
       {
-        "text": "Let’s see what <dog> will do today.",
+        "text": "[talking motions] Let’s see what <dog> will do today.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let’s see what <dog> can do today.",
+        "text": "[talking motions] Let’s see what <dog> can do today.",
         "robot": ""
       }
     },
@@ -919,12 +919,12 @@
     {
       "full":
       {
-        "text": "Has <dog> ever interacted with a robot before? Like roomba, or robot toys?",
+        "text": "Has [wave toward dog] <dog> ever interacted with a robot before? [questioning gesture] Like roomba, or robot toys?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Has <dog> ever interacted with robots before?",
+        "text": "Has [wave toward dog] <dog> ever interacted with robots before?",
         "robot": ""
       }
     },
@@ -932,12 +932,12 @@
     {
       "full":
       {
-        "text": "Good know to <dog> loves robots!",
+        "text": "Good to know [happy gesture] <dog> loves robots!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Good to know <dog> likes to play with robots!",
+        "text": "Good to know [happy gesture] <dog> likes to play with robots!",
         "robot": ""
       }
     },
@@ -945,12 +945,12 @@
     {
       "full":
       {
-        "text": " I hope <dog> will like me then.",
+        "text": "[talking motion] I hope <dog> will like me then.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "I hope <dog> likes me then.",
+        "text": "[talking motion] I hope <dog> likes me then.",
         "robot": ""
       }
     },
@@ -971,12 +971,12 @@
     {
       "full":
       {
-        "text": "<dog> will have some time to get familiar with this environment, and me! Hopefully <dog> likes me.",
+        "text": "[wave toward dog] <dog> will have some time to get familiar with this environment [wave toward room], and me [point to self]! Hopefully <dog> likes me.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> will be able to explore the environment, and me, for a period of time.",
+        "text": "[wave toward dog] <dog> will be able to explore the environment [wave toward room], and me [point to self], for a period of time.",
         "robot": ""
       }
     },
@@ -984,12 +984,12 @@
     {
       "full":
       {
-        "text": "Afterwards, <dog> will get a treat from me.",
+        "text": "Afterwards, [wave to dog] <dog> will get a treat [motion toward treats] from me [point to self].",
         "robot": ""
       },
       "repeat":
       {
-        "text": "After exploring, I will give <dog> a treat.",
+        "text": "After exploring, [point to self] I will give [point to dog] <dog> a treat [motion to treats].",
         "robot": ""
       }
     },
@@ -997,12 +997,12 @@
     {
       "full":
       {
-        "text": "In this study, we will explore how dogs understand pointing.",
+        "text": "[talking motion] In this study, we will explore how dogs understand pointing.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "This study explores how dogs understand pointing.",
+        "text": "[talking motions] This study explores how dogs understand pointing.",
         "robot": ""
       }
     },
@@ -1010,12 +1010,12 @@
     {
       "full":
       {
-        "text": "There will be two warmup sessions, one with me leading and one with <pointer> leading.",
+        "text": "There will be [holds up two fingers] two warmup sessions, one with [points toward self] me leading and one with [points toward pointer] <pointer> leading.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "We will have two warmup sessions, one with me and one with <pointer>.",
+        "text": "We will have [holds up two fingers] two warmup sessions, one with [points to self] me and one with [points to pointer] <pointer>.",
         "robot": ""
       }
     },
@@ -1023,12 +1023,12 @@
     {
       "full":
       {
-        "text": "The warmup sessions will be followed by two testing sessions, also one with me and one with <pointer>.",
+        "text": "The warmup sessions will be followed by [holds up two fingers] two testing sessions, also one with [points at self] me and one with [points at pointer] <pointer>.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "We will have two more testing sessions after the warmup sessions.",
+        "text": "We will have [holds up two fingers] two more testing sessions after the warmup sessions.",
         "robot": ""
       }
     },
@@ -1036,12 +1036,12 @@
     {
       "full":
       {
-        "text": "Between each session, you and <dog> will get a quick break in the lobby so we can get set up for the next session.",
+        "text": "Between each session, [wave toward person and dog] you and <dog> will get a quick break in [point toward lobby] the lobby so [point toward self and pointer/assistant] we can get set up for the next session.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You and <dog> will get a quick break in the lobby between sessions.",
+        "text": "[wave toward person and dog] You and <dog> will get a quick break in [point toward lobby] the lobby between sessions.",
         "robot": ""
       }
     },
@@ -1049,12 +1049,12 @@
     {
       "full":
       {
-        "text": "Also please let us know at any point if you think <dog> needs a break!",
+        "text": "Also [please gesture] please let us know at any point if you think [point at dog] <dog> needs a break!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please let us now any time during the sessions if you think <dog> needs a break!",
+        "text": "[please gesture] Please let us now any time during the sessions if you think [point at dog] <dog> needs a break!",
         "robot": ""
       }
     },
@@ -1062,12 +1062,12 @@
     {
       "full":
       {
-        "text": "Now <dog> will have 1 minute to get familiar with this environment.",
+        "text": "Now [wave at dog] <dog> will have [hold 1 finger up] 1 minute to get familiar with [wave toward room] this environment.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> will have 1 minute to get familiar with the environment.",
+        "text": "[wave at dog] <dog> will have [hold 1 finger up] 1 minute to get familiar with [wave toward room] the environment.",
         "robot": ""
       }
     },
@@ -1075,12 +1075,12 @@
     {
       "full":
       {
-        "text": "And feel free to let <dog> explore around the room. [motions out toward room]",
+        "text": "[welcoming hand gesture] And feel free to let <dog> explore around the room. [motions out toward room]",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Feel free to allow <dog> to explore the room. [motions out toward room]",
+        "text": "[welcoming hand gesture] Feel free to allow <dog> to explore the room. [motions out toward room]",
         "robot": ""
       }
     },
@@ -1088,12 +1088,12 @@
     {
       "full":
       {
-        "text": "Now let’s start!",
+        "text": "Now [encouraging hand swing] let’s start!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let's start!",
+        "text": "[encouraging hand swing] Let's start!",
         "robot": ""
       }
     },
@@ -1101,12 +1101,12 @@
     {
       "full":
       {
-        "text": " <dog>, come over!",
+        "text": " <dog>, [motion for dog to come over] come over!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Come over here <dog>!",
+        "text": "[motion for dog to come over] Come over here <dog>!",
         "robot": ""
       }
     },
@@ -1114,12 +1114,12 @@
     {
       "full":
       {
-        "text": "Hi <dog>!",
+        "text": "[waving] Hi <dog>!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Hi <dog>!",
+        "text": "[waving] Hi <dog>!",
         "robot": ""
       }
     },
@@ -1127,12 +1127,12 @@
     {
       "full":
       {
-        "text": "Hello <dog>!",
+        "text": "[waving] Hello <dog>!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Hello <dog>!",
+        "text": "[waving] Hello <dog>!",
         "robot": ""
       }
     },
@@ -1140,12 +1140,12 @@
     {
       "full":
       {
-        "text": "Hope we can be buddies!",
+        "text": "[waving] Hope we can be buddies!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Hope we can be buddies!",
+        "text": "[waving] Hope we can be buddies!",
         "robot": ""
       }
     },
@@ -1153,12 +1153,12 @@
     {
       "full":
       {
-        "text": "How are you!",
+        "text": "[stick out hand] How are you!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "How are you!",
+        "text": "[stick out hand] How are you!",
         "robot": ""
       }
     },
@@ -1166,12 +1166,12 @@
     {
       "full":
       {
-        "text": "I am so excited to play with you today!",
+        "text": "[point to self] I am so excited [excited arm swing] to play with you today!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "I am so excited to play with you today!",
+        "text": "[point to self] I am so excited [excited arm swing] to play with you today!",
         "robot": ""
       }
     },
@@ -1179,12 +1179,12 @@
     {
       "full":
       {
-        "text": "Time is up! Now I will provide a treat to <dog>.",
+        "text": "[point at wrist/watch] Time is up! [talking motions] Now I will provide a treat to <dog>.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Exploration time is done! Now I will give <dog> a treat.",
+        "text": "[point at wrist/watch] Exploration time is done! [talking motions] Now I will give <dog> a treat.",
         "robot": ""
       }
     },
@@ -1192,12 +1192,12 @@
     {
       "full":
       {
-        "text": "<owner>, please bring <dog> closer to you.",
+        "text": "<owner>, [please motion] please bring <dog> closer to [wave toward owner] you.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Bring <dog> closer to you please.",
+        "text": "Bring <dog> closer to [wave toward owner] you please.",
         "robot": ""
       }
     },
@@ -1205,12 +1205,12 @@
     {
       "full":
       {
-        "text": "[look to <pointer>] <pointer>, can you bring over the dispenser.",
+        "text": "[look to <pointer>] <pointer>, can you [bring over gesture] bring over the dispenser.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "[look to <pointer>] bring me the dispenser please, <pointer>.",
+        "text": "[look to <pointer>] [bring over gesture] bring me the dispenser please, <pointer>.",
         "robot": ""
       }
     },
@@ -1218,12 +1218,12 @@
     {
       "full":
       {
-        "text": "This is the container that we will use in this study to provide <dog> the treat.",
+        "text": "[gesture toward container] This is the container that we will use in this study to provide [wave toward dog] <dog> the treat.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "We will use this container to provide <dog> treats.",
+        "text": "We will use [gesture toward container] this container to provide [wave toward dog] <dog> treats.",
         "robot": ""
       }
     },
@@ -1231,12 +1231,12 @@
     {
       "full":
       {
-        "text": "Thank you. Can you bring me the spoon and the treat?",
+        "text": "[thank you gesture] Thank you. Can you [point to self] bring me the spoon and the treat?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Can you give me the spoon and treat?",
+        "text": "Can you [point to self] give me the spoon and treat?",
         "robot": ""
       }
     },
@@ -1257,12 +1257,12 @@
     {
       "full":
       {
-        "text": "Thanks.",
+        "text": "[thank you motion] Thanks.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Thank you.",
+        "text": "[thank you motion] Thank you.",
         "robot": ""
       }
     },
@@ -1270,12 +1270,12 @@
     {
       "full":
       {
-        "text": "<owner>, Please only release <dog> after I say 'ok.'",
+        "text": "<owner>, [please motion] Please only release <dog> after [point to self] I say 'ok.'",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Only release <dog> when I say 'ok.'",
+        "text": "[talking motions] Only release <dog> when [point to self] I say 'ok.'",
         "robot": ""
       }
     },
@@ -1309,12 +1309,12 @@
     {
       "full":
       {
-        "text": "Nice! We will now prepare for the warm-up session. Could you please take <dog> to the lobby?",
+        "text": "Nice! [happy hand gesture] We will now prepare for the warm-up session. [please hand gesture] Could you please take <dog> to the lobby [point to lobby]?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Can you please take <dog> to the lobby while we prepare for the warm-up session?",
+        "text": "[please hand gesture] Can you please take <dog> to the lobby [point to lobby] while we prepare for the warm-up session?",
         "robot": ""
       }
     },
@@ -1322,12 +1322,12 @@
     {
       "full":
       {
-        "text": "There will be a lot of back and forth from this room and the lobby in this study. Sorry about that in advance! Thanks, see you soon! ",
+        "text": "There will be a lot of back and forth from this room [point to room] and the lobby [point to lobby] in this study. [sorry gesture] Sorry about that in advance! [thank you gesture] Thanks, [goodbye wave] see you soon! ",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You will be moving between this room and the lobby many times during the study. Sorry in advance! Thanks, see you soon!",
+        "text": "You will be moving between this room [point to room] and the lobby [point to lobby] many times during the study. [sorry gesture] Sorry in advance! [thank you gesture] Thanks, [goodbye wave] see you soon!",
         "robot": ""
       }
     }
@@ -1338,12 +1338,12 @@
     {
       "full":
       {
-        "text": "Hi! Welcome back.",
+        "text": "[waving] Hi! Welcome back.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Welcome back!",
+        "text": "[waving] Welcome back!",
         "robot": ""
       }
     },
@@ -1351,12 +1351,12 @@
     {
       "full":
       {
-        "text": "Please take a seat.",
+        "text": "[wave toward seat] Please take a seat.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Take a seat, please.",
+        "text": "[wave toward seat] Take a seat, please.",
         "robot": ""
       }
     },
@@ -1364,12 +1364,12 @@
     {
       "full":
       {
-        "text": "And please let <dog> sit in the black square.",
+        "text": "And please let <dog> sit in [wave toward black square] the black square.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> can sit in the black square.",
+        "text": "<dog> can sit in [wave toward black square] the black square.",
         "robot": ""
       }
     },
@@ -1377,12 +1377,12 @@
     {
       "full":
       {
-        "text": "Please keep your head down and eyes closed during each trial. Please only look ahead when you hear me say 'ok.'",
+        "text": "Please keep your [look down] head down and [close eyes] eyes closed during each trial. [look up] Please only look ahead when you [point to self] hear me say 'ok.'",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please keep your head down and eyes closed during each trial until I say 'ok.'",
+        "text": "Please keep your [look down] head down and [close eyes] eyes closed during each trial until you [point to self] hear me say 'ok.'",
         "robot": ""
       }
     },
@@ -1390,12 +1390,12 @@
     {
       "full":
       {
-        "text": "Remember, when you hear the release command 'ok,' you can let <dog> get a treat.",
+        "text": "[talking motions] Remember, when you hear the release command 'ok,' you can let <dog> get a treat.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Only release <dog> when you hear the release command 'ok.'",
+        "text": "[talking motions] Only release <dog> when you hear the release command 'ok.'",
         "robot": ""
       }
     },
@@ -1403,12 +1403,12 @@
     {
       "full":
       {
-        "text": "If <dog> hesitates to make a choice after the release command, feel free to give <him/her> a release command of your own, but try not to point or give <dog> a directional hint.",
+        "text": "[waves toward dog] If <dog> hesitates to make a choice after the release command, [open hands toward owner] feel free to give <him/her> a release command of your own, [finger waving] but try not to point or give <dog> a directional hint.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "If <dog> hesitates after I say 'ok,' you can give <him/her> a release command of your own, but try not to point.",
+        "text": "[waves toward dog] If <dog> hesitates after I say 'ok,' [open hands toward owner] you can give <him/her> a release command of your own, [finger waving] but try not to point.",
         "robot": ""
       }
     },
@@ -1416,12 +1416,12 @@
     {
       "full":
       {
-        "text": "Please let <dog> go back to you after <he/she> gets the treat, and please do not let <dog> go to the other container.",
+        "text": "Please let <dog> [opens hands toward owner] go back to you after <he/she> gets the treat, and please [finger waving/negative body language] do not let <dog> go to the other container.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let <dog> return to you after the treat, but don't let <him/her> go to the other container.",
+        "text": "Let <dog> [opens hands toward owner] return to you after the treat, but [finger waving/negative body language] don't let <him/her> go to the other container.",
         "robot": ""
       }
     },
@@ -1429,12 +1429,12 @@
     {
       "full":
       {
-        "text": "Let’s start!",
+        "text": "[excited body language] Let’s start!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let’s start!",
+        "text": "[excited body language] Let’s start!",
         "robot": ""
       }
     },
@@ -1442,12 +1442,12 @@
     {
       "full":
       {
-        "text": "<assistant>, I’m ready, please give me the spoon and the treat!",
+        "text": "[turn head toward assistant] <assistant>, I’m ready, please give me the spoon and the treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Give me the spoon and treat please, <assistant>.",
+        "text": "[turn head toward assistant] Give me the spoon and treat please, <assistant>.",
         "robot": ""
       }
     },
@@ -1455,12 +1455,12 @@
     {
       "full":
       {
-        "text": "<assistant>, I’m ready for the spoon and treat!",
+        "text": "[turn head toward assistant] <assistant>, I’m ready for the spoon and treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Give me the spoon and treat please, <assistant>.",
+        "text": "[turn head toward assistant] Give me the spoon and treat please, <assistant>.",
         "robot": ""
       }
     },
@@ -1468,12 +1468,12 @@
     {
       "full":
       {
-        "text": "<dog>, look!",
+        "text": "<dog>, [point to treat] look!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog>, look!",
+        "text": "<dog>, [point to treat] look!",
         "robot": ""
       }
     },
@@ -1533,12 +1533,12 @@
     {
       "full":
       {
-        "text": "Great, you got the treat!",
+        "text": "[enthusiastic body language] Great, you got the treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Good job! You got the treat!",
+        "text": "[enthusiastic body language] Good job! You got the treat!",
         "robot": ""
       }
     },
@@ -1546,12 +1546,12 @@
     {
       "full":
       {
-        "text": "Nice, you got both treats!",
+        "text": "[enthusiastic body language] Nice, you got both treats!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Great, you got both treats!",
+        "text": "[enthusiastic body language] Great, you got both treats!",
         "robot": ""
       }
     },
@@ -1559,12 +1559,12 @@
     {
       "full":
       {
-        "text": "You will get it next time.",
+        "text": "[encouraging body language] You will get it next time.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You will get it next session.",
+        "text": "[encouraging body language] You will get it next time.",
         "robot": ""
       }
     },
@@ -1572,25 +1572,25 @@
     {
       "full":
       {
-        "text": "Hope you will get treat in the next session.",
+        "text": "[encouraging body language] Hope you will get treat in the next session.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Hope you will get the treat next time.",
+        "text": "[encouraging body language] Hope you will get the treat next time.",
         "robot": ""
       }
     },
-    "bait_next":
+    "bait_back_for_next":
     {
       "full":
       {
-        "text": "Please take <dog> back for the next trial.",
+        "text": "[open hands toward owner] Please take <dog> back for the next trial.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Take <dog> back please for the next trial.",
+        "text": "[open hands toward owner] Take <dog> back please for the next trial.",
         "robot": ""
       }
     },
@@ -1598,12 +1598,12 @@
     {
       "full":
       {
-        "text": "Let's move on to the next trial!",
+        "text": "Let's move on to [encouraging arm swing] the next trial!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let's start the next trial!",
+        "text": "Let's start [encouraging arm swing] the next trial!",
         "robot": ""
       }
     },
@@ -1611,12 +1611,12 @@
     {
       "full":
       {
-        "text": "<dog> can take another break. <owner>, please take <dog> to the lobby and we will prepare for the next session.",
+        "text": "<dog> can take another break. <owner>, please take [wave toward dog] <dog> to [point toward lobby] the lobby and [point to self] we will prepare for the next session.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please take <dog> to the lobby so that we can prepare for the next session.",
+        "text": "Please take [wave toward dog] <dog> to [point toward lobby] the lobby while [point to self] we prepare for the next session.",
         "robot": ""
       }
     }
@@ -1627,12 +1627,12 @@
     {
       "full":
       {
-        "text": "Please take a seat.",
+        "text": "[wave toward seat] Please take a seat.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Take a seat, please.",
+        "text": "[wave toward seat] Take a seat, please.",
         "robot": ""
       }
     },
@@ -1640,12 +1640,12 @@
     {
       "full":
       {
-        "text": "And please let <dog> sit in the black square.",
+        "text": "And please let <dog> sit in [wave toward black square] the black square.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog> can sit in the black square.",
+        "text": "<dog> can sit in [wave toward black square] the black square.",
         "robot": ""
       }
     },
@@ -1653,12 +1653,12 @@
     {
       "full":
       {
-        "text": "Now we will do the testing trials.",
+        "text": "[talking motions] Now we will do the testing trials.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "We will complete the testing trials now.",
+        "text": "[talking motions] We will complete the testing trials now.",
         "robot": ""
       }
     },
@@ -1666,12 +1666,12 @@
     {
       "full":
       {
-        "text": "Please keep your head down and eyes closed during each trial. Please only look ahead when you hear me say 'ok.'",
+        "text": "Please keep your [look down] head down and [close eyes] eyes closed during each trial. [look up] Please only look ahead when you [point to self] hear me say 'ok.'",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please keep your head down and eyes closed during each trial until I say 'ok.'",
+        "text": "Please keep your [look down] head down and [close eyes] eyes closed during each trial until you [point to self] hear me say 'ok.'",
         "robot": ""
       }
     },
@@ -1679,12 +1679,12 @@
     {
       "full":
       {
-        "text": "You will hear more utterances, but still please only release <dog> when you hear the release command 'ok.'",
+        "text": "[talking motions] You will hear more utterances, but still please only release <dog> when you hear the release command 'ok.'",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Remember, only release <dog> when you hear 'ok.'",
+        "text": "[talking motions] Remember, only release <dog> when you hear 'ok.'",
         "robot": ""
       }
     },
@@ -1692,12 +1692,12 @@
     {
       "full":
       {
-        "text": "And let <dog> go back to you after trial",
+        "text": "And let <dog> [open hands toward owner] go back to you after trial",
         "robot": ""
       },
       "repeat":
       {
-        "text": "After the trial, let <dog> return to you.",
+        "text": "After the trial, let <dog> [opens hands toward owner] return to you.",
         "robot": ""
       }
     },
@@ -1705,12 +1705,12 @@
     {
       "full":
       {
-        "text": "Please do not let <dog> go to the other container.",
+        "text": "Please [finger waving/negative body language] do not let <dog> go to the other container.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Do not let <dog> go to the other container.",
+        "text": "[finger waving/negative body language] Do not let <dog> go to the other container.",
         "robot": ""
       }
     },
@@ -1718,12 +1718,12 @@
     {
       "full":
       {
-        "text": "The testing session is longer than the warmup, so please let me know if you think <dog> is tired and needs a break.",
+        "text": "The testing session is longer than the warmup, so please [point to self] let me know if you think [point to dog] <dog> is tired and needs a break.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please let me know if <dog> needs a break.",
+        "text": "Please [point to self] let me know if [point to dog] <dog> needs a break.",
         "robot": ""
       }
     },
@@ -1731,12 +1731,12 @@
     {
       "full":
       {
-        "text": "Ready?",
+        "text": "[excited body language] Ready?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Are you ready?",
+        "text": "[excited body language] Are you ready?",
         "robot": ""
       }
     },
@@ -1757,12 +1757,12 @@
     {
       "full":
       {
-        "text": "<dog>, look!...ok.",
+        "text": "<dog>, [point to bait] look!...ok.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog>, look!...ok.",
+        "text": "<dog>, [point to bait] look!...ok.",
         "robot": ""
       }
     },
@@ -1770,12 +1770,12 @@
     {
       "full":
       {
-        "text": "<dog>, look!...ok.",
+        "text": "<dog>, [point to bait] look!...ok.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "<dog>, look!...ok.",
+        "text": "<dog>, [point to bait] look!...ok.",
         "robot": ""
       }
     },
@@ -1783,12 +1783,12 @@
     {
       "full":
       {
-        "text": "Great, you got the treat!",
+        "text": "[enthusiastic body language] Great, you got the treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Great, you got the treat!",
+        "text": "[enthusiastic body language] Good job! You got the treat!",
         "robot": ""
       }
     },
@@ -1796,12 +1796,12 @@
     {
       "full":
       {
-        "text": "Great!",
+        "text": "[enthusiastic body language] Great!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Great!",
+        "text": "[enthusiastic body language] Great!",
         "robot": ""
       }
     },
@@ -1809,12 +1809,12 @@
     {
       "full":
       {
-        "text": "Good <boy/girl>!",
+        "text": "[enthusiastic body language] Good <boy/girl>!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Good <boy/girl>!",
+        "text": "[enthusiastic body language] Good <boy/girl>!",
         "robot": ""
       }
     },
@@ -1822,12 +1822,12 @@
     {
       "full":
       {
-        "text": "Yay! You got the yummy treat!",
+        "text": "[enthusiastic body language] Yay! You got the yummy treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Yay! You got the yummy treat!",
+        "text": "[enthusiastic body language] Yay! You got the yummy treat!",
         "robot": ""
       }
     },
@@ -1835,12 +1835,12 @@
     {
       "full":
       {
-        "text": "Nice choice!",
+        "text": "[enthusiastic body language] Nice choice!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Nice choice!",
+        "text": "[enthusiastic body language] Nice choice!",
         "robot": ""
       }
     },
@@ -1848,12 +1848,12 @@
     {
       "full":
       {
-        "text": "You got the treat!",
+        "text": "[enthusiastic body language]You go t the treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You got the treat!",
+        "text": "[enthusiastic body language] You got the treat!",
         "robot": ""
       }
     },
@@ -1861,12 +1861,12 @@
     {
       "full":
       {
-        "text": "Hope you can get the treat next time as well!",
+        "text": "[enthusiastic body language] Hope you can get the treat next time as well!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Hope you can get the treat next time as well!",
+        "text": "[enthusiastic body language] Hope you can get the treat next time as well!",
         "robot": ""
       }
     },
@@ -1874,12 +1874,12 @@
     {
       "full":
       {
-        "text": "You got all the treats!",
+        "text": "[enthusiastic body language] You got all the treats!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You got all the treats!",
+        "text": "[enthusiastic body language] You got all the treats!",
         "robot": ""
       }
     },
@@ -1887,12 +1887,12 @@
     {
       "full":
       {
-        "text": "You will get it next time!",
+        "text": "[encouraging body language] You will get it next time.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You will get it next time!",
+        "text": "[encouraging body language] You will get it next time.",
         "robot": ""
       }
     },
@@ -1900,12 +1900,12 @@
     {
       "full":
       {
-        "text": "The treat is in the other container!",
+        "text": "[encouraging body language] The treat is in the other container!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "The treat is in the other container!",
+        "text": "[encouraging body language] The treat is in the other container!",
         "robot": ""
       }
     },
@@ -1913,12 +1913,12 @@
     {
       "full":
       {
-        "text": "That’s ok, you will still have a lot chances to get the treat!",
+        "text": "[encouraging body language] That’s ok, you will still have a lot chances to get the treat!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That’s ok, you will still have a lot chances to get the treat!",
+        "text": "[encouraging body language] That’s ok, you will still have a lot chances to get the treat!",
         "robot": ""
       }
     },
@@ -1926,12 +1926,12 @@
     {
       "full":
       {
-        "text": "Let’s try it one more time.",
+        "text": "[encouraging body language] Let’s try it one more time.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let’s try it one more time.",
+        "text": "[encouraging body language] Let’s try it one more time.",
         "robot": ""
       }
     },
@@ -1939,12 +1939,12 @@
     {
       "full":
       {
-        "text": "You can pay more attention to me next time.",
+        "text": "[encouraging body language] You can pay more attention to me next time.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You can pay more attention to me next time.",
+        "text": "[encouraging body language] You can pay more attention to me next time.",
         "robot": ""
       }
     },
@@ -1952,12 +1952,12 @@
     {
       "full":
       {
-        "text": "That’s okay, try again!",
+        "text": "[encouraging body language] That’s okay, try again!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "That’s okay, try again!",
+        "text": "[encouraging body language] That’s okay, try again!",
         "robot": ""
       }
     },
@@ -1965,12 +1965,12 @@
     {
       "full":
       {
-        "text": "You will get another chance!",
+        "text": "[encouraging body language] You will get another chance!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You will get another chance!",
+        "text": "[encouraging body language] You will get another chance!",
         "robot": ""
       }
     },
@@ -1978,12 +1978,12 @@
     {
       "full":
       {
-        "text": "Oh, I am so sorry you didn’t get any treat in this session!",
+        "text": "[sorry body language] Oh, I am so sorry you didn’t get any treat in this session!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Oh, I am so sorry you didn’t get any treat in this session!",
+        "text": "[sorry body language] Oh, I am so sorry you didn’t get any treat in this session!",
         "robot": ""
       }
     },
@@ -1991,12 +1991,12 @@
     {
       "full":
       {
-        "text": "We are halfway through. Do you think <dog> is having fun?",
+        "text": "[enthusiastic body language] We are halfway through. [question body language] Do you think <dog> is having fun?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Is <dog> having fun?",
+        "text": "[question body language] Is <dog> having fun?",
         "robot": ""
       }
     },
@@ -2004,12 +2004,12 @@
     {
       "full":
       {
-        "text": "Do you think <dog> need a break?",
+        "text": "Do you think [waves toward dog] <dog> need a break?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Does <dog> need a break?",
+        "text": "Does [waves toward dog] <dog> need a break?",
         "robot": ""
       }
     },
@@ -2017,12 +2017,12 @@
     {
       "full":
       {
-        "text": "Ok, let’s continue. <assistant>, can you check the two dispensers?",
+        "text": "Ok, let’s continue. [look toward assistant] <assistant>, can you check the two dispensers?",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Can you check the two dispensers, <assistant>?",
+        "text": "[look toward assistant] Can you check the two dispensers, <assistant>?",
         "robot": ""
       }
     },
@@ -2030,12 +2030,12 @@
     {
       "full":
       {
-        "text": "Sure. <dog> can have a break now. Please take <dog> to the lobby.",
+        "text": "Sure. <dog> can have a break now. Please take [wave toward dog] <dog> [point toward lobby] to the lobby.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "You can take <dog> to the lobby now.",
+        "text": "You can take [wave toward dog] <dog> [point toward lobby] to the lobby now.",
         "robot": ""
       }
     },
@@ -2043,12 +2043,12 @@
     {
       "full":
       {
-        "text": "Please take <dog> back.",
+        "text": "[open hands toward owner] Please take <dog> back.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Please take <dog> back.",
+        "text": "[open hands toward owner] Please take <dog> back.",
         "robot": ""
       }
     },
@@ -2056,12 +2056,12 @@
     {
       "full":
       {
-        "text": "Great! Let's move on to the next trial.",
+        "text": "[enthusiastic body language] Great! Let's move on to the next trial.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let's start the next trial!",
+        "text": "[enthusiastic body language] Let's start the next trial!",
         "robot": ""
       }
     },
@@ -2069,12 +2069,12 @@
     {
       "full":
       {
-        "text": "<assistant>, now let’s do the calibration.",
+        "text": "[look toward assistant] <assistant>, now let’s do the calibration.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Let's do the calibration now, <assistant>.",
+        "text": "[look toward assistant] Let's do the calibration now, <assistant>.",
         "robot": ""
       }
     },
@@ -2082,12 +2082,12 @@
     {
       "full":
       {
-        "text": "<dog> can take another break. <owner>, please take <dog> to the lobby and we will prepare for the next session.",
+        "text": "<dog> can take another break. <owner>, please take [wave toward dog] <dog> to [point toward lobby] the lobby and [point to self] we will prepare for the next session.",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Can you please take <dog> to the lobby while we prepare for the next session?",
+        "text": "Please take [wave toward dog] <dog> to [point toward lobby] the lobby while [point to self] we prepare for the next session.",
         "robot": ""
       }
     },
@@ -2095,12 +2095,12 @@
     {
       "full":
       {
-        "text": "That’s the end of it. Thank you!",
+        "text": "That’s the end of it. [thank you body language] Thank you!",
         "robot": ""
       },
       "repeat":
       {
-        "text": "Thank you so much!",
+        "text": "[thank you body language] Thank you so much!",
         "robot": ""
       }
     }
