@@ -1577,7 +1577,7 @@
       },
       "repeat":
       {
-        "text": "Hope you will get the treat next session.",
+        "text": "Hope you will get the treat next time.",
         "robot": ""
       }
     },
@@ -1861,7 +1861,7 @@
     {
       "full":
       {
-        "text": "[enthusiastic body language] Hope you [body language] can get [body language] the treat [body language] next time [body language] as well!",
+        "text": "[enthusiastic body language] Hope you [body language] can also get [body language] the treat [body language] next time [body language]!",
         "robot": ""
       },
       "repeat":

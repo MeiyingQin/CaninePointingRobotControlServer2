@@ -1,7 +1,7 @@
 import pydub
 from pydub import AudioSegment
 
-raw_audio_file = AudioSegment.from_mp3("./sentences.MP3")
+raw_audio_file = AudioSegment.from_mp3("./Recording.MP3")
 
 chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=500, silence_thresh=-30, keep_silence=500)
 
