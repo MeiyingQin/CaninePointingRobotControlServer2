@@ -6,14 +6,14 @@
       "full":
       {
         "text": "<pointer>, [looks at pointer] [body language] can you explain [body language] this?",
-        "robot": ["look_right", "^start(body_language) ^startSound(<pointer>) ^startSound(can_you_explain_this)"],
-        "flag": ["action", "speech"]
+        "robot": [],
+        "flag": []
       },
       "repeat":
       {
         "text": "Can you explain this, [looks at pointer] <pointer>?",
-        "robot": ["^startSound(can_you_explain_this) ^startSound(<pointer>)"],
-        "flag": ["speech"]
+        "robot": [],
+        "flag": []
       }
     },
     "assistant explain":
@@ -21,21 +21,21 @@
       "full":
       {
         "text": "<assistant>, [looks at assistant] [body language] could you please [body language] explain this?",
-        "robot": ["look_back", "^startSound(<assistant>) ^startSound(could_you_please_explain_this)"],
-        "flag": ["action", "speech"]
+        "robot": [],
+        "flag": []
       },
       "repeat":
       {
-        "text": "Could you please explain this, [looks at assistant] <assistant>?",
-        "robot": ["^startSound(could_you_please_explain_this) ^startSound(<assistant>)"],
-        "flag": ["speech"]
+        "text": "[looks at assistant] Could you please explain this, <assistant>?",
+        "robot": [],
+        "flag": []
       }
     },
     "did not learn":
     {
       "full":
       {
-        "text": "No, [shakes head] [body language] I didn’t learn [body language] that yet.",
+        "text": "[shakes head] No, [body language] I didn’t learn [body language] that yet.",
         "robot": ""
       },
       "repeat":
@@ -48,7 +48,7 @@
     {
       "full":
       {
-        "text": "Hmmmmm. [thinking body language] Sorry, [head shaking] I don’t [body language] remember.",
+        "text": "[thinking body language] Hmmmmm. [head shaking] Sorry, I don’t [body language] remember.",
         "robot": ""
       },
       "repeat":
@@ -87,7 +87,7 @@
     {
       "full":
       {
-        "text": "[hands up startled] Oh! [sorry body language] I am sorry.",
+        "text": "[body language] Oh! [sorry body language] I am sorry.",
         "robot": ""
       },
       "repeat": 
@@ -155,7 +155,7 @@
     {
       "full":
       {
-        "text": "Ok.",
+        "text": "[nod] Ok.",
         "robot": "",
         "flag": "speech"
       },
@@ -185,8 +185,9 @@
     {
       "full":
       {
-        "text": "[thank you body movement] Thank you. [question body language] Can you please bring me [question body language] the spoon and the treat? [hold out hands for spoon].",
-        "robot": ""
+        "text": "[thank you body movement] Thank you. [question body language] Can you please bring me [question body language] the spoon and the treat? [bait gesture].",
+        "robot": "",
+        "flag": ""
       },
       "repeat":
       {
