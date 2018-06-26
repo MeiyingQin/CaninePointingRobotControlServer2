@@ -1,0 +1,40 @@
+{
+"look_at_assistant": 				Need to code, head turns to assistant
+"no": "Stand/Gestures/Desperate_3",
+"thinking": "Stand/Emotions/Negative/Bored_2",
+"redo_previous_one":				Need to code, last part of unexpected question section
+"stand": 					Need to code, is this written already?
+"head_dip_down":				Need to code, head dip down to look at treat
+"wave": "Stand/Gestures/Hey_1",
+"welcome": "Stand/Gestures/Everything_5",
+"welcome_repeat": "Stand/Gestures/Everything_2",
+"point_to_self": "Stand/Gestures/Me_2",
+"look_at_pointer": 				Need to code, head turns to pointer 
+"quiet_gesture": 				Need to code, put one finger up to mouth for quiet gesture
+"question_long": "Stand/Gestures/Explain_4",
+"question_short": "Stand/Gestures/Explain_2",
+"point_to_chair": "Stand/Gestures/You_1",
+"thanks": "Stand/Gestures/Confident",
+"thanks_repeat": "Stand/Gestures/Yes_1",
+"nice_to_meet_you": "Stand/Gestures/Explain_3",
+"anywhere": "Stand/Gestures/Everything_6",
+"two_hand_explain": "Stand/Gestures/Explain_4",
+"one_hand_explain": "Stand/Gestures/Explain_5",
+"everything": "Stand/Gestures/Everything_3",
+"one_hand_explain_move": "Stand/Gestures/Explain_3",
+"excited": "Stand/Gestures/Far_3",
+"put_one_finger_up":				Need to code, one finger up
+"no_big_deal": "Stand/Gestures/Far_1",
+"wave_small": "Stand/Gesture/Hey_7",
+"look_toward_dog": 				Need to code, head moves to look at dog
+"happy": "Stand/Gestures/Yes_1",
+"put_two_fingers_up": 				Need to code, two fingers up
+"come": "Stand/Gestures/ComeOn_1",
+"interact": "Stand/Gestures/Caress_2",
+"point_to_wrist":				Need to code, signal that time is up
+"gesture_to_container": "Stand/Gestures/Everything_4",
+"hold_out_hands_for_spoon":			Need to code, is this written already?
+"bait":						Need to code, is this written already?
+"sad": "Stand/Gestures/Desperate_1",
+}
+
