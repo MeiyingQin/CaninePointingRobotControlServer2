@@ -19,7 +19,7 @@
                 "flag": []
             },
             "repeat": {
-                "text": "[b/look_at_assistant] | c/Could you please explain this <assistant>",
+                "text": "[b/look_at_assistant] | c/Could you please explain this | c/<assistant>",
                 "robot": [],
                 "flag": []
             }
