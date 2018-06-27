@@ -2,31 +2,78 @@ import speech_recognition as sr
 import pydub
 from pydub import AudioSegment
 from pydub.playback import play
+import os.path
 
 def save_segment(file_name, new_name):
-    raw_audio_file = AudioSegment.from_wav(file_name)
+    raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
     print("slicing video...")
     chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=500, silence_thresh=-30, keep_silence=500)
-    if len(chunks) != 3:
+    if len(chunks) != 2:
         print("video not sliced correctly")
     else:
         print("save segment")
-        segment = chunks[2].export(new_name, format="wav")
+        # save to unique
+        print("save to unique folder")
+        chunks[1].export("unique/" + new_name + ".wav", format="wav")
+        # save to all
+        print("save to all folder")
+        all_new_file_name = get_non_repetitve_name("all/" + new_name, ".wav")
+        chunks[1].export(all_new_file_name, format="wav")
         print("play segment...")
-        play(chunks[2])
+        play(chunks[1])
+
+def get_non_repetitve_name(file_name, file_type):
+    file_to_check = file_name + file_type
+    if not os.path.exists(file_to_check):
+        return file_to_check
+    index = 1
+    is_found = False
+    while not is_found:
+        file_to_check = file_name + "_" + str(index) + file_type
+        if not os.path.exists(file_to_check):
+            is_found = True
+        else:
+            index += 1
+    return file_to_check
 
 quit = False
+section = ""
+record_type = ""
+
+section_choices = {1: "unexpected",
+                   2: "dog_scared",
+                   3: "introduction",
+                   4: "warmup",
+                   5: "testing" }
+type_choices = {1: "full",
+                2: "repeat",
+                3: "choose section",
+                4: "quit" }
+key_json_file = open("Meiying-canine.json")
+key_json = key_json_file.read()
+key_json_file.close()
 
 while not quit:
     print("---------------------------------------------")
-    user_input = input("Press any key to start or q to quit: ")
-    if user_input == "q":
+    if not section:
+        print(section_choices)
+        user_input = input("Press choose the section from above 1/2/3/4/5: ")
+        section = section_choices[int(user_input)]
+    
+    print(type_choices)
+    user_input = input("Press choose the type to start from above 1/2/3/4: ")
+    if user_input == "3":
+        section = ""
+        continue
+    elif user_input == "4":
         quit = True
         continue
+    else:
+        record_type = type_choices[int(user_input)]
     
     recognizer = sr.Recognizer()
-    recognizer.pause_threshold = 4
-    recognizer.non_speaking_duration = 2
+    recognizer.pause_threshold = 2
+    recognizer.non_speaking_duration = 1.5
     mic = sr.Microphone()
     output_file_name = "test.wav"
     new_file_name = "new.wav"
@@ -41,11 +88,26 @@ while not quit:
         # if a RequestError or UnknownValueError exception is caught,
         #     update the response object accordingly
         try:
-            #new_file_name = recognizer.recognize_google(audio).replace(" ", "_") + ".wav"
-            output = open(output_file_name, "wb")
+            #text = recognizer.recognize_google(audio).lower()
+            text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower()
+            print("recognize text: " + text)
+            file_name = section + "_" + record_type + "_" + text.replace(" ", "_")
+            new_file_name = "clipped/" + file_name
+            output_file_name = "raw/RAW_" + file_name
+            # write into the unique folder
+            print("writing to unique folder...")
+            output = open("unique/" + output_file_name + ".wav", "wb")
             output.write(audio.get_wav_data())
             output.close()
+            # write into the all folder
+            print("writing to all folder...")
+            all_output_file_name = get_non_repetitve_name("all/" + output_file_name, ".wav")
+            output = open(all_output_file_name, "wb")
+            output.write(audio.get_wav_data())
+            output.close()
+            # get segment
             save_segment(output_file_name, new_file_name)
+            print("new file name: " + new_file_name)
         except sr.RequestError:
             # API was unreachable or unresponsive
             print("API unavailable")
