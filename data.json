@@ -26,36 +26,36 @@
         },
         "did not learn": {
             "full": {
-                "text": "[nb/no] | c/No | [nb/point_to_self] | c/I didn't learn that yet.",
+                "text": "[nb/no] | c/No | [nb/point_to_self] | c/I did not learn that yet.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/I haven't learned that yet.",
+                "text": "c/I have not learned that yet.",
                 "robot": [],
                 "flag": []
             }
         },
         "do not remember": {
             "full": {
-                "text": "[nb/thinking] | c/Hmmmmm. | [nb/no] | c/Sorry, I don't remember.",
+                "text": "[nb/thinking] | c/Hmmmmm. | [nb/no] | c/Sorry | c/I do not remember.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/no] | c/Sorry, I don't remember.",
+                "text": "[nb/no] | c/Sorry | c/I do not remember.",
                 "robot": [],
                 "flag": []
             }
         },
         "do not know": {
             "full": {
-                "text": "[nb/thinking] | c/Well. I don't think I know this. | [nb/no]",
+                "text": "[nb/thinking] | c/Well c/I do not think I know this | [nb/no]",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/I don't know this.",
+                "text": "c/I do not know this.",
                 "robot": [],
                 "flag": []
             }
@@ -124,48 +124,48 @@
     "Dog scared": {
         "initial check": {
             "full": {
-                "text": "[nb/look_toward_dog] | c/<dog> is barking ! | [nb/stand] |  c/<owner>, | [nb/question_long] | c/do you think <dog> needs a break? Or I can provide | [nb/question_short] | c/a treat to <dog> to see if that helps.",
+                "text": "[nb/look_toward_dog] | c/<dog> | c/is barking ! | [nb/stand] |  c/<owner>, | [nb/question_long] | c/do you think | c/<dog> | c/needs a break? | c/Or I can provide | [nb/question_short] | c/a treat to | c/<dog> | c/to see if that helps.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<owner>, does | [nb/question_long] | c/<dog> need a break? I can provide a treat to | [nb/look_toward_dog] | c/<dog>.",
+                "text": "c/<owner> | c/does | [nb/question_long] | c/<dog> | c/need a break? | c/I can provide a treat to | [nb/look_toward_dog] | c/<dog>.",
                 "robot": [],
                 "flag": []
             }
         },
         "initial check ok": {
             "full": {
-                "text": "[nb/yes] | Ok.",
+                "text": "[nb/yes] | Okay.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Ok.",
+                "text": "c/Okay.",
                 "robot": [],
                 "flag": []
             }
         },
         "set dispenser": {
             "full": {
-                "text": "[nb/look_at_pointer] | c/<pointer>, can you please bring over the dispenser.",
+                "text": "[nb/look_at_pointer] | c/<pointer> | c/can you please bring me over the dispenser.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/look_at_pointer] | c/<pointer>, could you bring the dispenser.",
+                "text": "[nb/look_at_pointer] | c/<pointer> | c/could you bring the dispenser.",
                 "robot": [],
                 "flag": []
             }
         },
         "bring spoon and treat": {
             "full": {
-                "text": "[nb/thanks] | c/Thank you. [nb/question_long] | c/Can you please bring me the spoon and the treat? [bait].",
+                "text": "[nb/thanks] | c/Thank you. | [nb/question_long] | c/Can you please bring me the spoon and the treat? | [bait].",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[thank you body movement] Thanks. Could you bring the spoon and the treat? [bait].",
+                "text": "[thank you body movement] | c/Thanks | c/Can you bring over the spoon and the treat? | [bait].",
                 "robot": [],
                 "flag": []
             }
@@ -184,60 +184,60 @@
         },
         "dog in position": {
             "full": {
-                "text": "[nb/look_toward_dog] | c/<owner>, please bring <dog> closer to you.",
+                "text": "[nb/look_toward_dog] | c/<owner> | c/please bring | c/<dog> | c/closer to you.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/look_toward_dog] | c/<owner>, can you please bring <dog> closer to you.",
+                "text": "[nb/look_toward_dog] | c/<owner> | c/ can you please bring | c/ <dog> | c/closer to you.",
                 "robot": [],
                 "flag": []
             }
         },
         "instruction to owner": {
             "full": {
-                "text": "[nb/one_hand_explain] | c/Please only release <dog> after I say 'ok.'",
+                "text": "[nb/one_hand_explain] | c/Please only release | c/<dog> |c/after I say 'okay'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Only release <dog> when I say 'ok.'",
+                "text": "c/Only release | c/<dog> | c/when I say 'okay'",
                 "robot": [],
                 "flag": []
             }
         },
         "show treat": {
             "full": {
-                "text": "[nb/look_toward_dog] | c/<dog>, look! | [nb/head_dip_down] | [nb/look_toward_dog] | c/I got a treat for you.",
+                "text": "[nb/look_toward_dog] | c/<dog> |c/look! | [nb/head_dip_down] | [nb/look_toward_dog] | c/I got a treat for you.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[look_toward_dog] | c/I got a treat for you, <dog>.",
+                "text": "[look_toward_dog] | c/I got a treat for you | c/<dog>.",
                 "robot": [],
                 "flag": []
             }
         },
-        "treat ok": {
+        "treat okay": {
             "full": {
-                "text": "[nb/happy] | c/Looks like <dog> is fine now. | [nb/wave_small] | c/Let's continue.",
+                "text": "[nb/happy] | c/Looks like | c/<dog> | is fine now. | [nb/wave_small] | c/Let's continue.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<dog> looks fine. | [nb/wave_small] | c/Let's continue now.",
+                "text": "c/<dog> | looks fine. | [nb/wave_small] | c/Let's continue now.",
                 "robot": [],
                 "flag": []
             }
         },
         "break": {
             "full": {
-                "text": "c/Maybe <dog> | [nb/look_toward_dog] | c/needs a break.",
+                "text": "c/Maybe | c/<dog> | [nb/look_toward_dog] | c/needs a break.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/look_toward_dog] | c/<dog> may need a break.",
+                "text": "[nb/look_toward_dog] | c/<dog> | c/may need a break.",
                 "robot": [],
                 "flag": []
             }
@@ -256,12 +256,12 @@
         },
         "release dog": {
             "full": {
-                "text": "d/Ok.",
+                "text": "d/Okay",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "d/Ok.",
+                "text": "d/Okay",
                 "robot": [],
                 "flag": []
             }
@@ -282,7 +282,7 @@
         },
         "initial_robot name": {
             "full": {
-                "text": "[nb/point_to_self] | c/I am Niffi.",
+                "text": "[nb/point_to_self] | c/I am Niffi. | c/N-I-F-F-I | c/niffi",
                 "robot": [],
                 "flag": []
             },
@@ -294,24 +294,24 @@
         },
         "initial_experimenter one name": {
             "full": {
-                "text": "c/And | [nb/look_at_pointer] | c/this is <pointer>.",
+                "text": "c/And | [nb/look_at_pointer] | c/this is |c/<pointer>.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/look_at_pointer] | c/this is <pointer>.", 
+                "text": "[nb/look_at_pointer] | c/this is | c/<pointer>.", 
                 "robot": [],
                 "flag": []
             }
         },
         "initial_experimenter one quiet": {
             "full": {
-                "text": "[b/stand] | c/She needs to stay quiet | [nb/quiet_gesture] | c/for now by the design of this study. | [b/stand] | c/But she is friendly.",
+                "text": "[b/stand] | c/She needs to stay | [nb/quiet_gesture] | d/quiet | c/for now | c/by the design of this study. | [b/stand] | c/But she is friendly.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[b/stand] | c/<pointer> needs to stay quiet | [nb/quiet_gesture] | c/for now.",
+                "text": "[b/stand] | c/<pointer> | c/needs to stay quiet for now.",
                 "robot": [],
                 "flag": []
             }
@@ -330,7 +330,7 @@
         },
         "initial_dog name": {
             "full": {
-                "text": "[c/And who is this? | [nb/question_long] | Could you please let me know | [nb/point_to_chair] | your dog's name?",
+                "text": "c/And who is this? | [nb/question_long] | c/Could you please let me know your dog's name?",
                 "robot": [],
                 "flag": []
             },
@@ -354,24 +354,24 @@
         },
         "initial_dog gender": {
             "full": {
-                "text": "[nb/point_to_chair] | c/Is <dog> | [nb/question_long] | c/a girl or a boy?",
+                "text": "c/Is | c/<dog> | [nb/question_long] | c/a girl or a boy?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/What gender is | [nb/point_to_chair] | c/<dog>?",
+                "text": "c/What gender is | c/<dog>?",
                 "robot": [],
                 "flag": []
             }
         },
         "initial_nice to meet you": {
             "full": {
-                "text": "c/Nice to meet you! | [nb/nice_to_meet_you]",
+                "text": "[nb/nice_to_meet_you] | c/Nice to meet you!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Glad to meet you! | [nb/welcome_repeat]",
+                "text": "[nb/welcome_repeat] | c/Glad to meet you!",
                 "robot": [],
                 "flag": []
             }
@@ -390,12 +390,12 @@
         },
         "initial_dog anywhere": {
             "full": {
-                "text": "c/<dog> can be | [nb/anywhere] | c/anywhere.",
+                "text": "c/<dog> | c/can go freely | [nb/anywhere] | c/anywhere in the room",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<dog> can move | [nb/anywhere] | c/anywhere in the room.",
+                "text": "c/<dog> |c/can go | [nb/anywhere] | c/anywhere in the room.",
                 "robot": [],
                 "flag": []
             }
@@ -414,43 +414,43 @@
         },
         "robot_work with few dogs": {
             "full": {
-                "text": "[nb/two_hand_explain] | c/We have worked with a few dogs | [nb/one_hand_explain] | c/so far, but I am still relatively new | [nb/everything] | c/in the dog lab.",
+                "text": "[nb/two_hand_explain] | c/We have worked with a few dogs | [nb/one_hand_explain] | c/so far | c/but I am still relatively new | [nb/everything] | c/in the dog lab.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/two_hand_explain] | c/We have already worked with a few dogs, [nb/one_hand_explain] | c/but I am still new to the lab.",
+                "text": "[nb/two_hand_explain] | c/We have already worked | c/with a few dogs | [nb/one_hand_explain] | c/but I am still new to the lab.",
                 "robot": [],
                 "flag": []
             }
         },
-        "robot_dogs ok with robot": {
+        "robot_dogs okay with robot": {
             "full": {
-                "text": "[nb/two_hand_explain] c/Most dogs I've seen are ok with me | [nb/point_to_self]. | c/But please let me know if you think | [nb/point_to_chair] | c/<dog> gets scared.",
+                "text": "[nb/two_hand_explain] | c/Most dogs I've seen are okay with | [nb/point_to_self] | d/me | c/But please let me know if you think | c/<dog> | c/gets scared.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Please let me | [nb/point_toward_self] | c/know if <dog> gets scared.",
+                "text": "c/Please let me know if | c/<dog> | c/gets scared.",
                 "robot": [],
                 "flag": []
             }
         },
         "robot_start self introduction": {
             "full": {
-                "text": "c/I will now introduce | [nb/point_toward_self] | c/myself. | [nb/welcome_repeat]",
+                "text": "c/I will now introduce | [nb/point_toward_self] | c/myself. | [b/welcome_repeat]",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/I will introduce | [point_toward_self] | c/myself now. | [nb/welcome_repeat]",
+                "text": "c/I will introduce | [nb/point_toward_self] | c/myself now. ",
                 "robot": [],
                 "flag": []
             }
         },
         "robot_gender": {
             "full": {
-                "text": "c/I | [nb/point_toward_self] | c/am a female.",
+                "text": "[nb/point_toward_self] | c/I am a female.",
                 "robot": [],
                 "flag": []
             },
@@ -479,14 +479,14 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/I work at the Social | [nb/question_short] | c/Robotics Lab at Yale.",
+                "text": "c/I work at the | [nb/question_short] | c/Social Robotics Lab at Yale.",
                 "robot": [],
                 "flag": []
             }
         },
         "robot_focus on current": {
             "full": {
-                "text": "[nb/one_hand_explain] | c/After this study is done, I can talk more | [nb/two_hand_explain] | c/about what studies I was involved in. Let's now focus on | [nb/one_hand_explain_move] | c/this study.",
+                "text": "[nb/one_hand_explain] | c/After this study is done | c/I can talk | [nb/two_hand_explain] | c/more about what studies I was involved in | c/ Let's now focus on | [nb/one_hand_explain_move] | c/this study.",
                 "robot": [],
                 "flag": []
             },
@@ -498,12 +498,12 @@
         },
         "dog_happy to play with dog": {
             "full": {
-                "text": "c/I am so excited | [nb/excited] | c/to play with <dog> today! ",
+                "text": "c/I am so excited | [nb/excited] | c/to play with | c/<dog> | c/today! ",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/I am very excited to play with <dog> today!",
+                "text": "c/I am very excited to play with | c/<dog> | c/today!",
                 "robot": [],
                 "flag": []
             }
@@ -522,36 +522,36 @@
         },
         "dog_sit": {
             "full": {
-                "text": "[nb/question_long] | c/Does <dog> know the  command 'sit'?",
+                "text": "[nb/question_long] | c/Does | c/<dog> | c/know the command 'sit'?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/question_short] | c/Does <dog> know the command 'sit'?",
+                "text": "[nb/question_short] | c/Does| c/<dog> | c/know the command 'sit'?",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_robot ask sit": {
             "full": {
-                "text": "[nb/question_short] | c/Can you let <dog> sit?",
+                "text": "[nb/question_short] | c/Can you let | c/<dog> | c/sit?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Can you ask <dog> to sit?",
+                "text": "c/Can you ask | c/<dog> | c/to sit?",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_praise": {
             "full": {
-                "text": "c/Good <dog gender>!",
+                "text": "c/Good | c/<dog gender>!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Good <dog gender>!",
+                "text": "c/Good | c/<dog gender>!",
                 "robot": [],
                 "flag": []
             }
@@ -570,48 +570,48 @@
         },
         "dog_not sit": {
             "full": {
-                "text": "[nb/no_big_deal] | c/That's fine. Maybe <dog> is shy today! Let's move on.",
+                "text": "[nb/no_big_deal] | c/That's fine. | c/Maybe | c/<dog> | c/is shy today! | c/Let's move on.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/No big deal. Let's move on.",
+                "text": "c/No big deal.| c/Let's move on.",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_does not know sit": {
             "full": {
-                "text": "c/That's totally fine. | [nb/no_big_deal] | c/<dog> doesn't need | [nb/two_hand_explain] | c/to know this command to participate in the study.",
+                "text": "c/That's totally fine. | [nb/no_big_deal] | c/<dog> | c/doesn't need | [nb/two_hand_explain] | c/to know this command to participate in the study.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/That's completely fine. | [nb/no_big_deal] |  c/<dog> doesn't need to know 'sit' for this study.",
+                "text": "c/That's completely fine. | [nb/no_big_deal] |  c/<dog> | c/doesn't need to know 'sit' for this study.",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_other tricks": {
             "full": {
-                "text": "[nb/question_long] | c/Does <dog> do any tricks?",
+                "text": "[nb/question_long] | c/Does | c/<dog> | c/do any tricks?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Does <dog> know any tricks?",
+                "text": "c/Does | c/<dog> | c/know any tricks?",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_robot ask to see tricks": {
             "full": {
-                "text": "c/I am excited | [one_hand_explain_move] | c/to see that. Could you please show them | [nb/everything] | c/to me?",
+                "text": "c/I am excited | [one_hand_explain_move] | c/to see that | c/Could you please show them | [nb/everything] | c/to me?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Could <dog> show them to me?",
+                "text": "c/Could | c/<dog> | c/show them to me?",
                 "robot": [],
                 "flag": []
             }
@@ -642,7 +642,7 @@
         },
         "dog_robot respond to tricks three": {
             "full": {
-                "text": "[nb/excited] | c/<dog> is so smart!",
+                "text": "[nb/excited] | c/<dog> | c/is so smart!",
                 "robot": [],
                 "flag": []
             },
@@ -666,7 +666,7 @@
         },
         "dog_age reply young": {
             "full": {
-                "text": "c/So | [nb/look_toward_dog] | c/<dog> is still young.",
+                "text": "c/So | [nb/look_toward_dog] | c/<dog> | c/is still young.",
                 "robot": [],
                 "flag": []
             },
@@ -678,12 +678,12 @@
         },
         "dog_age reply old": {
             "full": {
-                "text": "c/Wow, | [nb/look_toward_dog] | c/<dog> looks so young.",
+                "text": "c/Wow, | [nb/look_toward_dog] | c/<dog> | c/looks so young.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/look_toward_dog] | c/<dog> still looks very young",
+                "text": "[nb/look_toward_dog] | c/<dog> | c/still looks very young",
                 "robot": [],
                 "flag": []
             }
@@ -702,19 +702,19 @@
         },
         "dog_together length": {
             "full": {
-                "text": "[nb/question_short] | c/How long have | [nb/wave_small] | c/you been with <dog>?",
+                "text": "[nb/question_short] | c/How long have | [nb/wave_small] | c/you been with | c/<dog>?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/How many years have you been with <dog>?",
+                "text": "c/How many years have you been with | c/<dog>?",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_together length reply short": {
             "full": {
-                "text": "[nb/one_hand_explain] | c/That's not too long, but I believe | [nb/point_to_chair] | c/you will have a great time with <dog>.",
+                "text": "[nb/one_hand_explain] | c/That's not too long, but I believe | [nb/point_to_chair] | c/you will have a great time with | c/<dog>.",
                 "robot": [],
                 "flag": []
             },
@@ -774,72 +774,72 @@
         },
         "dog_food motivation": {
             "full": {
-                "text": "[nb/wave_small] | c/Is <dog> food motivated?",
+                "text": "[nb/wave_small] | c/Is | c/<dog> | c/food motivated?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Is <dog> motivated by food?",
+                "text": "c/Is | c/<dog> | c/motivated by food?",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_food motivation reply like": {
             "full": {
-                "text": "[nb/happy] | That's great! | [nb/no_big_deal] | c/<dog> will get a lot of treats today.",
+                "text": "[nb/happy] | That's great! | [nb/no_big_deal] | c/<dog> | c/will get a lot of treats today.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<dog> will get a lot of treats today!",
+                "text": "c/<dog> | c/will get a lot of treats today!",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_food motivation reply dislike": {
             "full": {
-                "text": "c/Let's see what <dog> will do today.",
+                "text": "c/Let's see what | c/<dog> | c/will do today.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Let's see what <dog> can do today.",
+                "text": "c/Let's see what | c/<dog> | c/can do today.",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_previous robot experience": {
             "full": {
-                "text": "[nb/wave_small] | c/Has <dog> ever interacted with a robot before? | [nb/question_long] | c/Like a roomba or robot toys?",
+                "text": "[nb/wave_small] | c/Has | c/<dog> | c/ever interacted with a robot before? | [nb/question_long] | c/Like a roomba or robot toys?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Has <dog> ever | [nb/question_short] | c/interacted with robots before?",
+                "text": "c/Has | c/<dog> | c/ever | [nb/question_short] | c/interacted with robots before?",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_previous robot experience reply like": {
             "full": {
-                "text": "c/Good to know | [nb/happy] | c/<dog> loves robots!",
+                "text": "c/Good to know | [nb/happy] | c/<dog> | c/loves robots!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Good to know <dog> likes to play with robots!",
+                "text": "c/Good to know | c/<dog> | c/likes to play with robots!",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_previous robot experience reply dislike": {
             "full": {
-                "text": "c/I hope <dog> will like | [nb/point_to_self] | c/me then.",
+                "text": "c/I hope | c/<dog> | c/will like | [nb/point_to_self] | c/me then.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/I hope <dog> likes me then.",
+                "text": "c/I hope | c/<dog> | c/likes me then.",
                 "robot": [],
                 "flag": []
             }
@@ -858,24 +858,24 @@
         },
         "study_exploration": {
             "full": {
-                "text": "[nb/wave_small] | c/<dog> will have some time to get familiar with | [nb/no_big_deal] | c/this environment, [nb/point_to_self] | c/and me ! Hopefully <dog> likes me.",
+                "text": "[nb/wave_small] | c/<dog> | c/will have some time to get familiar with | [nb/no_big_deal] | c/this environment | [nb/point_to_self] | c/and me !| c/ Hopefully | c/<dog> | c/likes me.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/wave_small] | c/<dog> will be able to explore the environment, and me, for a period of time.",
+                "text": "[nb/wave_small] | c/<dog> | c/will be able to explore the environment | c/and me | c/for a period of time.",
                 "robot": [],
                 "flag": []
             }
         },
         "study_treat": {
             "full": {
-                "text": "c/Afterwards, | [nb/wave_small] | c/<dog> will get a treat from me.| [nb/point_to_self]",
+                "text": "c/Afterwards, | [nb/wave_small] | c/<dog> | c/will get a treat from me.| [nb/point_to_self]",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/After exploring, I will give <dog> a treat.",
+                "text": "c/After exploring | c/I will give | c/<dog> | c/a treat.",
                 "robot": [],
                 "flag": []
             }
@@ -899,14 +899,14 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/We will have | [nb/put_two_fingers_up] | c/two warmup sessions, one with me and one with <pointer>.",
+                "text": "c/We will have | [nb/put_two_fingers_up] | c/two warmup sessions | c/one with me and one with | c/<pointer>.",
                 "robot": [],
                 "flag": []
             }
         },
         "study_test": {
             "full": {
-                "text": "c/The warmup sessions will be followed by | [nb/put_two_fingers_up] | c/two testing sessions, also one with | [nb/point_to_self] | c/me and one with | [nb/look_at_pointer] | c/<pointer>.",
+                "text": "c/The warmup sessions will be followed by | [nb/put_two_fingers_up] | c/two testing sessions | c/also one with | [nb/point_to_self] | c/me and one with | [nb/look_at_pointer] | c/<pointer>.",
                 "robot": [],
                 "flag": []
             },
@@ -918,48 +918,48 @@
         },
         "study_session break": {
             "full": {
-                "text": "c/Between each session, | [nb/wave_small] | c/you and <dog> will get a quick break in | [nb/point_to_chair] | c/the lobby so | [nb/point_to_self] | [nb/look_at_pointer] | c/we can get set up for the next session.",
+                "text": "c/Between each session, | [nb/wave_small] | c/you and | c/<dog> | c/will get a quick break in | [nb/point_to_chair] | c/the lobby so | [nb/point_to_self] | [nb/look_at_pointer] | c/we can get set up for the next session.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/You and <dog> will get a quick break in the lobby between sessions.",
+                "text": "c/You and | c/<dog> | c/will get a quick break in the lobby between sessions.",
                 "robot": [],
                 "flag": []
             }
         },
         "study_request break": {
             "full": {
-                "text": "[nb/one_hand_explain] | c/Also please let us know  at any point | [nb/two_hand_explain] | c/if you think <dog> needs a break!",
+                "text": "[nb/one_hand_explain] | c/Also please let us know  at any point | [nb/two_hand_explain] | c/if you think | c/<dog> | c/needs a break!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/one_hand_explain_move] | c/Please let us know any time during the sessions if you think <dog> needs a break!",
+                "text": "[nb/one_hand_explain_move] | c/Please let us know any time during the sessions if you think | c/<dog> | c/needs a break!",
                 "robot": [],
                 "flag": []
             }
         },
         "explore_exploration": {
             "full": {
-                "text": "[nb/wave_small] | c/Now <dog>  will have | [nb/put_one_finger_up] | c/1 minute to get familiar | [nb/no_big_deal] | c/with this environment.",
+                "text": "[nb/wave_small] | c/Now <dog>  will have | [nb/put_one_finger_up] | c/one minute to get familiar | [nb/no_big_deal] | c/with this environment.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<dog> will have | [nb/put_one_finger_up] | c/1 minute to get familiar with the environment.",
+                "text": "c/<dog> will have | [nb/put_one_finger_up] | c/one minute to get familiar with the environment.",
                 "robot": [],
                 "flag": []
             }
         },
         "explore_dog explore": {
             "full": {
-                "text": "[nb/welcome] | c/And feel free  to let <dog> explore around | [nb/welcome_repeat] | c/the room.",
+                "text": "[nb/welcome] | c/And feel free  to let | c/<dog> explore around | [nb/welcome_repeat] | c/the room.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/welcome_repeat] | c/Feel free to allow <dog> to explore the room.",
+                "text": "[nb/welcome_repeat] | c/Feel free to allow | c/<dog> | c/to explore the room.",
                 "robot": [],
                 "flag": []
             }
@@ -990,7 +990,7 @@
         },
         "explore_close one": {
             "full": {
-                "text": "[nb/wave_small] | c/Hi <dog>!",
+                "text": "[nb/wave_small] | c/Hi | c/<dog>!",
                 "robot": [],
                 "flag": []
             },
@@ -1002,12 +1002,12 @@
         },
         "explore_close two": {
             "full": {
-                "text": "[nb/wave_small] | c/Hello <dog>!",
+                "text": "[nb/wave_small] | c/Hello | c/<dog>!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Hello <dog>!",
+                "text": "c/Hello | c/<dog>!",
                 "robot": [],
                 "flag": []
             }
@@ -1050,12 +1050,12 @@
         },
         "bait_start": {
             "full": {
-                "text": "[nb/point_to_wrist] | c/Time is up! Now I will provide a treat to <dog>.",
+                "text": "[nb/point_to_wrist] | c/Time is up! | c/Now I will provide a treat to <dog>.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Exploration time is done! Now I will give <dog> a treat.",
+                "text": "c/Exploration time is done! | c/Now I will give | c/<dog> | c/a treat.",
                 "robot": [],
                 "flag": []
             }
