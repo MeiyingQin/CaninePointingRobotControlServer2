@@ -267,7 +267,7 @@
             }
         }
     },
-    "introduction": {
+    "Introduction": {
         "initial_greeting": {
             "full": {
                 "text": "[nb/wave] | c/Hello. | [nb/welcome] | c/Welcome back to the dog lab!",
