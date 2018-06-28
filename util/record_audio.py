@@ -3,6 +3,7 @@ import pydub
 from pydub import AudioSegment
 from pydub.playback import play
 import os.path
+import string
 
 def save_segment(file_name, new_name):
     raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
@@ -89,7 +90,8 @@ while not quit:
         #     update the response object accordingly
         try:
             #text = recognizer.recognize_google(audio).lower()
-            text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower()
+            text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower().strip()
+            text = "".join([i for i in text if i not in list(string.punctuation)])
             print("recognize text: " + text)
             file_name = section + "_" + record_type + "_" + text.replace(" ", "_")
             new_file_name = "clipped/" + file_name
