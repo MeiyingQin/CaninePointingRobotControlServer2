@@ -8,6 +8,7 @@ json_file='data.json'
 json_data = open(json_file)
 data = json.load(json_data, object_pairs_hook=OrderedDict)
 json_data.close()
+
 count = 0
 punctuation = string.punctuation
 punctuation = punctuation.replace("{", "")
@@ -19,6 +20,7 @@ punctuation = punctuation.replace("[", "")
 punctuation = punctuation.replace("]", "")
 punctuation = punctuation.replace("/", "")
 punctuation = punctuation.replace("|", "")
+punctuation = punctuation.replace("_", "")
 
 actions_json_file = 'actions.json'
 actions_json_data = open(actions_json_file)
@@ -26,19 +28,22 @@ actions = json.load(actions_json_data)
 actions_json_data.close()
 
 for section in data.keys():
+    if section == "Warmup" or section == "Testing":
+        continue
     for keyword in data[section].keys():
-        for command_type in data[section][keyword].keys():
+        for command_condition in data[section][keyword].keys():
             count += 1
-            commands = data[section][keyword][command_type]["text"].strip().split("|")
+            commands = data[section][keyword][command_condition]["text"].strip().split("|")
             robot_command = ""
             to_be_added = ""
             for command in commands:
-                command = command.strip()
+                command = command.strip().lower()
                 command = "".join(i for i in command if i not in list(punctuation))
                 if command.startswith("["):
                     command = command.replace("[", "")
                     command = command.replace("]", "")
                     detailed_command = command.split("/")
+                    print detailed_command
                     command_type = detailed_command[0]
                     command_content = detailed_command[1]
                     if command_type == "b":
@@ -60,18 +65,18 @@ for section in data.keys():
                     # remember to replace <owner>, <pointer>, <dog>, <dog_gender>, <assistant>, later
                     # speech
                     detailed_command = command.split("/")
+                    print detailed_command
                     command_type = detailed_command[0]
-                    command_content = detailed_command[1]                    
+                    command_content = detailed_command[1].replace(" ", "_")
                     if command_type == "d":
                         robot_command += "^mode(disabled)" + " "
                         robot_command += "^runSound(****/"
-                        robot_command += command_content.replace(" ", "_")
+                        robot_command += command_content
                         robot_command += ") "
                         robot_command += to_be_added
                         to_be_added = ""
                     elif command_type == "c":
                         robot_command += "^mode(contextual)" + " "
-                        robot_command += "^mode(disabled)" + " "
                         robot_command += "^runSound("
                         robot_command += command_content
                         robot_command += ") "
@@ -79,6 +84,7 @@ for section in data.keys():
                         to_be_added = ""                        
                     else:
                         print section + "|" + keyword + "|" + command_type + ": has invalid saying type"
+            data[section][keyword][command_condition]["robot"] = robot_command
             #robot = []
             #flag = []
             

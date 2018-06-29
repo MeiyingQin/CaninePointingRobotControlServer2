@@ -1,16 +1,15 @@
 {
-"look_at_assistant": 				Need to code, head turns to assistant
+"look_at_assistant": "",
 "no": "Stand/Gestures/Desperate_3",
 "thinking": "Stand/Emotions/Negative/Bored_2",
-"stand": 					Need to code, is this written already?
-"head_dip_down":				Need to code, head dip down to look at treat
+"head_dip_down":"",
 "wave": "Stand/Gestures/Hey_1",
 "welcome": "Stand/Gestures/Everything_5",
 "welcome_repeat": "Stand/Gestures/Everything_2",
 "point_to_self": "Stand/Gestures/Me_2",
-"look_at_pointer": 				Need to code, head turns to pointer 
-"look_at_owner": 				Need to code, head turns to pointer 
-"quiet_gesture": 				Need to code, put one finger up to mouth for quiet gesture
+"look_at_pointer": "", 
+"look_at_owner": "",
+"quiet_gesture": "",
 "question_long": "Stand/Gestures/Explain_4",
 "question_short": "Stand/Gestures/Explain_2",
 "point_to_chair": "Stand/Gestures/You_1",
@@ -23,17 +22,19 @@
 "everything": "Stand/Gestures/Everything_3",
 "one_hand_explain_move": "Stand/Gestures/Explain_3",
 "excited": "Stand/Gestures/Far_3",
-"put_one_finger_up":				Need to code, one finger up
 "no_big_deal": "Stand/Gestures/Far_1",
 "wave_small": "Stand/Gesture/Hey_7",
 "happy": "Stand/Gestures/Yes_1",
-"put_two_fingers_up": 				Need to code, two fingers up
 "come": "Stand/Gestures/ComeOn_1",
 "interact": "Stand/Gestures/Caress_2",
-"point_to_wrist":				Need to code, signal that time is up
+"point_to_wrist": "",
 "gesture_to_container": "Stand/Gestures/Everything_4",
-"hold_out_hands_for_spoon":			Need to code, is this written already?
-"bait":						Need to code, is this written already?
-"sad": "Stand/Gestures/Desperate_1"
+"hold_out_hands_for_spoon": "",
+"bait": "",
+"sad": "Stand/Gestures/Desperate_1",
+"yes": "",
+"stand": "",
+"start_idle": "",
+"stop_idle": ""
 }
 
