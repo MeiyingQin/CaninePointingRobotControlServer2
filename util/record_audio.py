@@ -7,7 +7,8 @@ import os.path
 def save_segment(file_name, new_name):
     raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
     print("slicing video...")
-    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=500, silence_thresh=-30, keep_silence=500)
+    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-30, keep_silence=500)
+    print("slicing audio to " + str(len(chunks)))
     if len(chunks) != 2:
         print("video not sliced correctly")
     else:
@@ -89,7 +90,7 @@ while not quit:
         #     update the response object accordingly
         try:
             #text = recognizer.recognize_google(audio).lower()
-            text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower()
+            text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower().strip()
             print("recognize text: " + text)
             file_name = section + "_" + record_type + "_" + text.replace(" ", "_")
             new_file_name = "clipped/" + file_name
