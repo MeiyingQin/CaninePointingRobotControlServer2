@@ -8,7 +8,7 @@ import string
 def save_segment(file_name, new_name):
     raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
     print("slicing video...")
-    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-30, keep_silence=500)
+    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-35, keep_silence=500)
     print("slicing audio to " + str(len(chunks)))
     if len(chunks) != 2:
         print("video not sliced correctly")

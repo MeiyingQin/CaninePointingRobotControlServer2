@@ -510,7 +510,7 @@
         },
         "dog_robot ask questions": {
             "full": {
-                "text": "c/Before we start, | {\\pau=500\\} | [nb/everything] | c/I have a few questions for you.",
+                "text": "c/Before we start, | {\\pau=500\\} | [nb/everything] | c/I have a few questions for | [nb/point_at_owner] | d/you.",
                 "robot": [],
                 "flag": []
             },
@@ -570,19 +570,19 @@
         },
         "dog_not sit": {
             "full": {
-                "text": "[nb/no_big_deal] | c/That's fine. | {\\pau=1000\\} | c/Maybe | c/<dog> | c/is shy today! | c/Let's move on.",
+                "text": "[nb/no_big_deal] | c/That's fine. | {\\pau=1000\\} | c/Maybe | c/<dog> | c/is | [nb/shy] | d/shy | c/today! | {\\pau=1000\\} | c/Let's move on.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/No big deal.| c/Let's move on.",
+                "text": "c/No big deal.| {\\pau=1000\\} | c/Let's move on.",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_does not know sit": {
             "full": {
-                "text": "[nb/no_big_deal] | c/That's totally fine. | {\\pau=1000\\} | c/<dog> | c/doesn't need | [nb/two_hand_explain] | c/to know this command to participate in the study.",
+                "text": "[nb/no_big_deal] | c/That's totally fine. | {\\pau=1000\\} | c/<dog> | c/doesn't need | [nb/two_hand_explain] | c/to know this command to participate in this study.",
                 "robot": [],
                 "flag": []
             },
@@ -594,7 +594,7 @@
         },
         "dog_other tricks": {
             "full": {
-                "text": "[nb/question_long] | c/Does | c/<dog> | c/do any other tricks?",
+                "text": "[nb/question_long] | c/Does | c/<dog> | c/know any other tricks?",
                 "robot": [],
                 "flag": []
             },
@@ -606,7 +606,7 @@
         },
         "dog_robot ask to see tricks": {
             "full": {
-                "text": "[nb/one_hand_explain_move] | c/I am excited  | c/to see that | {\\pau=1000\\} | c/Could you please show them | [nb/everything] | c/to me?",
+                "text": "[nb/one_hand_explain_move] | c/I am excited  | c/to see that | {\\pau=1000\\} | c/Could you please show them | [nb/everything] | c/to | [nb/point_to_self] |d/me?",
                 "robot": [],
                 "flag": []
             },
@@ -690,7 +690,7 @@
         },
         "dog_breed": {
             "full": {
-                "text": "[nb/question_long] | c/What kind of breed is | [nb/wave_small] | c/<dog>",
+                "text": "[nb/question_long] | c/What breed is | [nb/wave_small] | c/<dog>",
                 "robot": [],
                 "flag": []
             },
@@ -719,14 +719,14 @@
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/one_hand_explain_move] | c/Sounds like you two will have many adventures in the future.",
+                "text": "[nb/one_hand_explain_move] | c/Sounds like you two will share many great times in the future.",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_together length reply long": {
             "full": {
-                "text": "[nb/excited] | c/You've been with each other for quite some time.",
+                "text": "[nb/excited] | c/You've been together | {\\pau=500\\} | c/for quite some time.",
                 "robot": [],
                 "flag": []
             },
@@ -750,24 +750,24 @@
         },
         "dog_other dogs reply few": {
             "full": {
-                "text": "c/<dog> | c/must feel great | [nb/happy] | c/to be the only dog in the family | [nb/two_hand_explain] | c/to get all the treats and toys.",
+                "text": "c/<dog> | c/must feel | [nb/happy] | c/special | c/to be the only dog in the family to get | [nb/everything] | c/all | c/the treats and toys.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Being the only dog must be great!",
+                "text": "c/Being the only dog at home must be great!",
                 "robot": [],
                 "flag": []
             }
         },
         "dog_other dogs reply many": {
             "full": {
-                "text": "[nb/happy] | c/It is great | c/to have | [nb/everything] | c/other dogs to play with at home.",
+                "text": "c/It is | [nb/happy] | c/great | c/to have | [nb/everything] | c/other dogs to play with at home.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/It must be fun to | c/have | [nb/everything] | c/so many dog friends at home.",
+                "text": "c/It must be fun to have | [nb/everything] | c/other dog friends at home.",
                 "robot": [],
                 "flag": []
             }
@@ -786,7 +786,7 @@
         },
         "dog_food motivation reply like": {
             "full": {
-                "text": "[nb/happy] | d/That's great! | {\\pau=1000\\} | [nb/no_big_deal] | c/<dog> | c/will get a lot of treats today.",
+                "text": "[nb/happy] | d/That's great! | {\\pau=1000\\} | [nb/no_big_deal] | c/<dog> | c/will get | [nb/many] | d/a lot of | d/treats today.",
                 "robot": [],
                 "flag": []
             },
@@ -810,7 +810,7 @@
         },
         "dog_previous robot experience": {
             "full": {
-                "text": "[nb/wave_small] | c/Has | c/<dog> | c/ever interacted with a robot before? | [nb/question_long] | c/Like a roomba or robot toys?",
+                "text": "[nb/wave_small] | c/Has | c/<dog> | c/ever interacted with a robot before? | [nb/question_long] | c/Like | [b/thinking] | c/roombas | c/or robot toys?",
                 "robot": [],
                 "flag": []
             },
@@ -822,7 +822,7 @@
         },
         "dog_previous robot experience reply like": {
             "full": {
-                "text": "c/Good to know | [nb/happy] | c/<dog> | c/loves robots!",
+                "text": "[nb/happy] | c/Good to know | c/<dog> | c/loves robots!",
                 "robot": [],
                 "flag": []
             },
@@ -834,7 +834,7 @@
         },
         "dog_previous robot experience reply dislike": {
             "full": {
-                "text": "c/I hope | c/<dog> | c/will like | [nb/point_to_self] | c/me then.",
+                "text": "c/I hope | c/<dog> | c/will like | [nb/point_to_self] | d/me then.",
                 "robot": [],
                 "flag": []
             },
@@ -846,7 +846,7 @@
         },
         "study_start": {
             "full": {
-                "text": "c/Now I will | [nb/one_hand_explain_move] | c/explain this study a little bit.",
+                "text": "c/Now I will | [nb/one_hand_explain_move] | c/explain this study.",
                 "robot": [],
                 "flag": []
             },
@@ -858,19 +858,19 @@
         },
         "study_exploration": {
             "full": {
-                "text": "[nb/wave_small] | c/<dog> | c/will have some time to get familiar with | [nb/no_big_deal] | c/this environment | {\\pau=400\\} | [nb/point_to_self] | c/and me !| {\\pau=1000\\} | c/ Hopefully | c/<dog> | c/likes me.",
+                "text": "[nb/wave_small] | c/<dog> | c/will have some time to get familiar with | [nb/no_big_deal] | c/this environment | {\\pau=400\\} | [nb/point_to_self] | c/and me !",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/wave_small] | c/<dog> | c/will be able to explore the environment | c/and me | c/for a period of time.",
+                "text": "c/<dog> | c/will get familiar | {\\pau=300\\} | c/with the environment and me | {\\pau=500\\} | c/for a period of time.",
                 "robot": [],
                 "flag": []
             }
         },
         "study_treat": {
             "full": {
-                "text": "c/Afterwards, | {\\pau=500\\} | [nb/wave_small] | c/<dog> | c/will get a treat from me.| [nb/point_to_self]",
+                "text": "c/Afterwards, | {\\pau=500\\} | [nb/wave_small] | c/<dog> | c/will get | [nb/yummy_treat] | d/a treat.",
                 "robot": [],
                 "flag": []
             },
@@ -882,7 +882,7 @@
         },
         "study_pointing": {
             "full": {
-                "text": "c/In this study, | {\\pau=500\\} | [nb/two_hand_explain] | c/we will explore how dogs understand pointing.",
+                "text": "c/In this study, | {\\pau=500\\} | [nb/two_hand_explain] | c/we will explore how dogs understand | [nb/explain_pointing] | d/pointing.",
                 "robot": [],
                 "flag": []
             },
@@ -906,7 +906,7 @@
         },
         "study_test": {
             "full": {
-                "text": "c/The warmup sessions will be followed by two testing sessions | {\\pau=1000\\} |  c/also one with | [nb/point_to_self] | c/me | c/and one with | [nb/look_at_pointer] | c/<pointer>.",
+                "text": "c/The warmup sessions will be followed by | c/two testing sessions | {\\pau=1000\\} |  c/also one with | [nb/point_to_self] | c/me | c/and one with | [nb/look_at_pointer] | c/<pointer>.",
                 "robot": [],
                 "flag": []
             },
@@ -1062,43 +1062,43 @@
         },
         "bait_dog back": {
             "full": {
-                "text": "[nb/two_hand_explain] | c/<owner>, | {\\pau=500\\} | c/please bring | c/<dog> | c/closer | [nb/wave_small] | c/to you.",
+                "text": "[nb/two_hand_explain] | c/<owner>, | {\\pau=500\\} | c/please let | c/<dog> | d/stay in the | [nb/point_at_black_square] | d/black square",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Bring | c/<dog> | c/closer to you please.",
+                "text": "c/Please let | c/<dog> | c/stay in the black square.",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_get dispenser": {
             "full": {
-                "text": "[nb/look_at_pointer] | d/<pointer>,| {\\pau=500\\} |c/Can you | [nb/come] | c/bring over the dispenser.",
+                "text": "[nb/look_at_pointer] | d/<pointer>,| {\\pau=500\\} |c/Can you | [nb/come] | c/put the dispenser | [nb/point_at_introduction_dispenser] | over there.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Bring me the dispenser please, | c/<pointer>.",
+                "text": "d/Put the dispenser | [nb/point_at_introduction_dispenser] | d/over there please, | d/<pointer>.",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_introduction dispenser": {
             "full": {
-                "text": "[nb/gesture_to_container] | c/This is the container that we will use | [nb/two_hand_explain] | c/in this study to provide | [nb/wave_small] | c/<dog> | c/the treat.",
+                "text": "[nb/gesture_to_container] | c/This is the equipment that we will use | [nb/two_hand_explain] | c/in this study to provide | c/<dog> | [nb/yummy_treat] | c/the yummy treat.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/We will use this container to provide | c/<dog> | c/treats.",
+                "text": "c/We will use this equipment to provide | c/<dog> | c/treats.",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_spoon treat": {
             "full": {
-                "text": "[nb/thanks] | c/Thank you. | {\\pau=1000\\} | c/Can you bring me the spoon and | [nb/question_short] | c/the treat?",
+                "text": "[nb/thanks] | c/Thank you. | d/<pointer> |  {\\pau=1000\\} | c/Can you bring me the spoon and | [nb/question_short] | c/the treat?",
                 "robot": [],
                 "flag": []
             },
@@ -1134,55 +1134,55 @@
         },
         "bait_instruction release": {
             "full": {
-                "text": "c/<owner>, | [nb/one_hand_explain]| c/Please only release | c/<dog> | c/after | [nb/point_to_self] | c/I say 'okay.'",
+                "text": "c/<owner>, | [nb/one_hand_explain]| c/Please only let | c/<dog> | [nb/point_at_introduction_dispenser] | d/approach the dispenser | d/after | [nb/point_to_self] | c/I say | {\\pau=800\\} | d/'okay.'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Only release | c/<dog> | c/when I say 'okay.'",
+                "text": "c/Only release | c/<dog> | c/when I say | {\\pau=800\\} | d/'okay.'",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_action_bait treat": {
             "full": {
-                "text": "[b/bait]",
+                "text": "[b/bait] | d/please bait",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[b/bait]",
+                "text": "[b/bait] | d/please bait",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_release": {
             "full": {
-                "text": "d/Okay.",
+                "text": "[b/release_dog] | d/Okay.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "d/Okay.",
+                "text": "[b/release_dog] | d/Okay.",
                 "robot": [],
                 "flag": []
             }
         },
         "transition_lobby": {
             "full": {
-                "text": "[nb/no_big_deal] | c/Nice! | {\\pau=1000\\} | c/We will | [nb/two_hand_explain] | c/now prepare for the warm-up session.| {\\pau=1000\\} | c/Could you please take | c/<dog> | [nb/point_to_chair] | d/to the lobby?",
+                "text": "[nb/no_big_deal] | c/Nice! | {\\pau=1000\\} | c/We will now | [nb/two_hand_explain] | c/prepare for the warm-up session.| {\\pau=1000\\} | c/Could you please take | c/<dog> | [nb/point_to_chair] | d/to the lobby?",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Can you please | [nb/one_hand_explain_move] | c/take | c/<dog> | c/to the lobby while we prepare for the warmup session?",
+                "text": "c/Can you please take | c/<dog> | c/to the lobby while we prepare for the warmup session?",
                 "robot": [],
                 "flag": []
             }
         },
         "transition_lobby explain": {
             "full": {
-                "text": "c/There | [nb/one_hand_explain] | c/will be a lot of back and forth from | [nb/gesture_to_container] | c/this room and | [nb/point_to_chair] | c/the lobby in this study. | {\\pau=1000\\} | [nb/sad] | c/Sorry about that in advance! | {\\pau=1000\\} | [nb/thanks] | c/Thanks, | {\\pau=500\\} | [nb/wave] | c/see you soon! ",
+                "text": "c/There will be | [nb/one_hand_explain] | c/ a lot of back and forth | {\\pau=1000\\} | [nb/sad] | c/Sorry about that in advance! | {\\pau=1000\\} | [nb/thanks] | c/Thanks, | {\\pau=500\\} | [nb/wave] | c/see you soon! ",
                 "robot": [],
                 "flag": []
             },
@@ -1196,103 +1196,103 @@
     "Warmup": {
         "introduction_welcome back": {
             "full": {
-                "text": "[waving] Hi! [body language] Welcome back.",
+                "text": "[waving] | c/Hi! | [body language] | c/Welcome back.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Welcome back!",
+                "text": "c/Welcome back!",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_seat": {
             "full": {
-                "text": "[body language] Please [wave toward seat] take a seat.",
+                "text": "[wave toward seat] | d/Please take a seat.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Take a seat, please.",
+                "text": "d/Take a seat, please.",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_dog in square": {
             "full": {
-                "text": "[body language] And please [body language] let <dog> [body language] sit in [wave toward black square] the black square.",
+                "text": "d/And please let | d/<dog> | d/stay in | [wave toward black square] | d/the black square.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "<dog> can sit in the black square.",
+                "text": "c/<dog> | c/needs to stay in the black square.",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_owner head down": {
             "full": {
-                "text": "[body language] Please keep [look down] your head down [close eyes] and eyes closed [body language] during [body language] each trial. [body language] Please only [body language] look ahead [body language] when you [point to self] hear me [body language] say 'ok.'",
+                "text": "[body language] Please keep [look down] your head down | and | [close eyes] eyes closed |during each trial. [body language] Please only |[body language] | look ahead when you hear | [point to self] I say | 'ok.'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Please keep your head down and eyes closed during each trial until you hear me say 'ok.'",
+                "text": "Please keep your head down and eyes closed during each trial | until you hear I say | 'ok.'",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_release": {
             "full": {
-                "text": "[body language] Remember, [body language] when you [body language] hear the [body language] release command [body language] 'ok,' [body language] you can [body language] let <dog> [body language] get a treat.",
+                "text": "[body language] After when you hear the release command | [body language] 'ok,' |you can let | <dog> | get a treat from the dispenser.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[body language] Only release [body language] <dog> when [body language] you hear [body language] the release command [body language] 'ok.'",
+                "text": "[body language] Please only release | <dog> | when you hear the release command | 'ok.'",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_encourage": {
             "full": {
-                "text": "[waves toward dog] If <dog> [body language] hesitates to [body language] make a choice [body language] after the [body language] release command, [open hands toward owner] feel free [body language] to give [body language] <him/her> a [body language] release command [body language] of your own, [finger waving] but try not [body language] to point or [body language] give <dog> [body language] a directional hint.",
+                "text": "[waves toward dog] If | <dog> | hesitates to approach the dispensers | after the release command 'ok', | [open hands toward owner] feel free to give [body language] | <dog> | a release command of your own, | [finger waving] but try not | to point | or give | <dog> | a directional hint.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "If <dog> hesitates after I say 'ok,' you can give <him/her> a release command of your own, but try not to point.",
+                "text": "If |<dog>| hesitates after I say 'ok,' | you can give | <dog> | a release command of your own | but please do not point.",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_one container at a time": {
             "full": {
-                "text": "[body language] Please let <dog> [opens hands toward owner] go back to you [body language] after <he/she> [body language] gets the treat, [body language] and please [finger waving/negative body language] do not let [body language] <dog> go to [body language] the other container.",
+                "text": "[body language] Please let | <dog> | [opens hands toward owner] go back to you [body language] | after | <dog> | [body language] approached the dispenser | [no] |and please do not | let | <dog> | go to the other container | even if | <dog> | does not go the dispnser has treat.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Let <dog> return to you after the treat, but don't let <him/her> go to the other container.",
+                "text": "Let | <dog> | return to you immediately after | <dog> | make choice and get close to the dispenser | but don't let | <dog> | go to the other dispenser.",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_start": {
             "full": {
-                "text": "[excited body language] Let\u2019s start!",
+                "text": "[excited body language] Let's start!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[excited body language] Let\u2019s start!",
+                "text": "[excited body language] Let's start!",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_get spoon treat one": {
             "full": {
-                "text": "[turn head toward assistant][body language]  <assistant>, [body language] I\u2019m ready, [body language] please give me [body language] the spoon [body language] and the treat!",
+                "text": "[turn head toward assistant] |<assistant>, | [body language] I'm ready | please give me [body language] the spoon [body language] and the treat!",
                 "robot": [],
                 "flag": []
             },
@@ -1350,57 +1350,57 @@
                 "flag": []
             }
         },
-        "bait_baiting": {
+        "bait_bait": {
             "full": {
-                "text": "[Non social sound baiting]",
+                "text": "[Non social sound baiting] | please bait",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[Non social sound baiting]",
+                "text": "[Non social sound baiting] | please bait",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_release": {
             "full": {
-                "text": "Ok.",
+                "text": "Okay.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Ok.",
+                "text": "Okay.",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_praise_get treat one": {
             "full": {
-                "text": "[enthusiastic body language] Great, [body language] you got [body language] the treat!",
+                "text": "[enthusiastic body language] Great |  you got the treat!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Good job! You got the treat!",
+                "text": "Good job! | You got the treat!",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_praise_get treat two": {
             "full": {
-                "text": "[enthusiastic body language] Nice, [body language] you got [body language] both treats!",
+                "text": "[enthusiastic body language] Nice | you got both treats!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Great, you got both treats!",
+                "text": "Great | you got both treats!",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_praise_not get treat one": {
             "full": {
-                "text": "[encouraging body language] You will [body language] get it [body language] next time.",
+                "text": "[encouraging body language] You will get it next time.",
                 "robot": [],
                 "flag": []
             },
@@ -1412,7 +1412,7 @@
         },
         "bait_praise_not get treat two": {
             "full": {
-                "text": "[encouraging body language] Hope you will [body language] get treat in [body language] the next [body language] session.",
+                "text": "[encouraging body language] Hope you will get treat | in the next session.",
                 "robot": [],
                 "flag": []
             },
@@ -1424,19 +1424,19 @@
         },
         "bait_back_for_next": {
             "full": {
-                "text": "[open hands toward owner] Please take [body language] <dog> back [body language] for the [body language] next trial.",
+                "text": "[open hands toward owner] Please take | <dog> | back | for the [body language] next trial.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Take <dog> back please for the next trial.",
+                "text": "Take | <dog> | back please | for the next trial.",
                 "robot": [],
                 "flag": []
             }
         },
         "next_trial": {
             "full": {
-                "text": "[body language] Let's move on [body language] to the [body language] next trial!",
+                "text": "[body language] Let's move on to the next trial!",
                 "robot": [],
                 "flag": []
             },
@@ -1448,12 +1448,12 @@
         },
         "transition_lobby": {
             "full": {
-                "text": "[body language] <dog> can take [body language] another break. [body language] <owner>, [body language] please take [wave toward dog] <dog> to [point toward lobby] the lobby and [point to self] we will [body language] prepare for [body language] the next [body language] session.",
+                "text": "break time now! | [body language] <owner> | please take <dog> to [point toward lobby] the lobby | and we will prepare for the next session.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Please take <dog> to the lobby while we prepare for the next session.",
+                "text": "Please take | <dog> | to the lobby while we prepare for the next session.",
                 "robot": [],
                 "flag": []
             }
@@ -1462,7 +1462,7 @@
     "Testing": {
         "introduction_seat": {
             "full": {
-                "text": "[body language] Please [wave toward seat] take a seat.",
+                "text": "Please |[wave toward seat] take a seat.",
                 "robot": [],
                 "flag": []
             },
@@ -1474,36 +1474,36 @@
         },
         "introduction_square": {
             "full": {
-                "text": "[body language] And please [body language] let <dog> [body language] sit in [wave toward black square] the black square.",
+                "text": "And please let | <dog> | stay | [wave toward black square] | in the black square.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "<dog> can sit in the black square.",
+                "text": "<dog> | should stay in the black square.",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_start": {
             "full": {
-                "text": "[body language] Now we will [body language] do the [body language] testing trials.",
+                "text": "(delete this)",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "We will complete the testing trials now.",
+                "text": "(delete this)",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_eyes close": {
             "full": {
-                "text": "[body language] Please [body language] keep your [look down] head down and [close eyes] eyes closed [body language] during each [body language] trial. [body language] Please only [body language] look ahead [body language] when you [point to self] hear me [body language] say 'ok.'",
+                "text": "Please keep your | [look down] head down | and | [close eyes] eyes closed | during each trial. | Please only | [body language] | look ahead | [body language] | when you | [point to self] hear me say | 'ok.'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "Please keep your head down and eyes closed during each trial until you hear me say 'ok.'",
+                "text": "Please keep your head down and eyes closed during each trial | until you hear me say 'ok.'",
                 "robot": [],
                 "flag": []
             }
