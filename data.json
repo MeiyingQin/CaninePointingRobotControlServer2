@@ -119,7 +119,19 @@
                 "robot": [],
                 "flag": []
             }
-        }
+        },
+		"no worries": {
+		    "full": {
+			    "text": "c/no worries. | c/This is totally fine.",
+				"robot": [],
+				"flag": []
+			},
+			"repeat": {
+			    "text": "c/ don't worry about this. c/this is ok.",
+				"robot": [],
+				"flag": []
+			}
+		}
     },
     "Dog scared": {
         "initial check": {
@@ -208,7 +220,7 @@
         },
         "show treat": {
             "full": {
-                "text": "d/<dog> | c/look! | {\\pau=1000\\} | [nb/head_dip_down] | c/I got a treat for you.",
+                "text": "d/<dog> | c/look! | {\\pau=1000\\} | [nb/point_at_introduction_dispenser] | c/I got a treat for you.",
                 "robot": [],
                 "flag": []
             },
@@ -270,7 +282,7 @@
     "Introduction": {
         "initial_greeting": {
             "full": {
-                "text": "[nb/wave] | c/Hello. | {\\pau=2000\\} | [nb/welcome] | c/Welcome back to the dog lab!",
+                "text": "[nb/welcome_wave] | c/Hello. | {\\pau=2000\\} | [nb/welcome] | c/Welcome back to the dog lab!",
                 "robot": [],
                 "flag": []
             },
@@ -306,7 +318,7 @@
         },
         "initial_experimenter one quiet": {
             "full": {
-                "text": "c/She needs to stay | [nb/quiet_gesture] | d/quiet | c/for now | c/by the design of this study. | {\\pau=1000\\} | c/But she is friendly.",
+                "text": "c/She needs to stay | [nb/quiet_gesture] | d/quiet | c/for now | c/by the design of this study. | {\\pau=1000\\} | c/But she is friendly. | {\\pau=1000\\}  | c/and she won't bite you. ",
                 "robot": [],
                 "flag": []
             },

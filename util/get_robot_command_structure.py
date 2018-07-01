@@ -50,11 +50,16 @@ for section in data.keys():
                         robot_command += "^run("
                         robot_command += actions[command_content]
                         robot_command += ") "
+                        if command_content.startswith("loop"):
+                            to_be_added = "^stop(" + actions[command_content] + ") "
                     elif command_type == "nb":
                             robot_command += "^start("
                             robot_command += actions[command_content]
                             robot_command += ") "
-                            to_be_added = "^wait(" + actions[command_content] + ") "
+                            if command_content.startswith("loop"):
+                                to_be_added = "^stop(" + actions[command_content] + ") "
+                            else:
+                                to_be_added = "^wait(" + actions[command_content] + ") "
                     else:
                         print section + "|" + keyword + "|" + command_type + ": has invalid action type"
                 elif command.startswith("{"):

@@ -1,9 +1,16 @@
 {
-"look_at_assistant": "",
-"no": "Stand/Gestures/Desperate_3",
-"thinking": "Stand/Emotions/Negative/Bored_2",
-"head_dip_down":"",
-"wave": "Stand/Gestures/Hey_1",
+"look_at_assistant": "customanimations-ff193e/look_at_pointer",
+"no_1": "Stand/Gestures/No_9",
+"no_2": "Stand/Gestures/No_6",
+"no_3": "Stand/Gestures/Desperate_3",
+"loop_thinking": "Stand/BodyTalk/Thinking/ThinkingLoop_1",
+"welcome_wave": "Stand/Gestures/Hey_1",
+"welcome": "Stand/Gestures/Enthusiastic_5",
+
+
+"everything": "Stand/Gestures/Everything_1",
+
+
 "welcome": "Stand/Gestures/Everything_5",
 "welcome_repeat": "Stand/Gestures/Everything_2",
 "point_to_self": "Stand/Gestures/Me_2",
