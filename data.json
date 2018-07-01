@@ -390,7 +390,7 @@
         },
         "initial_take seat": {
             "full": {
-                "text": "[nb/welcome] | c/Please take | [nb/point_to_chair] | c/a seat.",
+                "text": "[nb/random] | c/Please take | [nb/point_to_chair] | c/a seat.",
                 "robot": [],
                 "flag": []
             },
@@ -426,7 +426,7 @@
         },
         "robot_work with few dogs": {
             "full": {
-                "text": "[nb/two_hand_explain] | c/We have worked with a few dogs | [nb/one_hand_explain] | c/so far | {\\pau=1000\\} | c/but I am still relatively new | [nb/everything] | c/in the dog lab.",
+                "text": "[nb/two_hand_explain] | c/We have worked with a few dogs | [nb/one_hand_explain] | c/so far | {\\pau=1000\\} | c/but I am still relatively new | [nb/random] | c/in the dog lab.",
                 "robot": [],
                 "flag": []
             },
@@ -522,7 +522,7 @@
         },
         "dog_robot ask questions": {
             "full": {
-                "text": "c/Before we start, | {\\pau=500\\} | [nb/everything] | c/I have a few questions for | [nb/point_at_owner] | d/you.",
+                "text": "c/Before we start, | {\\pau=500\\} | [nb/random] | c/I have a few questions for | [nb/point_at_owner] | d/you.",
                 "robot": [],
                 "flag": []
             },
@@ -618,7 +618,7 @@
         },
         "dog_robot ask to see tricks": {
             "full": {
-                "text": "[nb/one_hand_explain_move] | c/I am excited  | c/to see that | {\\pau=1000\\} | c/Could you please show them | [nb/everything] | c/to | [nb/point_to_self] |d/me?",
+                "text": "[nb/one_hand_explain_move] | c/I am excited  | c/to see that | {\\pau=1000\\} | c/Could you please show them | [nb/random] | c/to | [nb/point_to_self] |d/me?",
                 "robot": [],
                 "flag": []
             },
@@ -630,12 +630,12 @@
         },
         "dog_robot respond to tricks one": {
             "full": {
-                "text": "[nb/welcome] | c/Impressive!",
+                "text": "[nb/random] | c/Impressive!",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[nb/welcome] | c/Wow!",
+                "text": "[nb/random] | c/Wow!",
                 "robot": [],
                 "flag": []
             }
@@ -762,7 +762,7 @@
         },
         "dog_other dogs reply few": {
             "full": {
-                "text": "c/<dog> | c/must feel | [nb/happy] | c/special | c/to be the only dog in the family to get | [nb/everything] | c/all | c/the treats and toys.",
+                "text": "c/<dog> | c/must feel | [nb/happy] | c/special | c/to be the only dog in the family to get | [nb/random] | c/all | c/the treats and toys.",
                 "robot": [],
                 "flag": []
             },
@@ -774,12 +774,12 @@
         },
         "dog_other dogs reply many": {
             "full": {
-                "text": "c/It is | [nb/happy] | c/great | c/to have | [nb/everything] | c/other dogs to play with at home.",
+                "text": "c/It is | [nb/happy] | c/great | c/to have | [nb/random] | c/other dogs to play with at home.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/It must be fun to have | [nb/everything] | c/other dog friends at home.",
+                "text": "c/It must be fun to have | [nb/random] | c/other dog friends at home.",
                 "robot": [],
                 "flag": []
             }
@@ -966,7 +966,7 @@
         },
         "explore_dog explore": {
             "full": {
-                "text": "[nb/welcome] | c/And feel free to let | c/<dog> | c/explore around | [nb/welcome_repeat] | c/the room.",
+                "text": "[nb/random] | c/And feel free to let | c/<dog> | c/explore around | [nb/welcome_repeat] | c/the room.",
                 "robot": [],
                 "flag": []
             },
