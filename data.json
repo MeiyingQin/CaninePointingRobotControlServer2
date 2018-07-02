@@ -177,7 +177,7 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/<owner> |  | c/does | [nb/question_long] | c/<dog> | c/need a break? | {\\pau=500\\} | c/I can provide a treat to | c/<dog>.",
+                "text": "c/<owner> | c/does | [nb/question_long] | c/<dog> | c/need a break? | {\\pau=500\\} | c/I can provide a treat to | c/<dog>.",
                 "robot": [],
                 "flag": []
             }
@@ -244,12 +244,12 @@
         },
         "treat okay": {
             "full": {
-                "text": "[nb/happy] | c/Looks like | c/<dog> | c/is fine now. | {\\pau=1000\\} | [nb/wave_small] | c/Let's continue.",
+                "text": "[nb/happy] | c/Looks like | c/<dog> | c/is fine now. | {\\pau=1000\\} | c/Let's continue.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/<dog> | c/looks fine. | {\\pau=1000\\} | [nb/wave_small] | c/Let's continue now.",
+                "text": "c/<dog> | c/looks fine. | {\\pau=1000\\} | c/Let's continue now.",
                 "robot": [],
                 "flag": []
             }
@@ -534,7 +534,7 @@
         },
         "dog_robot ask questions": {
             "full": {
-                "text": "c/Before we start, | {\\pau=500\\} | [nb/question_short] | c/I have a few questions for | [nb/point_at_owner] | d/you.",
+                "text": "c/Before we start, | {\\pau=500\\} | [nb/question_short] | c/I have a few questions for | [nb/point_to_chair] | d/you.",
                 "robot": [],
                 "flag": []
             },
@@ -1122,12 +1122,12 @@
         },
         "bait_get dispenser": {
             "full": {
-                "text": "[nb/look_at_pointer] | d/<pointer>,| {\\pau=500\\} |d/Can you | d/put the dispenser | [nb/point_at_introduction_dispenser] | d/over there.",
+                "text": "[nb/look_at_pointer] | d/<pointer>,| {\\pau=500\\} |d/Can you | d/put the dispenser | [nb/point_to_intro_container] | d/over there.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "d/Put the dispenser | [nb/point_at_introduction_dispenser] | d/over there please, | d/<pointer>.",
+                "text": "d/Put the dispenser | [nb/point_to_intro_container] | d/over there please, | d/<pointer>.",
                 "robot": [],
                 "flag": []
             }
@@ -1158,7 +1158,7 @@
         },
         "bait_instruction release": {
             "full": {
-                "text": "c/<owner>, | [nb/one_hand_explain]| c/Please only let | c/<dog> | [nb/point_at_introduction_dispenser] | d/approach the dispenser | d/after | [nb/point_to_self_1] | c/I say | {\\pau=800\\} | d/'okay.'",
+                "text": "c/<owner>, | [nb/left_hand_explain]| c/Please only let | c/<dog> | [nb/point_to_intro_container] | d/approach the dispenser | d/after | [nb/point_to_self_1] | c/I say | {\\pau=800\\} | d/'okay.'",
                 "robot": [],
                 "flag": []
             },
@@ -1211,7 +1211,7 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/You will be moving | [nb/two_hand_explain_2] | c/between this room and the lobby many times during the study. | {\\pau=1000\\} | c/Sorry in advance! | {\\pau=500\\} | [nb/wave_small] | c/Thanks | {\\pau=500\\} | c/see you soon!",
+                "text": "c/You will be moving | [nb/two_hand_explain_2] | c/between this room and the lobby many times during the study. | {\\pau=1000\\} | c/Sorry in advance! | {\\pau=500\\} | [nb/thanks_2] | c/Thanks | {\\pau=500\\} | c/see you soon!",
                 "robot": [],
                 "flag": []
             }
@@ -1280,7 +1280,7 @@
         },
         "introduction_owner head down": {
             "full": {
-                "text": "d/Please keep | [nb/nstruction_owner_head_down] | d/your head down eyes closed | c/during each trial. | c/Please only | [nb/look_ahead] | d/look ahead | c/when you hear | [nb/point to self_1] | d/I say | {//pau=300//} | d/'okay'",
+                "text": "d/Please keep | [nb/instruction_owner_head_down] | d/your head down eyes closed | c/during each trial. | c/Please only | [nb/look_ahead] | d/look ahead | c/when you hear | [nb/point_to_self_1] | d/I say | {//pau=300//} | d/'okay'",
                 "robot": [],
                 "flag": []
             },
@@ -1297,19 +1297,19 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/Please only release | c<dog> | c/when you hear the release command | {//pau=300//} | 'okay'",
+                "text": "c/Please only release | c/<dog> | c/when you hear the release command | {//pau=300//} | c/'okay'",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_encourage": {
             "full": {
-                "text": "d/If | c/<dog> | c/hesitates to approach the dispensers after the release command | {//pau=200//} | 'okay', | [nb/point_to_chair] | c/feel free to give | c/<dog> | a release command of your own, | {//pau=1000} | [nb/no_3] | d/but try not | to point | {//pau=200//} | c/or give | c/<dog> | c/a directional hint.",
+                "text": "d/If | c/<dog> | c/hesitates to approach the dispensers after the release command | {//pau=200//} | c/'okay', | [nb/point_to_chair] | c/feel free to give | c/<dog> | c/a release command of your own, | {//pau=1000} | [nb/no_3] | d/but try not | d/to point | {//pau=200//} | c/or give | c/<dog> | c/a directional hint.",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "If |<dog>| hesitates after I say 'ok,' | you can give | <dog> | a release command of your own | but please do not point.",
+                "text": "c/If | c/<dog>| c/hesitates after I say | {//pau=500//} | c/'okay' | c/you can give | c/<dog> | c/a release command of your own | c/but please do not point.",
                 "robot": [],
                 "flag": []
             }
@@ -1400,7 +1400,7 @@
         },
         "bait_praise_not get treat two": {
             "full": {
-                "text": "[nb/other] c/Hope you will get treat | c/in the next session.",
+                "text": "[nb/other] | c/Hope you will get treat | c/in the next session.",
                 "robot": [],
                 "flag": []
             },
@@ -1474,7 +1474,7 @@
         },
         "introduction_eyes close": {
             "full": {
-                "text": "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point to self_1] | d/hear I say | {//pau=500//} | d/'ok.'",
+                "text": "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point_to_self_1] | d/hear I say | {//pau=500//} | d/'ok.'",
                 "robot": [],
                 "flag": []
             },
@@ -1522,7 +1522,7 @@
         },
         "introduction_request break": {
             "full": {
-                "text": "c/ The testing session | [nb/longer] | c/is longer than the warmup | c/so please | [nb/point to self_2] | d/let me know | [nb/point_to_chair] | c/if you think | c/ <dog> | c/is tired and needs a break.",
+                "text": "c/ The testing session | [nb/longer] | c/is longer than the warmup | c/so please | [nb/point_to_self_2] | d/let me know | [nb/point_to_chair] | c/if you think | c/ <dog> | c/is tired and needs a break.",
                 "robot": [],
                 "flag": []
             },
@@ -1534,7 +1534,7 @@
         },
         "introduction_ready": {
             "full": {
-                "text": "c/Ready? | {//pau=1000//} | c/Please close your eyes and wait until you head I say | {//pau=500//} | | okay",
+                "text": "c/Ready? | {//pau=1000//} | c/Please close your eyes and wait until you head I say | {//pau=500//} | c/okay",
                 "robot": [],
                 "flag": []
             },
@@ -1582,7 +1582,7 @@
         },
         "bait_bait_praise_get treat one": {
             "full": {
-                "text": "[nb/happy] c/Great | {//pau=1000//} |c/you got the treat!",
+                "text": "[nb/happy] | c/Great | {//pau=1000//} |c/you got the treat!",
                 "robot": [],
                 "flag": []
             },
@@ -1666,7 +1666,7 @@
         },
         "bait_bait_praise_get treat eight": {
             "full": {
-                "text": "[nb/enthusiastic] | c/You got all the treats!",
+                "text": "[nb/impressive] | c/You got all the treats!",
                 "robot": [],
                 "flag": []
             },
@@ -1726,19 +1726,19 @@
         },
         "bait_praise_not get treat five": {
             "full": {
-                "text": "[nb/sorry_1] sorry",
+                "text": "[nb/sorry_1] | d/sorry",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/worry",
+                "text": "c/sorry",
                 "robot": [],
                 "flag": []
             }
         },
         "bait_praise_not get treat six": {
             "full": {
-                "text": "[nb/sorry_2] sorry again",
+                "text": "[nb/sorry_2] | d/sorry again",
                 "robot": [],
                 "flag": []
             },
@@ -1798,7 +1798,7 @@
         },
         "check_break reply no": {
             "full": {
-                "text": "[nb/sure] d/Sure | {//pau=500//} | c/let's continue. |",
+                "text": "[nb/sure] | d/Sure | {//pau=500//} | c/let's continue. ",
                 "robot": [],
                 "flag": []
             },
@@ -1810,7 +1810,7 @@
         },
         "check_break reply yes": {
             "full": {
-                "text": "[nb/sure] d/Sure | {//pau=500//} | c/Let's take a break now. | {//pau=1000//} | [nb/point_to_lobby] | d/Please take | d/<dog> | d/to the lobby.",
+                "text": "[nb/sure] | d/Sure | {//pau=500//} | c/Let's take a break now. | {//pau=1000//} | [nb/point_to_lobby] | d/Please take | d/<dog> | d/to the lobby.",
                 "robot": [],
                 "flag": []
             },
@@ -1855,7 +1855,7 @@
                 "robot": [],
                 "flag": []
             }
-		}
+		},
         "calibration": {
             "full": {
                 "text": "[b/look_at_assistant] | d/<assistant> | d/now let's do the calibration.",
