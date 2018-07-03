@@ -1,30 +1,24 @@
 import selenium
 from selenium import webdriver
 import time
+import threading
 
-
-driver = webdriver.Chrome()
-driver.get("https://portal.feedandgo.com/")
-
-email = driver.find_element_by_id("user_email")
-password = driver.find_element_by_id("user_password")
-submit_button = driver.find_element_by_class_name("login_submit_btn")
-
-email.send_keys("")
-password.send_keys("")
-submit_button.click()
-
-is_continue = True
-while is_continue:
-    user_input = raw_input("press any key to continue, press q to quit: ")
-    if user_input == "q":
-        is_continue = False
-        continue
-    else:
+class Dispenser():
+    def __init__(self, user_email, user_password):
+        self.driver = webdriver.Chrome()
+        self.driver.get("https://portal.feedandgo.com/")
+        email = self.driver.find_element_by_id("user_email")
+        password = self.driver.find_element_by_id("user_password")
+        submit_button = self.driver.find_element_by_class_name("login_submit_btn")
+        email.send_keys(user_email)
+        password.send_keys(user_password)
+        submit_button.click()
+    
+    def feed(self):
         is_found = False
         while not is_found:
             try:
-                feedNowButton = driver.find_element_by_partial_link_text("Feed Now")
+                feedNowButton = self.driver.find_element_by_partial_link_text("Feed Now")
                 feedNowButton.click()
                 is_found = True
             except selenium.common.exceptions.ElementNotVisibleException:
@@ -33,7 +27,7 @@ while is_continue:
         is_found = False
         while not is_found:
             try:
-                feedConfirmButton = driver.find_element_by_id("feed-yes")
+                feedConfirmButton = self.driver.find_element_by_id("feed-yes")
                 feedConfirmButton.click()
                 is_found = True
             except selenium.common.exceptions.ElementNotVisibleException:
@@ -42,9 +36,15 @@ while is_continue:
         is_found = False
         while not is_found:
             try:
-                buttonParent = driver.find_element_by_id("callPetOver")
+                buttonParent = self.driver.find_element_by_id("callPetOver")
                 cancelWebcamButton = buttonParent.find_element_by_css_selector(".btn.btn-default.left")
                 cancelWebcamButton.click()
                 is_found = True
             except selenium.common.exceptions.ElementNotVisibleException:
-                print "wait for finishing"
+                print "wait for finishing"        
+
+dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
+
+dispenser_1_thread = threading.Thread(target=Dispenser.feed, args=(dispenser_1,))
+
+dispenser_1_thread.start()
