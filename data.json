@@ -206,7 +206,7 @@
                 "flag": []
             }
         },
-        "get spoon and treat": {
+        "get dispenser": {
             "full": {
                 "text": "[nb/thanks_2] | c/Thanks.",
                 "robot": [],
@@ -1168,6 +1168,18 @@
                 "flag": []
             }
         },
+		"bait_action start": {
+		    "full": {
+                "text": "[nb/two_hand_explain_2] | d/Now let's start!",
+                "robot": [],
+                "flag": []
+            },
+            "repeat": {
+                "text": "d/Let's start!",
+                "robot": [],
+                "flag": []
+            }
+		},
         "bait_action_bait treat": {
             "full": {
                 "text": "[b/bait] | d/please bait",
@@ -1902,6 +1914,18 @@
             },
             "repeat": {
                 "text": "d/<owner>",
+                "robot": [],
+                "flag": []
+            }
+        },
+		"say dog name": {
+            "full": {
+                "text": "d/<dog>",
+                "robot": [],
+                "flag": []
+            },
+            "repeat": {
+                "text": "d/<dog>",
                 "robot": [],
                 "flag": []
             }
