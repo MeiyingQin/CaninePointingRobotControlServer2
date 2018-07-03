@@ -10,8 +10,8 @@ email = driver.find_element_by_id("user_email")
 password = driver.find_element_by_id("user_password")
 submit_button = driver.find_element_by_class_name("login_submit_btn")
 
-email.send_keys("robot.pointing.feeder.1@gmail.com")
-password.send_keys("keepondancing")
+email.send_keys("")
+password.send_keys("")
 submit_button.click()
 
 is_continue = True
