@@ -2,6 +2,7 @@
 
 import json
 import string
+import os
 from collections import OrderedDict
 
 json_file='../data.json'
@@ -28,6 +29,22 @@ actions = json.load(actions_json_data)
 actions_json_data.close()
 is_loop = False
 
+action_dict = {}
+for key in actions.keys():
+    action_dict[key] = 0
+
+sound_to_record = []
+sound_dict = {}
+target_directory = "E:/Meiying/working/Research/5_dog_pointing_2/code/CaninePointingRobotControlServer2/util/unique/all"
+for root, dirs, files in os.walk(target_directory):
+    for name in files:
+        name = name[:-4]
+        if name in sound_dict.keys():
+            print name, "already in recorded"
+        else:
+            #print name
+            sound_dict[name] = 0
+
 for section in data.keys():
     for keyword in data[section].keys():
         for command_condition in data[section][keyword].keys():
@@ -38,13 +55,16 @@ for section in data.keys():
             for command in commands:
                 command = command.strip().lower()
                 command = "".join(i for i in command if i not in list(punctuation))
-                if command.startswith("["):
+                if command.startswith("["): # actions
                     command = command.replace("[", "")
                     command = command.replace("]", "")
                     detailed_command = command.split("/")
-                    print detailed_command
+                    #print detailed_command
                     command_type = detailed_command[0]
                     command_content = detailed_command[1]
+                    # check if action defined
+                    action_dict[command_content] += 1
+                    # start define command
                     if command_type == "b":
                         robot_command += "^run("
                         robot_command += actions[command_content]
@@ -63,7 +83,7 @@ for section in data.keys():
                                 to_be_added = "^wait(" + actions[command_content] + ") "
                     else:
                         print section + "|" + keyword + "|" + command_type + ": has invalid action type"
-                elif command.startswith("{"):
+                elif command.startswith("{"): # direct naoqi command like pause
                     command = command.replace("{", "")
                     command = command.replace("}", "")
                     robot_command += command.strip() + " "
@@ -71,13 +91,20 @@ for section in data.keys():
                         robot_command += to_be_added
                         to_be_added = ""
                         is_loop = False
-                else:
+                else: # speech
                     # remember to replace <owner>, <pointer>, <dog>, <dog_gender>, <assistant>, later
                     # speech
                     detailed_command = command.split("/")
-                    print detailed_command
+                    #print detailed_command
                     command_type = detailed_command[0]
-                    command_content = detailed_command[1].replace(" ", "_")
+                    command_content = section.replace(" ", "_") + "_" + command_condition + "_" + keyword.replace(" ", "_") + "_" + detailed_command[1].strip().replace(" ", "_")
+                    command_content = command_content.lower()
+                    # check if sound file exist
+                    if command_content not in sound_dict.keys():
+                        sound_to_record.append(command_content)
+                    else:
+                        sound_dict[command_content] += 1
+                    # start define command
                     if command_type == "d":
                         robot_command += "^mode(disabled)" + " "
                         robot_command += "^runSound(CanineStudy/"
@@ -107,4 +134,33 @@ new_json_data = open("new_new_data.json", "w")
 json.dump(data, new_json_data, indent = 4, separators=(',', ': '))
 new_json_data.close()
 
-#print data["Unexpected"]["pointer explain"]["full"]["text"]
+"""
+keys = action_dict.keys()
+keys.sort()
+for key in keys:
+    print key, action_dict[key]
+"""
+
+print "command needs to be recorded are:"
+sound_to_record.sort()
+for command in sound_to_record:
+    if "<" not in command and not command.startswith("warmup") and not command.startswith("testing"):
+        print command
+
+print
+
+print "command not used are:"
+sounds = sound_dict.keys()
+sounds.sort()
+for sound in sounds:
+    if sound_dict[sound] == 0:
+        print sound
+
+print
+
+print "command used more than once: "
+sounds = sound_dict.keys()
+sounds.sort()
+for sound in sounds:
+    if sound_dict[sound] > 1:
+        print sound

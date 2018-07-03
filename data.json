@@ -182,7 +182,7 @@
                 "flag": []
             }
         },
-        "initial check ok": {
+        "initial check okay": {
             "full": {
                 "text": "[nb/happy] | d/Okay.",
                 "robot": [],
@@ -232,7 +232,7 @@
         },
         "instruction to owner": {
             "full": {
-                "text": "[nb/left_hand_explain] | c/Please only let | c/<dog> | c/approach the dispenser |c/after I say 'okay'",
+                "text": "[nb/two_hand_explain_4] | c/Please only let | c/<dog> | c/approach the dispenser |c/after I say 'okay'",
                 "robot": [],
                 "flag": []
             },
@@ -306,7 +306,7 @@
         },
         "initial_robot name": {
             "full": {
-                "text": "[nb/point_to_self_1] | c/I am Niffi. | {\\pau=1000\\} | c/N-I-F-F-I | {\\pau=1000\\} | c/niffi",
+                "text": "[nb/point_to_self_1] | c/I am Niffi. | {\\pau=1000\\} | c/N_I_F_F_I | {\\pau=1000\\} | c/niffi",
                 "robot": [],
                 "flag": []
             },
@@ -486,7 +486,7 @@
         },
         "robot_adult": {
             "full": {
-                "text": "c/And I am | [nb/left_hand_explain] | c/an adult!",
+                "text": "c/And I am | [nb/two_hand_explain_4] | c/an adult!",
                 "robot": [],
                 "flag": []
             },
@@ -738,7 +738,7 @@
         },
         "dog_together length reply short": {
             "full": {
-                "text": "[nb/left_hand_explain] | c/That's not too long| {\\pau=1000\\} | c/but I believe | [nb/look_at_owner] | c/you will have a great time with | c/<dog>.",
+                "text": "[nb/two_hand_explain_2] | c/That's not too long| {\\pau=1000\\} | c/but I believe | [nb/look_at_owner] | c/you will have a great time with | c/<dog>.",
                 "robot": [],
                 "flag": []
             },
@@ -935,7 +935,7 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/We will have two more testing sessions | [nb/left_hand_explain] | c/after the warmup sessions.",
+                "text": "c/We will have two more testing sessions | [nb/two_hand_explain_3] | c/after the warmup sessions.",
                 "robot": [],
                 "flag": []
             }
@@ -1206,7 +1206,7 @@
         },
         "transition_lobby explain": {
             "full": {
-                "text": "c/There will be | [nb/left_hand_explain] | c/ a lot of back and forth | {\\pau=1000\\} | [nb/sorry_2] | c/Sorry about that in advance! | {\\pau=1000\\} | [nb/thanks_1] | c/Thanks, | {\\pau=500\\} | c/see you soon! ",
+                "text": "c/There will be | [nb/two_hand_explain_4] | c/ a lot of back and forth | {\\pau=1000\\} | [nb/sorry_2] | c/Sorry about that in advance! | {\\pau=1000\\} | [nb/thanks_1] | c/Thanks, | {\\pau=500\\} | c/see you soon! ",
                 "robot": [],
                 "flag": []
             },
@@ -1285,14 +1285,14 @@
                 "flag": []
             },
             "repeat": {
-                "text": "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear I say | {//pau=300//} | d/'ok.'",
+                "text": "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear I say | {//pau=300//} | d/'okay.'",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_release": {
             "full": {
-                "text": "[nb/two_hand_explain_1] | c/After when you hear the release command | {//pau=300//} | d/'okay' | c/you can let | c/<dog> | c/get a treat from one of the | [nb/point_to_intro_container] | d/dispenser.",
+                "text": "[nb/two_hand_explain_2] | c/After when you hear the release command | {//pau=300//} | d/'okay' | c/you can let | c/<dog> | c/get a treat from one of the | [nb/point_to_intro_container] | d/dispenser.",
                 "robot": [],
                 "flag": []
             },
@@ -1328,7 +1328,7 @@
         },
         "introduction_start": {
             "full": {
-                "text": "[nb/two_hand_explain_1] | d/Let's start!",
+                "text": "[nb/two_hand_explain_3] | d/Let's start!",
                 "robot": [],
                 "flag": []
             },
@@ -1474,24 +1474,24 @@
         },
         "introduction_eyes close": {
             "full": {
-                "text": "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point_to_self_1] | d/hear I say | {//pau=500//} | d/'ok.'",
+                "text": "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point_to_self_1] | d/hear I say | {//pau=500//} | d/'okay.'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear me say | {//pau=300//} | c/'ok.'",
+                "text": "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear me say | {//pau=300//} | c/'okay.'",
                 "robot": [],
                 "flag": []
             }
         },
         "introduction_release_instruction": {
             "full": {
-                "text": "c/You will hear more utterances from me during the trial, | {//pau=1000//} | c/but still please only | {//pau=700//} | c/release | c/<dog> | c/when you hear the release command | {//pau=400//} | c/'ok.'",
+                "text": "c/You will hear more utterances from me during the trial, | {//pau=1000//} | c/but still please only | {//pau=700//} | c/release | c/<dog> | c/when you hear the release command | {//pau=400//} | c/'okay.'",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "c/Remember | {//pau=1000//} | c/only release | c/<dog> | c/when you hear | d/'ok.'",
+                "text": "c/Remember | {//pau=1000//} | c/only release | c/<dog> | c/when you hear | d/'okay.'",
                 "robot": [],
                 "flag": []
             }
@@ -1702,12 +1702,12 @@
         },
         "bait_praise_not get treat three": {
             "full": {
-                "text": "c/That's ok",
+                "text": "c/That's okay",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "d/That's ok",
+                "text": "d/That's okay",
                 "robot": [],
                 "flag": []
             }
