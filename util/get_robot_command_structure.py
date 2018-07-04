@@ -49,90 +49,100 @@ for section in data.keys():
     for keyword in data[section].keys():
         for command_condition in data[section][keyword].keys():
             count += 1
-            commands = data[section][keyword][command_condition]["text"].strip().split("|")
-            robot_command = ""
-            to_be_added = ""
-            for command in commands:
-                command = command.strip().lower()
-                command = "".join(i for i in command if i not in list(punctuation))
-                if command.startswith("["): # actions
-                    command = command.replace("[", "")
-                    command = command.replace("]", "")
-                    detailed_command = command.split("/")
-                    #print detailed_command
-                    command_type = detailed_command[0]
-                    command_content = detailed_command[1]
-                    # check if action defined
-                    action_dict[command_content] += 1
-                    # start define command
-                    if command_type == "b":
-                        robot_command += "^run("
-                        robot_command += actions[command_content]
-                        robot_command += ") "
-                        if command_content.startswith("loop"):
-                            is_loop = True
-                            to_be_added = "^stop(" + actions[command_content] + ") "
-                    elif command_type == "nb":
-                        robot_command += "^start("
-                        robot_command += actions[command_content]
-                        robot_command += ") "
-                        if command_content.startswith("loop"):
-                            is_loop = True
-                            to_be_added = "^stop(" + actions[command_content] + ") "
+            texts = data[section][keyword][command_condition]["text"]
+            data[section][keyword][command_condition]["robot"] = []
+            data[section][keyword][command_condition]["flag"] = []
+            for text in texts:
+                commands = text.strip().split("|")
+                robot_command = ""
+                to_be_added = ""
+                is_speech = True
+                for command in commands:
+                    command = command.strip().lower()
+                    command = "".join(i for i in command if i not in list(punctuation))
+                    if command.startswith("["): # actions
+                        command = command.replace("[", "")
+                        command = command.replace("]", "")
+                        detailed_command = command.split("/")
+                        #print detailed_command
+                        command_type = detailed_command[0]
+                        command_content = detailed_command[1]
+                        # check if action defined
+                        action_dict[command_content] += 1
+                        # start define command
+                        if command_type == "b":
+                            robot_command += "^run("
+                            robot_command += actions[command_content]
+                            robot_command += ") "
+                            if command_content.startswith("loop"):
+                                is_loop = True
+                                to_be_added = "^stop(" + actions[command_content] + ") "
+                        elif command_type == "nb":
+                            robot_command += "^start("
+                            robot_command += actions[command_content]
+                            robot_command += ") "
+                            if command_content.startswith("loop"):
+                                is_loop = True
+                                to_be_added = "^stop(" + actions[command_content] + ") "
+                            else:
+                                to_be_added = "^wait(" + actions[command_content] + ") "
+                        elif command_type == "u":
+                            is_speech = False
+                            robot_command += command_content
                         else:
-                            to_be_added = "^wait(" + actions[command_content] + ") "
-                    elif command_type == "c":
-                        robot_command += command_content
-                    else:
-                        print section + "|" + keyword + "|" + command_type + ": has invalid action type"
-                elif command.startswith("{"): # direct naoqi command like pause
-                    command = command.replace("{", "")
-                    command = command.replace("}", "")
-                    robot_command += command.strip() + " "
-                    if is_loop:
-                        robot_command += to_be_added
-                        to_be_added = ""
-                        is_loop = False
-                else: # speech
-                    # remember to replace <owner>, <pointer>, <dog>, <dog_gender>, <assistant>, later
-                    # speech
-                    detailed_command = command.split("/")
-                    #print detailed_command
-                    command_type = detailed_command[0]
-                    command_content = section.replace(" ", "_") + "_" + command_condition + "_" + keyword.replace(" ", "_") + "_" + detailed_command[1].strip().replace(" ", "_")
-                    command_content = command_content.lower()
-                    # check if sound file exist
-                    if command_content not in sound_dict.keys():
-                        sound_to_record.append(command_content)
-                    else:
-                        sound_dict[command_content] += 1
-                    # start define command
-                    if command_type == "d":
-                        robot_command += "^mode(disabled)" + " "
-                        robot_command += "^runSound(CanineStudy/"
-                        robot_command += command_content
-                        robot_command += ") "
-                        if not is_loop:
+                            print section + "|" + keyword + "|" + command_type + ": has invalid action type"
+                    elif command.startswith("{"): # direct naoqi command like pause
+                        command = command.replace("{", "")
+                        command = command.replace("}", "")
+                        robot_command += command.strip() + " "
+                        if is_loop:
                             robot_command += to_be_added
                             to_be_added = ""
-                    elif command_type == "c":
-                        robot_command += "^mode(contextual)" + " "
-                        robot_command += "^runSound("
-                        robot_command += command_content
-                        robot_command += ") "
-                        if not is_loop:
-                            robot_command += to_be_added
-                            to_be_added = ""                        
-                    else:
-                        print section + "|" + keyword + "|" + command_type + ": has invalid saying type"
-            data[section][keyword][command_condition]["robot"] = robot_command
+                            is_loop = False
+                    else: # speech
+                        # remember to replace <owner>, <pointer>, <dog>, <dog_gender>, <assistant>, later
+                        # speech
+                        detailed_command = command.split("/")
+                        #print detailed_command
+                        command_type = detailed_command[0]
+                        command_content = section.replace(" ", "_") + "_" + command_condition + "_" + keyword.replace(" ", "_") + "_" + detailed_command[1].strip().replace(" ", "_")
+                        command_content = command_content.lower()
+                        # check if sound file exist
+                        if command_content not in sound_dict.keys():
+                            sound_to_record.append(command_content)
+                        else:
+                            sound_dict[command_content] += 1
+                        # start define command
+                        if command_type == "d":
+                            robot_command += "^mode(disabled)" + " "
+                            robot_command += "^runSound(CanineStudy/"
+                            robot_command += command_content
+                            robot_command += ") "
+                            if not is_loop:
+                                robot_command += to_be_added
+                                to_be_added = ""
+                        elif command_type == "c":
+                            robot_command += "^mode(contextual)" + " "
+                            robot_command += "^runSound("
+                            robot_command += command_content
+                            robot_command += ") "
+                            if not is_loop:
+                                robot_command += to_be_added
+                                to_be_added = ""                        
+                        else:
+                            print section + "|" + keyword + "|" + command_type + ": has invalid saying type"
+                data[section][keyword][command_condition]["robot"].append(robot_command)
+                if is_speech:
+                    data[section][keyword][command_condition]["flag"].append("speech")
+                else:
+                    data[section][keyword][command_condition]["flag"].append("action")
             #robot = []
             #flag = []
             
             #data[section][keyword][command_type]["robot"] = robot
             #data[section][keyword][command_type]["flag"] = flag
 
-new_json_data = open("new_new_data.json", "w")
+new_json_data = open("../new_new_data.json", "w")
 json.dump(data, new_json_data, indent = 4, separators=(',', ': '))
 new_json_data.close()
 
