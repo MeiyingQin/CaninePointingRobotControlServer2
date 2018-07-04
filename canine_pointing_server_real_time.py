@@ -24,7 +24,7 @@ if __name__ == "__main__":
     GET_HEAD_ANGLE = "get head angle"
     SET_HEAD_ANGLE = "set head angle"
     PROGRESS_BAR_RANGE = 100.0
-    ROBOT_HEAD_RANGE = 119.0
+    ROBOT_HEAD_RANGE = 75.0
     
     robot_ip = "127.0.0.1"
     robot_port = 49244
