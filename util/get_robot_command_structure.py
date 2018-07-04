@@ -73,14 +73,16 @@ for section in data.keys():
                             is_loop = True
                             to_be_added = "^stop(" + actions[command_content] + ") "
                     elif command_type == "nb":
-                            robot_command += "^start("
-                            robot_command += actions[command_content]
-                            robot_command += ") "
-                            if command_content.startswith("loop"):
-                                is_loop = True
-                                to_be_added = "^stop(" + actions[command_content] + ") "
-                            else:
-                                to_be_added = "^wait(" + actions[command_content] + ") "
+                        robot_command += "^start("
+                        robot_command += actions[command_content]
+                        robot_command += ") "
+                        if command_content.startswith("loop"):
+                            is_loop = True
+                            to_be_added = "^stop(" + actions[command_content] + ") "
+                        else:
+                            to_be_added = "^wait(" + actions[command_content] + ") "
+                    elif command_type == "c":
+                        robot_command += command_content
                     else:
                         print section + "|" + keyword + "|" + command_type + ": has invalid action type"
                 elif command.startswith("{"): # direct naoqi command like pause

@@ -53,9 +53,6 @@
 	
 	"stand": "customanimations-ff193e/stand",
 	"rest": "customanimations-ff193e/rest",
-	"wake_up": "customanimations-ff193e/wakeup",
-
-	"start_idle": "",
-	"stop_idle": ""
+	"wake_up": "customanimations-ff193e/wakeup"
 }
 

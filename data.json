@@ -1944,24 +1944,24 @@
         },
         "start idle": {
             "full": {
-                "text": "[b/start_idle]",
+                "text": "[c/start_idle]",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[b/start_idle]",
+                "text": "[c/start_idle]",
                 "robot": [],
                 "flag": []
             }
         },
         "stop idle": {
             "full": {
-                "text": "[b/stop_idle]",
+                "text": "[c/stop_idle]",
                 "robot": [],
                 "flag": []
             },
             "repeat": {
-                "text": "[b/stop_idle]",
+                "text": "[c/stop_idle]",
                 "robot": [],
                 "flag": []
             }
