@@ -6,6 +6,7 @@ import socket
 import datetime
 import time
 import json
+import random
 
 from naoqi import ALProxy
 import almath
@@ -14,11 +15,47 @@ class naoRobot(object):
     #length:meter
     def __init__(self, ip, port):
         self.animatedSpeechProxy = ALProxy("ALAnimatedSpeech", ip, port)
+        self.postureProxy = ALProxy("ALRobotPosture", ip, port)
+        self.behaviourProxy = ALProxy("ALBehaviorManager", ip, 9559)
         
         self.motionProxy = ALProxy("ALMotion", ip, port)
         self.notificationProxy = ALProxy("ALDiagnosis", ip, port)
         self.bodyTemperatureProxy = ALProxy("ALBodyTemperature", ip, port)
         self.batteryProxy = ALProxy("ALBattery", ip, port)
+        
+        self.right_arm = ["RShoulderPitch", "RShoulderRoll", "RElbowRoll", "RElbowYaw", "RWristYaw"]
+        self.left_arm = ["LShoulderPitch", "LShoulderRoll", "LElbowRoll", "LElbowYaw", "LWristYaw"]
+        self.head = ["HeadYaw", "HeadPitch"]
+
+        self.stand_joints = {
+            "RShoulderPitch": [83.4, 30.0/3],
+            "RShoulderRoll": [-9.8, 10.0/3],
+            "RElbowRoll": [23.0, 18.0/3],
+            "RElbowYaw": [69.5, 39.0/3],
+            "RWristYaw": [3.8, 90.0/3],
+            "LShoulderPitch": [83.5, 30.0/3],
+            "LShoulderRoll": [8.6, 10.0/3],
+            "LElbowRoll": [-22.5, 18.0/3],
+            "LElbowYaw": [-66.9, 40.0/3],
+            "LWristYaw": [6.8, 90.0/3],
+            "HeadYaw": [0, 30.0/3],
+            "HeadPitch": [-7.5, 20.0/3]
+        }
+        
+        self.scratch = [
+            "customanimations-ff193e/scratch_back_left",
+            "customanimations-ff193e/scratch_back_right",
+            "customanimations-ff193e/scratch_eye",
+            "customanimations-ff193e/scratch_leg",
+        ]
+        random.shuffle(self.scratch)
+        
+        self.stretch = [
+            "customanimations-ff193e/relax_leg"
+        ]
+        
+        self.idling = False
+        self.is_running_idling = False
         
         self.initialize()
         
@@ -27,8 +64,20 @@ class naoRobot(object):
         self.notificationProxy.setEnableNotification(False)
         self.bodyTemperatureProxy.setEnableNotifications(False)
         self.motionProxy.setEnableNotifications(False)
-        self.batteryProxy.enablePowerMonitoring(False)      
+        self.batteryProxy.enablePowerMonitoring(False)
+
+    def _deg_to_rad(self, deg_lsts):
+        return [x * almath.TO_RAD for x in deg_lsts]
     
+    def _run_behaviour(self, behaviour):
+        self.behaviourProxy.startBehavior(behaviour)
+        
+        while self.behaviourProxy.isBehaviorRunning(package_name + behaviour):
+            time.sleep(0.5)
+    
+    def _joint_move_blocking(self, joint_lsts, angle_lsts, speed):
+        self.motionProxy.angleInterpolationWithSpeed(joint_lsts, angle_lsts, speed)    
+        
     #def _interaction_speech(self, text, speed = 82, volume = 85):
         #self.ttsProxy.setParameter("speed", speed)
         #self.ttsProxy.setParameter("volume", volume)
@@ -39,8 +88,8 @@ class naoRobot(object):
     def speech(self, text):
         self.animatedSpeechProxy.say(text)
     
-    def stand(self):
-        self.animatedSpeechProxy.say("customanimations-ff193e/stand")
+    def stand(self, speed):
+        self.postureProxy.goToPosture("Stand", speed)
 
     def initialize(self):
         #self.ttsProxy.setParameter("volume", 82)
@@ -74,16 +123,54 @@ class naoRobot(object):
         #self._run_movement_unblocking([arm_movements], self.speed)        
     
     def start_idle(self):
-        for chain in ["Body", "Legs", "Arms", "LArm", "RArm"]:
-            self.motionProxy.setBreathEnabled(chain, True)
+        self.idling = True
+        while self.idling:
+            self.is_running_idling = True
+            
+            mode = random.random()
+            if mode < 0.015: # stretch leg
+                self._run_behaviour(self.stretch[1])
+                self.stand()
+            elif mode < 0.030: # scratch back, eye or leg
+                if len(self.scratch) > 0:
+                    self._run_behavoiur(self.scratch.pop())
+                    self.stand()
+            else:              
+                joint_lists = []
+                angle_lists = []
+                
+                for joint, [mean, sd] in self.stand_joints.items():
+                    is_move = random.randint(1, 10) != 7
+                    if is_move:
+                        angle = random.gauss(mean, sd)
+                        joint_lists.append(joint)
+                        angle_lists.append(angle)
+                
+                self._joint_move_blocking(joint_lists, angle_lists, 0.2)
+
+            self.is_running_idling = False
+            
+            wait = random.randint(1, 10)
+            interval = 0.1
+            for loop in range(int(wait / interval)):
+                if not self.idling:
+                    break
+                time.sleep(interval)
     
     def stop_idle(self):
-        for chain in ["Body", "Legs", "Arms", "LArm", "RArm"]:
-            self.motionProxy.setBreathEnabled(chain, False)
+        self.idling = False
+        
+        while self.is_running_idling:
+            time.sleep(0.1)
+        
+        self.stand()
 
 def custom_print(message):
     print message
     sys.stdout.flush()
+
+def dispenser_rotate(dispenser_lists):
+    pass
 
 def parse_command(command, library):
     command_list = command.split(DELIMINATOR)
@@ -98,17 +185,26 @@ def parse_command(command, library):
     flag = library[section][command_name][condition]["flag"]
     
     return command_content, flag
-        
-def run_command(nao, command, flag):
-    if flag == "speech":
-        nao.speech(command)
-        nao.stand()
-    elif flag == "speech not stand back":
-        nao.speech(command)
-    elif flag == "action":
-        pass
-    else:
-        custom_print("this is not a valid flag")
+
+def run_command(nao, command, flags, dispensers):
+    flag_list = flag.strip().split(DELIMINATOR)
+    
+    for flag in flag_list:
+        if flag == "speech":
+            nao.speech(command)
+        elif flag == "action":
+            if command == "start_idle":
+                nao.start_idle()
+            elif command == "stop_idle":
+                nao.stop_idle()
+            elif command == "stand":
+                nao.stand(0.2)
+            elif command == "dispenser_rotate":
+                pass
+            else:
+                custom_print("command is not defined")
+        else:
+            custom_print("this is not a valid flag")
 
 def log(log_file_name, message):
     log_file = open("logs/" + log_file_name, "a+")
