@@ -11,12 +11,15 @@ import random
 from naoqi import ALProxy
 import almath
 
+from bait import Dispenser
+
 class naoRobot(object):
     #length:meter
     def __init__(self, ip, port):
         self.animatedSpeechProxy = ALProxy("ALAnimatedSpeech", ip, port)
         self.postureProxy = ALProxy("ALRobotPosture", ip, port)
         self.behaviourProxy = ALProxy("ALBehaviorManager", ip, 9559)
+        self.ledProxy = ALProxy("ALLeds", ip, port)
         
         self.motionProxy = ALProxy("ALMotion", ip, port)
         self.notificationProxy = ALProxy("ALDiagnosis", ip, port)
@@ -56,6 +59,9 @@ class naoRobot(object):
         
         self.idling = False
         self.is_running_idling = False
+        
+        self.blinking = False
+        self.is_running_blinking = False        
         
         self.initialize()
         
@@ -120,7 +126,7 @@ class naoRobot(object):
         #arm_movements = self._arm_movement(left_arm=left_arm, right_arm=right_arm)
         #leg_movements = self._leg_movement(left_leg=left_leg, right_leg=right_leg)
     
-        #self._run_movement_unblocking([arm_movements], self.speed)        
+        #self._run_movement_unblocking([arm_movements], self.speed)
     
     def start_idle(self):
         self.idling = True
@@ -164,13 +170,57 @@ class naoRobot(object):
             time.sleep(0.1)
         
         self.stand()
+    
+    def start_blinking(self):
+        self.blinking = True
+        while self.blinking:
+            self.is_running_blinking = True
+            
+            name = 'FaceLeds'
+            intensity = 0.0
+            duration = 0.2
+            self.ledProxy.fade(name, intensity, duration)
+            
+            intensity = 1.0
+            duration = 0.2
+            proxy.fade(name, intensity, duration)
+            
+            custom_print("blink")
+
+            self.is_running_blinking = False
+            
+            wait = round(random.uniform(2, 10), 2)
+            interval = 0.1
+            for loop in range(int(wait / interval)):
+                if not self.blinking:
+                    break
+                time.sleep(interval)
+    
+    def stop_blinking(self):
+        self.blinking = False
+        
+        while self.is_running_blinking:
+            time.sleep(0.1)
+    
+    def stop(self):
+        self.stop_idle()
+        self.stop_blinking()
 
 def custom_print(message):
     print message
     sys.stdout.flush()
 
 def dispenser_rotate(dispenser_lists):
-    pass
+    threads = []
+    for dispenser in dispenser_lists:
+        dispenser_thread = theading.Thread(target=Dispenser.feed, args(dispenser, ))
+        threads.append(dispenser_thread)
+    
+    for thread in threads:
+        thread.start()
+    
+    for thread in threads:
+        thread.join()
 
 def parse_command(command, library):
     command_list = command.split(DELIMINATOR)
@@ -194,13 +244,15 @@ def run_command(nao, command, flags, dispensers):
             nao.speech(command)
         elif flag == "action":
             if command == "start_idle":
-                nao.start_idle()
+                idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
+                idle_thread.start()
+                idle_thread.join()
             elif command == "stop_idle":
                 nao.stop_idle()
             elif command == "stand":
                 nao.stand(0.2)
             elif command == "dispenser_rotate":
-                pass
+                dispenser_rotate(dispensers)
             else:
                 custom_print("command is not defined")
         else:
@@ -233,45 +285,27 @@ if __name__ == "__main__":
     
     file_name = "log_robot_actions.txt"
     log(file_name, "=======================================================================\n")  
-    log(file_name, "robot speed = " + str(robot_speed) + "robot wait = " + str(robot_wait))
-    
-    idle_pid = []
-    blinking_pid = []
-    touch_pid = []   
+    log(file_name, "robot speed = " + str(robot_speed) + "robot wait = " + str(robot_wait)) 
     
     nao = naoRobot(robot_ip, robot_port)
     
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    #pid = None   
+    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
+    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
+    
+    dispensers = [dispenser_1, dispenser_2]
     
     while True:
-        
-        if len(idle_pid) != 0:
-            for pid in idle_pid:
-                os.killpg(os.getpgid(pid), signal.SIGTERM)
-            idle_pid = []
-        
-        if len(blinking_pid) != 0:
-            for pid in blinking_pid:
-                os.killpg(os.getpgid(pid), signal.SIGTERM)
-            blinking_pid = []
-        
-        if len(touch_pid) != 0:
-            for pid in blinking_pid:
-                os.killpg(os.getpgid(pid), signal.SIGTERM)
-            touch_pid = []
-        
-        blinking_process = subprocess.Popen("python ./robot_blinking.py", stdout=None, shell=True, preexec_fn=os.setsid)
-        touch_process = subprocess.Popen("python ./touchsensor.py", stdout=None, shell=True, preexec_fn=os.setsid)
-        
-        blinking_pid.append(blinking_process.pid)
-        touch_pid.append(touch_process.pid)
         
         connection, client_address = socket.accept()
         custom_print("get connection from " + str(client_address))
         log(file_name, "get connection from " + str(client_address))
+        
+        blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
+        blinking_thread.start()
+        
         is_connected = True
         
         while is_connected:
@@ -281,10 +315,12 @@ if __name__ == "__main__":
                 log(file_name, "received data: " + data.strip())
                 command = data.strip()
                 command_content, flag = parse_command(command, command_library)
-                run_command(nao, command_content, flag)
+                run_command(nao, command_content, flag, dispensers)
                 connection.sendall(CONNECTION_RESPOND + LINE_TERMINATOR)
             else:
                 custom_print("received empty data, close socket")
                 log(file_name, "close socket")
-                is_connected = False               
+                is_connected = False
+                nao.stop()
+                blinking_thread.join()
         
