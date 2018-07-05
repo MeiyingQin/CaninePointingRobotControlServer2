@@ -3231,7 +3231,7 @@
         "introduction_owner head down": {
             "full": {
                 "text": [
-                    "d/Please keep | [nb/instruction_owner_head_down] | d/your head down eyes closed | c/during each trial. | c/Please only | [nb/look_ahead] | d/look ahead | c/when you hear | [nb/point_to_self_1] | d/I say | {//pau=300//} | d/'okay'",
+                    "d/Please keep | [nb/instruction_owner_head_down] | d/your head down and eyes closed | c/during each trial. | c/Please only | [nb/look_ahead] | d/look ahead | c/when you hear | [nb/point_to_self_1] | d/me say | {//pau=300//} | d/'okay'",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3245,7 +3245,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear I say | {//pau=300//} | d/'okay.'",
+                    "c/Please keep your head down and eyes closed during each trial | {//pau=500//} | c/until you hear me say | {//pau=300//} | d/'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3261,7 +3261,7 @@
         "introduction_release": {
             "full": {
                 "text": [
-                    "[nb/two_hand_explain_2] | c/After when you hear the release command | {//pau=300//} | d/'okay' | c/you can let | c/<dog> | c/get a treat from one of the | [nb/point_to_intro_container] | d/dispenser.",
+                    "[nb/two_hand_explain_2] | c/After you hear the release command | {//pau=300//} | d/'okay' | c/you can let | c/<dog> | c/get a treat from one of the | [nb/point_to_intro_container] | d/dispensers.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3275,7 +3275,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/Please only release | c/<dog> | c/when you hear the release command | {//pau=300//} | c/'okay'",
+                    "c/Please only release | c/<dog> | c/after you hear the release command | {//pau=300//} | c/'okay'",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3291,7 +3291,7 @@
         "introduction_encourage": {
             "full": {
                 "text": [
-                    "d/If | c/<dog> | c/hesitates to approach the dispensers after the release command | {//pau=200//} | c/'okay', | [nb/point_to_chair] | c/feel free to give | c/<dog> | c/a release command of your own, | {//pau=1000} | [nb/no_3] | d/but try not | d/to point | {//pau=200//} | c/or give | c/<dog> | c/a directional hint.",
+                    "d/If | c/<dog> | c/hesitates to approach the dispensers after the release command | {//pau=200//} | c/'okay', | [nb/point_to_chair] | c/feel free to give | c/<dog> | c/a release command of your own, | {//pau=1000} | [nb/no_3] | d/but do not | {//pau=300//} | d/point | {//pau=200//} | c/or give | c/<dog> | c/any directional hint.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3305,7 +3305,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/If | c/<dog>| c/hesitates after I say | {//pau=500//} | c/'okay' | c/you can give | c/<dog> | c/a release command of your own | c/but please do not point.",
+                    "c/If | c/<dog>| c/hesitates after I say | {//pau=500//} | c/'okay' | {//pau=500//} | c/you can give | c/<dog> | c/a release command of your own | {//pau=1000//} | c/but please do not provide any directional hint.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3321,7 +3321,7 @@
         "introduction_one container at a time": {
             "full": {
                 "text": [
-                    "c/Please let | c/<dog> | [nb/point_to_chair] | d/go back to you | c/after | c/<dog> | c/ approached the dispenser | [nb/no_4] | d/and please do not let | d/<dog> | c/go to the other dispenser | {//pau=500//} | c/even if | c/<dog> | c/does not go the dispnser has treat.",
+                    "c/Please let | c/<dog> | [nb/point_to_chair] | d/go back to you | {//pau=500//} | c/after | c/<dog> | c/ approaches the dispenser | [nb/no_4] | d/and please do not let | d/<dog> | c/go to the other dispenser | {//pau=500//} | c/even if | c/<dog> | c/does not go to the dispnser that has a treat.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3335,7 +3335,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/Let | c/<dog> | c/return to you immediately after | c/<dog> | c/make a choice and get close to the dispenser | {//pau=1000//} | c/but don't let | c/<dog> | c/go to the other dispenser.",
+                    "c/Let | c/<dog> | c/return to you immediately after | c/<dog> | c/makes a choice and approaches the dispenser | {//pau=1000//} | c/but don't let | c/<dog> | c/go to the other dispenser.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3537,7 +3537,7 @@
         "bait_praise_not get treat two": {
             "full": {
                 "text": [
-                    "[nb/other] | c/Hope you will get treat | c/in the next session.",
+                    "[nb/other] | c/Hope you will get treats | c/in the next sessions.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3719,7 +3719,7 @@
         "introduction_eyes close": {
             "full": {
                 "text": [
-                    "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point_to_self_1] | d/hear I say | {//pau=500//} | d/'okay.'",
+                    "d/Please keep your | [nb/instruction_owner_head_down] | d/head down and eyes closed during each trial. | {//pau=1000//} | d/Please only | [nb/look_ahead] | d/look ahead | {//pau=500//} | d/when you | [nb/point_to_self_1] | d/hear me say | {//pau=500//} | d/'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3749,7 +3749,7 @@
         "introduction_release_instruction": {
             "full": {
                 "text": [
-                    "c/You will hear more utterances from me during the trial, | {//pau=1000//} | c/but still please only | {//pau=700//} | c/release | c/<dog> | c/when you hear the release command | {//pau=400//} | c/'okay.'",
+                    "c/You will hear more utterances from me during the trial,| {//pau=500//} | c/ like look. | {//pau=1000//} | c/but still please only | {//pau=700//} | c/release | c/<dog> | c/when you hear the release command | {//pau=400//} | c/'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3793,7 +3793,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/After the trial | {//pau=1000//} | c/let | c/<dog> | c/return to you.",
+                    "c/After the trial | {//pau=1000//} | c/let | c/<dog> | c/return to you immediately.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3839,7 +3839,7 @@
         "introduction_request break": {
             "full": {
                 "text": [
-                    "c/ The testing session | [nb/longer] | c/is longer than the warmup | c/so please | [nb/point_to_self_2] | d/let me know | [nb/point_to_chair] | c/if you think | c/ <dog> | c/is tired and needs a break.",
+                    "c/ The testing session | [nb/longer] | c/is longer than the warmup | {//pau=1000//} | c/so please | [nb/point_to_self_2] | d/let me know | [nb/point_to_chair] | c/if you think | c/ <dog> | c/is tired and needs a break.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3869,7 +3869,7 @@
         "introduction_ready": {
             "full": {
                 "text": [
-                    "c/Ready? | {//pau=1000//} | c/Please close your eyes and wait until you head I say | {//pau=500//} | c/okay",
+                    "c/Ready? | {//pau=1000//} | c/Please close your eyes and wait until you hear me say | {//pau=500//} | c/okay",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3883,7 +3883,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/Are you ready?",
+                    "c/Please close your eyes now",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3896,7 +3896,7 @@
                 ]
             }
         },
-        "introduction_bait": {
+        "bait_bait": {
             "full": {
                 "text": [
                     "[b/bait] | d/Please bait.",
@@ -4099,7 +4099,6 @@
             },
             "repeat": {
                 "text": [
-                    "[u/stand]",
                     "c/Yay!",
                     "[u/stand]"
                 ],
@@ -4350,7 +4349,7 @@
             "full": {
                 "text": [
                     "[u/stand]",
-                    "[nb/loop_thinking] | d/hmmmm. | {//pau=3000//}",
+                    "c/hmmmm. | {//pau=1000//} | c/That's okay. ",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -4631,6 +4630,36 @@
                 ]
             }
         },
+		"check_break reply yes back": {
+            "full": {
+                "text": [
+                    "c/ Hi again. | {//pau=1000//} | c/ please close your eyes.",
+					"[u/stand]"
+                ],
+                "robot": [
+                    "^start(Stand/Gestures/Please_1) ^mode(disabled) ^runSound(CanineStudy/testing_full_check_break_reply_yes_sure) ^wait(Stand/Gestures/Please_1) //pau500// ^mode(contextual) ^runSound(testing_full_check_break_reply_yes_lets_take_a_break_now) //pau1000// ^start(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/testing_full_check_break_reply_yes_please_take) ^wait(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/testing_full_check_break_reply_yes_<dog>) ^mode(disabled) ^runSound(CanineStudy/testing_full_check_break_reply_yes_to_the_lobby) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "c/ please close your eyes.",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(contextual) ^runSound(testing_repeat_check_break_reply_yes_you_can_take) ^mode(contextual) ^runSound(testing_repeat_check_break_reply_yes_<dog>) ^mode(contextual) ^runSound(testing_repeat_check_break_reply_yes_to_the_lobby_now_for_a_break) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            }
+        },
         "take_dog_back": {
             "full": {
                 "text": [
@@ -4664,7 +4693,7 @@
         "move on": {
             "full": {
                 "text": [
-                    "c/Great! | {//pau=1000//} | c/Let's move  on to the next trial.",
+                    "c/Great! | {//pau=1000//} | c/Let's move on to the next trial.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -4876,7 +4905,6 @@
         "stand": {
             "full": {
                 "text": [
-                    "[b/stand]",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -4890,7 +4918,6 @@
             },
             "repeat": {
                 "text": [
-                    "[b/stand]",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -4906,8 +4933,7 @@
         "start idle": {
             "full": {
                 "text": [
-                    "[u/start_idle]",
-                    "[u/stand]"
+                    "[u/start_idle]"
                 ],
                 "robot": [
                     "start_idle",
@@ -4920,8 +4946,7 @@
             },
             "repeat": {
                 "text": [
-                    "[u/start_idle]",
-                    "[u/stand]"
+                    "[u/start_idle]"
                 ],
                 "robot": [
                     "start_idle",
@@ -4936,8 +4961,7 @@
         "stop idle": {
             "full": {
                 "text": [
-                    "[u/stop_idle]",
-                    "[u/stand]"
+                    "[u/stop_idle]"
                 ],
                 "robot": [
                     "stop_idle",
@@ -4950,8 +4974,7 @@
             },
             "repeat": {
                 "text": [
-                    "[u/stop_idle]",
-                    "[u/stand]"
+                    "[u/stop_idle]"
                 ],
                 "robot": [
                     "stop_idle",
@@ -4966,8 +4989,7 @@
         "wake up": {
             "full": {
                 "text": [
-                    "[b/wake_up]",
-                    "[u/stand]"
+                    "[b/wake_up]"
                 ],
                 "robot": [
                     "^run(customanimations-ff193e/wakeup) ",
@@ -4980,8 +5002,7 @@
             },
             "repeat": {
                 "text": [
-                    "[b/wake_up]",
-                    "[u/stand]"
+                    "[b/wake_up]"
                 ],
                 "robot": [
                     "^run(customanimations-ff193e/wakeup) ",
@@ -4996,8 +5017,7 @@
         "rest": {
             "full": {
                 "text": [
-                    "[b/rest]",
-                    "[u/stand]"
+                    "[b/rest]"
                 ],
                 "robot": [
                     "^run(customanimations-ff193e/rest) ",
@@ -5010,8 +5030,7 @@
             },
             "repeat": {
                 "text": [
-                    "[b/rest]",
-                    "[u/stand]"
+                    "[b/rest]"
                 ],
                 "robot": [
                     "^run(customanimations-ff193e/rest) ",
