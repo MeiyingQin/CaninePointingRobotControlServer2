@@ -297,30 +297,36 @@ if __name__ == "__main__":
     
     dispensers = [dispenser_1, dispenser_2]
     
-    while True:
-        
-        connection, client_address = socket.accept()
-        custom_print("get connection from " + str(client_address))
-        log(file_name, "get connection from " + str(client_address))
-        
-        blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
-        blinking_thread.start()
-        
-        is_connected = True
-        
-        while is_connected:
-            data = connection.recv(1024)
-            if data:
-                custom_print("received: " + data.strip())
-                log(file_name, "received data: " + data.strip())
-                command = data.strip()
-                command_content, flag = parse_command(command, command_library)
-                run_command(nao, command_content, flag, dispensers)
-                connection.sendall(CONNECTION_RESPOND + LINE_TERMINATOR)
-            else:
-                custom_print("received empty data, close socket")
-                log(file_name, "close socket")
-                is_connected = False
-                nao.stop()
-                blinking_thread.join()
+    try:
+        while True:
+            
+            connection, client_address = socket.accept()
+            custom_print("get connection from " + str(client_address))
+            log(file_name, "get connection from " + str(client_address))
+            
+            blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
+            blinking_thread.start()
+            
+            is_connected = True
+            
+            while is_connected:
+                data = connection.recv(1024)
+                if data:
+                    custom_print("received: " + data.strip())
+                    log(file_name, "received data: " + data.strip())
+                    command = data.strip()
+                    command_content, flag = parse_command(command, command_library)
+                    run_command(nao, command_content, flag, dispensers)
+                    connection.sendall(CONNECTION_RESPOND + LINE_TERMINATOR)
+                else:
+                    custom_print("received empty data, close socket")
+                    log(file_name, "close socket")
+                    is_connected = False
+                    nao.stop()
+                    blinking_thread.join()
+            
+            connection.close()
+    except KeyboardInterrupt:
+        socket.shutdown()
+        socket.close()
         
