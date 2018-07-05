@@ -329,4 +329,4 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         socket.shutdown()
         socket.close()
-        
+        custom_print("main server receive keyboard interruption, close socket and shut server down")

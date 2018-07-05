@@ -32,7 +32,7 @@ if __name__ == "__main__":
     motionProxy = ALProxy("ALMotion", robot_ip, robot_port)   
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_ip = "192.168.1.105"
+    server_ip = "192.168.1.101"
     server_port = 10001
     server_address = (server_ip, server_port)
     socket.bind(server_address)
@@ -41,27 +41,32 @@ if __name__ == "__main__":
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    while True:
-        connection, client_address = socket.accept()
-        custom_print("get connection from " + str(client_address))
-        is_connected = True
-        
-        while is_connected:
-            data = connection.recv(1024)
-            message = CONNECTION_RESPOND + LINE_TERMINATOR
-            if data:
-                custom_print("received: " + data.strip())
-                data = data.strip().split(DELIMINATOR)
-                if data[0] == GET_HEAD_ANGLE:
-                    angle = motionProxy.getAngles("HeadYaw", False)[0]
-                    progress = angleToProgress(angle)
-                    message = str(progress) + LINE_TERMINATOR
-                elif data[0] == SET_HEAD_ANGLE:
-                    angle = progressToAngle(data[1])
-                    motionProxy.setAngles("HeadYaw", [angle], robot_wait)
-                custom_print("sent: " + message)
-                connection.sendall(message)
-            else:
-                custom_print("received empty data, close socket")
-                is_connected = False
-    
+    try:
+        while True:
+            connection, client_address = socket.accept()
+            custom_print("get connection from " + str(client_address))
+            is_connected = True
+            
+            while is_connected:
+                data = connection.recv(1024)
+                message = CONNECTION_RESPOND + LINE_TERMINATOR
+                if data:
+                    custom_print("received: " + data.strip())
+                    data = data.strip().split(DELIMINATOR)
+                    if data[0] == GET_HEAD_ANGLE:
+                        angle = motionProxy.getAngles("HeadYaw", False)[0]
+                        progress = angleToProgress(angle)
+                        message = str(progress) + LINE_TERMINATOR
+                    elif data[0] == SET_HEAD_ANGLE:
+                        angle = progressToAngle(data[1])
+                        motionProxy.setAngles("HeadYaw", [angle], robot_wait)
+                    custom_print("sent: " + message)
+                    connection.sendall(message)
+                else:
+                    custom_print("received empty data, close socket")
+                    is_connected = False
+            connection.close()
+    except KeyboardInterrupt:
+        socket.shutdown()
+        socket.close()
+        custom_print("real time server receive keyboard interruption, close socket and shut server down")    
