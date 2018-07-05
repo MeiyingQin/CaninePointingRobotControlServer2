@@ -16,6 +16,12 @@ from bait import Dispenser
 class naoRobot(object):
     #length:meter
     def __init__(self, ip, port):
+        self.dog = ""
+        self.owner = ""
+        self.pointer = ""
+        self.assistant = ""
+        self.dog_gender = ""
+        
         self.animatedSpeechProxy = ALProxy("ALAnimatedSpeech", ip, port)
         self.postureProxy = ALProxy("ALRobotPosture", ip, port)
         self.behaviourProxy = ALProxy("ALBehaviorManager", ip, 9559)
@@ -64,7 +70,21 @@ class naoRobot(object):
         self.is_running_blinking = False        
         
         self.initialize()
+    
+    def set_dog(self, dog):
+        self.dog = dog
+    
+    def set_owner(self, owner):
+        self.owner = owner
+    
+    def set_pointer(self, pointer):
+        self.pointer = pointer
         
+    def set_assistant(self, assistant):
+        self.assistant = assistant
+    
+    def set_dog_gender(self, dog_gender):
+        self.dog_gender = dog_gender
     
     def _disable_notifications(self):
         self.notificationProxy.setEnableNotification(False)
@@ -222,8 +242,20 @@ def dispenser_rotate(dispenser_lists):
     for thread in threads:
         thread.join()
 
+def is_initial_information(command):
+    command_list = command.strip().split(DELIMINATOR)
+    return command_list[0] == "initial"
+
+def set_initial_information(commmand, nao):
+    command_list = command.strip().split(DELIMINATOR)
+    nao.set_dog(command_list[1])
+    nao.set_owner(command_list[2])
+    nao.set_pointer(command_list[3])
+    nao.set_assistant(command_list[4])
+    nao.set_dog_gender(command_list[5])
+
 def parse_command(command, library):
-    command_list = command.split(DELIMINATOR)
+    command_list = command.strip().split(DELIMINATOR)
     if len(command_list) != 3:
         return
     
@@ -315,8 +347,12 @@ if __name__ == "__main__":
                     custom_print("received: " + data.strip())
                     log(file_name, "received data: " + data.strip())
                     command = data.strip()
-                    command_content, flag = parse_command(command, command_library)
-                    run_command(nao, command_content, flag, dispensers)
+                    if is_initial_information(command):
+                        set_initial_information(command, nao)
+                    else:
+                        command_content, flag = parse_command(command, command_library)
+                        if command:
+                            run_command(nao, command_content, flag, dispensers)
                     connection.sendall(CONNECTION_RESPOND + LINE_TERMINATOR)
                 else:
                     custom_print("received empty data, close socket")
