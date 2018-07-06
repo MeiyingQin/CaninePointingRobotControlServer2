@@ -16,11 +16,6 @@ from bait import Dispenser
 class naoRobot(object):
     #length:meter
     def __init__(self, ip, port):
-        self.dog = ""
-        self.owner = ""
-        self.pointer = ""
-        self.assistant = ""
-        self.dog_gender = ""
         
         self.animatedSpeechProxy = ALProxy("ALAnimatedSpeech", ip, port)
         self.postureProxy = ALProxy("ALRobotPosture", ip, port)
@@ -70,21 +65,6 @@ class naoRobot(object):
         self.is_running_blinking = False        
         
         self.initialize()
-    
-    def set_dog(self, dog):
-        self.dog = dog
-    
-    def set_owner(self, owner):
-        self.owner = owner
-    
-    def set_pointer(self, pointer):
-        self.pointer = pointer
-        
-    def set_assistant(self, assistant):
-        self.assistant = assistant
-    
-    def set_dog_gender(self, dog_gender):
-        self.dog_gender = dog_gender
     
     def _disable_notifications(self):
         self.notificationProxy.setEnableNotification(False)
@@ -244,15 +224,11 @@ def dispenser_rotate(dispenser_lists):
 
 def is_initial_information(command):
     command_list = command.strip().split(DELIMINATOR)
-    return command_list[0] == "initial"
+    return command_list[0] == INITIAL_INFORMATION
 
-def set_initial_information(commmand, nao):
+def set_initial_information(commmand):
     command_list = command.strip().split(DELIMINATOR)
-    nao.set_dog(command_list[1])
-    nao.set_owner(command_list[2])
-    nao.set_pointer(command_list[3])
-    nao.set_assistant(command_list[4])
-    nao.set_dog_gender(command_list[5])
+    return command_list[1:]
 
 def parse_command(command, library):
     command_list = command.strip().split(DELIMINATOR)
@@ -263,18 +239,22 @@ def parse_command(command, library):
     command_name = command_list[1]
     condition = command_list[2]
     
-    command_content = library[section][command_name][condition]["robot"]
-    flag = library[section][command_name][condition]["flag"]
+    command_content = library[section][command_name][condition][DICT_COMMAND_KEY]
+    flag = library[section][command_name][condition][DICT_FLAG_KEY]
     
     return command_content, flag
 
-def run_command(nao, command, flags, dispensers):
+def run_command(nao, command, flags, dispensers, dog, dog_gender, owner, pointer, assistant):
     flag_list = flag.strip().split(DELIMINATOR)
-    
     for flag in flag_list:
-        if flag == "speech":
+        if flag == DICT_FLAG_SPEECH:
+            command = command.replace(DICT_DOG_TAG, dog)
+            command = command.replace(DICT_DOG_GENDER_TAG, dog_gender)
+            command = command.replace(DICT_OWNER_TAG, owner)
+            command = command.replace(DICT_POINTER_TAG, pointer)
+            command = command.replace(DICT_ASSISTANT_TAG, assistant)
             nao.speech(command)
-        elif flag == "action":
+        elif flag == DICT_FLAG_ACTION:
             if command == "start_idle":
                 idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
                 idle_thread.start()
@@ -299,6 +279,16 @@ if __name__ == "__main__":
     CONNECTION_RESPOND = "success"
     LINE_TERMINATOR = "\n"
     DELIMINATOR = "|"
+    INITIAL_INFORMATION = "initial information"
+    DICT_COMMAND_KEY = "robot"
+    DICT_FLAG_KEY = "flag"
+    DICT_FLAG_SPEECH = "speech"
+    DICT_FLAG_ACTION = "action"
+    DICT_OWNER_TAG = "<owner>"
+    DICT_DOG_TAG = "<dog>"
+    DICT_DOG_GENDER_TAG = "<dog_gender>"
+    DICT_POINTER_TAG = "<pointer>"
+    DICT_ASSISTANT_TAG = "<assistant>"    
     
     json_file='data.json'
     json_data = open(json_file)
@@ -339,6 +329,12 @@ if __name__ == "__main__":
             blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
             blinking_thread.start()
             
+            dog = ""
+            dog_gender = ""
+            owner = ""
+            pointer = ""
+            assistant = ""
+            
             is_connected = True
             
             while is_connected:
@@ -348,9 +344,9 @@ if __name__ == "__main__":
                     log(file_name, "received data: " + data.strip())
                     command = data.strip()
                     if is_initial_information(command):
-                        set_initial_information(command, nao)
+                        [dog, dog_gender, owner, pointer, assistant] = set_initial_information(command)
                     else:
-                        command_content, flag = parse_command(command, command_library)
+                        command_content, flag = parse_command(command, command_library, dog, dog_gender, owner, pointer, assistant)
                         if command:
                             run_command(nao, command_content, flag, dispensers)
                     connection.sendall(CONNECTION_RESPOND + LINE_TERMINATOR)
