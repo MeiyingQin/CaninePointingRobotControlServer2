@@ -35,7 +35,7 @@ for key in actions.keys():
 
 sound_to_record = []
 sound_dict = {}
-target_directory = "E:/Meiying/working/Research/5_dog_pointing_2/code/CaninePointingRobotControlServer2/util/unique/all"
+target_directory = "./unique/new_all"
 for root, dirs, files in os.walk(target_directory):
     for name in files:
         name = name[:-4]
@@ -105,7 +105,10 @@ for section in data.keys():
                         detailed_command = command.split("/")
                         #print detailed_command
                         command_type = detailed_command[0]
-                        command_content = section.replace(" ", "_") + "_" + command_condition + "_" + keyword.replace(" ", "_") + "_" + detailed_command[1].strip().replace(" ", "_")
+                        if "<" in detailed_command[1]:
+                            command_content = detailed_command[1].strip().replace(" ", "_")
+                        else:
+                            command_content = section.replace(" ", "_") + "_" + command_condition + "_" + keyword.replace(" ", "_") + "_" + detailed_command[1].strip().replace(" ", "_")
                         command_content = command_content.lower()
                         # check if sound file exist
                         if command_content not in sound_dict.keys():
@@ -123,7 +126,7 @@ for section in data.keys():
                                 to_be_added = ""
                         elif command_type == "c":
                             robot_command += "^mode(contextual)" + " "
-                            robot_command += "^runSound("
+                            robot_command += "^runSound(CanineStudy/"
                             robot_command += command_content
                             robot_command += ") "
                             if not is_loop:
@@ -156,7 +159,8 @@ for key in keys:
 print "command needs to be recorded are:"
 sound_to_record.sort()
 for command in sound_to_record:
-    if "<" not in command and not command.startswith("warmup") and not command.startswith("testing"):
+    if "<" not in command:
+    #if "<" not in command and not command.startswith("warmup") and not command.startswith("testing"):
         print command
 
 print
