@@ -4843,60 +4843,52 @@
         "say owner name": {
             "full": {
                 "text": [
-                    "d/<owner>",
-                    "[u/stand]"
+                    "d/<owner>"
                 ],
                 "robot": [
                     "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
                     "stand"
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             },
             "repeat": {
                 "text": [
-                    "d/<owner>",
-                    "[u/stand]"
+                    "d/<owner>"
                 ],
                 "robot": [
                     "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
                     "stand"
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             }
         },
         "say dog name": {
             "full": {
                 "text": [
-                    "d/<dog>",
-                    "[u/stand]"
+                    "d/<dog>"
                 ],
                 "robot": [
                     "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             },
             "repeat": {
                 "text": [
-                    "d/<dog>",
-                    "[u/stand]"
+                    "d/<dog>"
                 ],
                 "robot": [
                     "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             }
         },

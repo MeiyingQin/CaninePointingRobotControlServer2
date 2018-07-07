@@ -2,11 +2,12 @@ import socket
 #import os
 #import signal
 #import subprocess
-#import sys
+import sys
 import datetime
 import time
 import json
 import random
+import threading
 
 from naoqi import ALProxy
 import almath
@@ -213,7 +214,7 @@ def custom_print(message):
 def dispenser_rotate(dispenser_lists):
     threads = []
     for dispenser in dispenser_lists:
-        dispenser_thread = theading.Thread(target=Dispenser.feed, args(dispenser, ))
+        dispenser_thread = theading.Thread(target=Dispenser.feed, args=(dispenser, ))
         threads.append(dispenser_thread)
     
     for thread in threads:
@@ -228,9 +229,9 @@ def is_initial_information(command):
 
 def set_initial_information(commmand):
     command_list = command.strip().split(DELIMINATOR)
-    return command_list[1:]
+    return [x.lower() for x in command_list[1:]]
 
-def parse_command(command, library):
+def parse_command(command, library, dog, dog_gender, owner, pointer, assistant):
     command_list = command.strip().split(DELIMINATOR)
     if len(command_list) != 3:
         return
@@ -244,17 +245,20 @@ def parse_command(command, library):
     
     return command_content, flag
 
-def run_command(nao, command, flags, dispensers, dog, dog_gender, owner, pointer, assistant):
-    flag_list = flag.strip().split(DELIMINATOR)
-    for flag in flag_list:
-        if flag == DICT_FLAG_SPEECH:
+def run_command(nao, commands, flags, dispensers):
+    for flag_index in range(len(flags)):
+        command = commands[flag_index]
+        if flags[flag_index] == DICT_FLAG_SPEECH:
+            command = command.replace(DICT_OWNER_TAG, owner)
             command = command.replace(DICT_DOG_TAG, dog)
             command = command.replace(DICT_DOG_GENDER_TAG, dog_gender)
-            command = command.replace(DICT_OWNER_TAG, owner)
             command = command.replace(DICT_POINTER_TAG, pointer)
             command = command.replace(DICT_ASSISTANT_TAG, assistant)
-            nao.speech(command)
-        elif flag == DICT_FLAG_ACTION:
+            print "run speech command: ", command
+            #nao.speech(command)
+        elif flags[flag_index] == DICT_FLAG_ACTION:
+            print "run action command: ", command
+            """
             if command == "start_idle":
                 idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
                 idle_thread.start()
@@ -267,8 +271,11 @@ def run_command(nao, command, flags, dispensers, dog, dog_gender, owner, pointer
                 dispenser_rotate(dispensers)
             else:
                 custom_print("command is not defined")
+            """
         else:
+            custom_print(flag)
             custom_print("this is not a valid flag")
+            
 
 def log(log_file_name, message):
     log_file = open("logs/" + log_file_name, "a+")
@@ -299,17 +306,18 @@ if __name__ == "__main__":
     robot_port = 9559
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_ip = "192.168.1.101"
-    server_port = 10000
+    #server_ip = "192.168.1.101"
+    server_ip = "192.168.7.142"
+    server_port = 10009
     server_address = (server_ip, server_port)
     socket.bind(server_address)
     socket.listen(1)
     
     file_name = "log_robot_actions.txt"
-    log(file_name, "=======================================================================\n")  
-    log(file_name, "robot speed = " + str(robot_speed) + "robot wait = " + str(robot_wait)) 
+    log(file_name, "=======================================================================\n")
     
-    nao = naoRobot(robot_ip, robot_port)
+    #nao = naoRobot(robot_ip, robot_port)
+    nao = ""
     
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
@@ -326,8 +334,8 @@ if __name__ == "__main__":
             custom_print("get connection from " + str(client_address))
             log(file_name, "get connection from " + str(client_address))
             
-            blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
-            blinking_thread.start()
+            #blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
+            #blinking_thread.start()
             
             dog = ""
             dog_gender = ""
@@ -344,7 +352,7 @@ if __name__ == "__main__":
                     log(file_name, "received data: " + data.strip())
                     command = data.strip()
                     if is_initial_information(command):
-                        [dog, dog_gender, owner, pointer, assistant] = set_initial_information(command)
+                        [owner, dog, dog_gender, pointer, assistant] = set_initial_information(command)
                     else:
                         command_content, flag = parse_command(command, command_library, dog, dog_gender, owner, pointer, assistant)
                         if command:
@@ -354,11 +362,10 @@ if __name__ == "__main__":
                     custom_print("received empty data, close socket")
                     log(file_name, "close socket")
                     is_connected = False
-                    nao.stop()
-                    blinking_thread.join()
+                    #nao.stop()
+                    #blinking_thread.join()
             
             connection.close()
     except KeyboardInterrupt:
-        socket.shutdown()
         socket.close()
         custom_print("main server receive keyboard interruption, close socket and shut server down")
