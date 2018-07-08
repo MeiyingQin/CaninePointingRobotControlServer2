@@ -363,60 +363,48 @@
         "dog name": {
             "full": {
                 "text": [
-                    "d/<dog> ",
-                    "[u/stand]"
+                    "d/<dog> "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             },
             "repeat": {
                 "text": [
-                    "d/<dog>. ",
-                    "[u/stand]"
+                    "d/<dog>. "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             }
         },
         "owner name": {
             "full": {
                 "text": [
-                    "d/<owner> ",
-                    "[u/stand]"
+                    "d/<owner> "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<owner>) "
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             },
             "repeat": {
                 "text": [
-                    "d/<owner>. ",
-                    "[u/stand]"
+                    "d/<owner>. "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<owner>) "
                 ],
                 "flag": [
-                    "speech",
-                    "action"
+                    "speech"
                 ]
             }
         }
@@ -4508,6 +4496,36 @@
                 ]
             }
         },
+        "take_dog_back": {
+            "full": {
+                "text": [
+                    "[nb/point_to_chair] | d/Please take | d/<dog> | d/back to you.",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^start(Stand/Gestures/You_1) ^mode(disabled) ^runSound(CanineStudy/testing_full_take_dog_back_please_take) ^wait(Stand/Gestures/You_1) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(disabled) ^runSound(CanineStudy/testing_full_take_dog_back_back_to_you) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "d/Please take | d/<dog> | d/back.",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/testing_repeat_take_dog_back_please_take) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_take_dog_back_back) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            }
+        },
         "check_half way": {
             "full": {
                 "text": [
@@ -4538,14 +4556,14 @@
                 ]
             }
         },
-        "check_break": {
+        "check_half way break": {
             "full": {
                 "text": [
                     "[nb/question_short] | c/Do you think | c/<dog> | c/needs a break?",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_2) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_do_you_think) ^wait(Stand/Gestures/Explain_2) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_needs_a_break) ",
+                    "^start(Stand/Gestures/Explain_2) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_half_way_break_do_you_think) ^wait(Stand/Gestures/Explain_2) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_half_way_break_needs_a_break) ",
                     "stand"
                 ],
                 "flag": [
@@ -4559,7 +4577,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_check_break_does) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_check_break_need_a_break) ",
+                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_check_half_way_break_does) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_check_half_way_break_need_a_break) ",
                     "stand"
                 ],
                 "flag": [
@@ -4631,11 +4649,11 @@
         "check_break reply yes back": {
             "full": {
                 "text": [
-                    "c/ Hi again. | {//pau=1000//} | c/ please close your eyes.",
+                    "c/ Hi again. | {//pau=1000//} | c/ let's continue.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_reply_yes_back_hi_again) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_reply_yes_back_please_close_your_eyes) ",
+                    "^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_reply_yes_back_hi_again) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_full_check_break_reply_yes_back_lets_continue) ",
                     "stand"
                 ],
                 "flag": [
@@ -4658,14 +4676,14 @@
                 ]
             }
         },
-        "take_dog_back": {
+        "check_half way continue": {
             "full": {
                 "text": [
-                    "[nb/point_to_chair] | d/Please take | d/<dog> | d/back to you.",
+                    "[nb/excited] | d/great!. | {//pau=1000//} | c/let's continue.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/You_1) ^mode(disabled) ^runSound(CanineStudy/testing_full_take_dog_back_please_take) ^wait(Stand/Gestures/You_1) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(disabled) ^runSound(CanineStudy/testing_full_take_dog_back_back_to_you) ",
+                    "^start(customanimations-ff193e/excited) ^mode(disabled) ^runSound(CanineStudy/testing_full_check_half_way_continue_great) ^wait(customanimations-ff193e/excited) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_full_check_half_way_continue_lets_continue) ",
                     "stand"
                 ],
                 "flag": [
@@ -4675,41 +4693,11 @@
             },
             "repeat": {
                 "text": [
-                    "d/Please take | d/<dog> | d/back.",
+                    "c/let's continue.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/testing_repeat_take_dog_back_please_take) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_take_dog_back_back) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "move on": {
-            "full": {
-                "text": [
-                    "c/Great! | {//pau=1000//} | c/Let's move on to the next trial.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_great) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_lets_move_on_to_the_next_trial) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/Let's start the next trial!",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_move_on_lets_start_the_next_trial) ",
+                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_check_half_way_continue_lets_continue) ",
                     "stand"
                 ],
                 "flag": [
@@ -4770,6 +4758,36 @@
                 ],
                 "robot": [
                     "^mode(contextual) ^runSound(CanineStudy/testing_repeat_calibration_lets_do_the_calibration_now) ^mode(contextual) ^runSound(CanineStudy/<assistant>) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            }
+        },
+        "move on": {
+            "full": {
+                "text": [
+                    "c/Great! | {//pau=1000//} | c/Let's move on to the next trial.| {//pau=1000//} | c/<owner> | {//pau=500//} | c/please close your eyes",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_great) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_lets_move_on_to_the_next_trial) //pau1000// ^mode(contextual) ^runSound(CanineStudy/<owner>) //pau500// ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_please_close_your_eyes) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "c/Let's start the next trial! | {//pau=1000//} | c/please close your eyes",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_move_on_lets_start_the_next_trial) //pau1000// ^mode(contextual) ^runSound(CanineStudy/testing_repeat_move_on_please_close_your_eyes) ",
                     "stand"
                 ],
                 "flag": [
@@ -4846,8 +4864,7 @@
                     "d/<owner>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<owner>) "
                 ],
                 "flag": [
                     "speech"
@@ -4858,8 +4875,7 @@
                     "d/<owner>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<owner>) "
                 ],
                 "flag": [
                     "speech"
@@ -4872,8 +4888,7 @@
                     "d/<dog>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
                 ],
                 "flag": [
                     "speech"
@@ -4884,8 +4899,7 @@
                     "d/<dog>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) ",
-                    "stand"
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
                 ],
                 "flag": [
                     "speech"
@@ -5009,6 +5023,120 @@
                 ],
                 "flag": [
                     "speech"
+                ]
+            }
+        },
+        "bait": {
+            "full": {
+                "text": [
+                    "[b/bait] | d/please bait",
+                    "[u/dispenser_rotate]",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_full_bait_please_bait) ",
+                    "dispenser_rotate",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action",
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[b/bait] | d/please bait",
+                    "[u/dispenser_rotate]",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_bait_please_bait) ",
+                    "dispenser_rotate",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action",
+                    "action"
+                ]
+            }
+        },
+        "point left": {
+            "full": {
+                "text": [
+                    "d/<dog> | {//pau=500//} | [nb/point_left] | d/look! | {//pau=4000//} | d/okay."
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) //pau500// ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_look) ^wait(customanimations-ff193e/point_left) //pau4000// ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_okay) "
+                ],
+                "flag": [
+                    "speech"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "d/<dog> | {//pau=500//} | [nb/point_left] | d/look! | {//pau=4000//} | d/okay."
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) //pau500// ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_look) ^wait(customanimations-ff193e/point_left) //pau4000// ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_okay) "
+                ],
+                "flag": [
+                    "speech"
+                ]
+            }
+        },
+        "point right": {
+            "full": {
+                "text": [
+                    "d/<dog> | {//pau=500//} | [nb/point_right] | d/look! | {//pau=4000//} | d/okay."
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) //pau500// ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_look) ^wait(customanimations-ff193e/point_right) //pau4000// ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_okay) "
+                ],
+                "flag": [
+                    "speech"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "d/<dog> | {//pau=500//} | [nb/point_right] | d/look! | {//pau=4000//} | d/okay."
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) //pau500// ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_look) ^wait(customanimations-ff193e/point_right) //pau4000// ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_okay) "
+                ],
+                "flag": [
+                    "speech"
+                ]
+            }
+        },
+        "release dog okay": {
+            "full": {
+                "text": [
+                    "d/Okay.",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/test_system_full_release_dog_okay_okay) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "d/Okay.",
+                    "[u/stand]"
+                ],
+                "robot": [
+                    "^mode(disabled) ^runSound(CanineStudy/test_system_repeat_release_dog_okay_okay) ",
+                    "stand"
+                ],
+                "flag": [
+                    "speech",
+                    "action"
                 ]
             }
         }
