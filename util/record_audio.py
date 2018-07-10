@@ -6,9 +6,9 @@ import os.path
 import string
 
 def save_segment(file_name, new_name):
-    raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
+    raw_audio_file = AudioSegment.from_ogg("unique/"+ file_name + ".wav")
     print("slicing video...")
-    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-35, keep_silence=500)
+    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-35, keep_silence=50)
     print("slicing audio to " + str(len(chunks)))
     if len(chunks) != 2:
         print("video not sliced correctly")
@@ -46,7 +46,8 @@ section_choices = {1: "unexpected",
                    2: "dog_scared",
                    3: "introduction",
                    4: "warmup",
-                   5: "testing" }
+                   5: "testing",
+                   6: "name"}
 type_choices = {1: "full",
                 2: "repeat",
                 3: "choose section",
@@ -59,7 +60,7 @@ while not quit:
     print("---------------------------------------------")
     if not section:
         print(section_choices)
-        user_input = input("Press choose the section from above 1/2/3/4/5: ")
+        user_input = input("Press choose the section from above 1/2/3/4/5/6: ")
         section = section_choices[int(user_input)]
     
     print(type_choices)
@@ -94,7 +95,11 @@ while not quit:
             text = recognizer.recognize_google_cloud(audio, credentials_json=key_json).lower().strip()
             text = "".join([i for i in text if i not in list(string.punctuation)])
             print("recognize text: " + text)
-            file_name = section + "_" + record_type + "_" + text.replace(" ", "_")
+            file_name = ""
+            if section == "name":
+                file_name = text.replace(" ", "_")
+            else:
+                file_name = section + "_" + record_type + "_" + text.replace(" ", "_")
             new_file_name = "clipped/" + file_name
             output_file_name = "raw/RAW_" + file_name
             # write into the unique folder
