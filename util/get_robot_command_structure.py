@@ -22,6 +22,7 @@ punctuation = punctuation.replace("]", "")
 punctuation = punctuation.replace("/", "")
 punctuation = punctuation.replace("|", "")
 punctuation = punctuation.replace("_", "")
+punctuation = punctuation.replace("=", "")
 
 actions_json_file = '../actions.json'
 actions_json_data = open(actions_json_file)
