@@ -79,7 +79,7 @@ class naoRobot(object):
     def _run_behaviour(self, behaviour):
         self.behaviourProxy.startBehavior(behaviour)
         
-        while self.behaviourProxy.isBehaviorRunning(package_name + behaviour):
+        while self.behaviourProxy.isBehaviorRunning(behaviour):
             time.sleep(0.5)
     
     def _joint_move_blocking(self, joint_lsts, angle_lsts, speed):
@@ -132,19 +132,22 @@ class naoRobot(object):
         #self._run_movement_unblocking([arm_movements], self.speed)
     
     def start_idle(self):
+        custom_print("start idle")
         self.idling = True
         while self.idling:
             self.is_running_idling = True
             
             mode = random.random()
             if mode < 0.015: # stretch leg
-                self._run_behaviour(self.stretch[1])
-                self.stand()
+                custom_print("stretch leg")
+                self._run_behaviour(self.stretch[0])
+                self.stand(0.2)
             elif mode < 0.030: # scratch back, eye or leg
-                if len(self.scratch) > 0:
-                    self._run_behavoiur(self.scratch.pop())
-                    self.stand()
-            else:              
+                custom_print("scratch")
+                self._run_behaviour(random.choice(self.scratch))
+                self.stand(0.2)
+            else: 
+                custom_print("random move")
                 joint_lists = []
                 angle_lists = []
                 
@@ -155,11 +158,12 @@ class naoRobot(object):
                         joint_lists.append(joint)
                         angle_lists.append(angle)
                 
-                self._joint_move_blocking(joint_lists, angle_lists, 0.2)
+                angle_lists = self._deg_to_rad(angle_lists)
+                self._joint_move_blocking(joint_lists, angle_lists, 0.1)
 
             self.is_running_idling = False
             
-            wait = random.randint(1, 10)
+            wait = random.randint(1, 5)
             interval = 0.1
             for loop in range(int(wait / interval)):
                 if not self.idling:
@@ -167,12 +171,14 @@ class naoRobot(object):
                 time.sleep(interval)
     
     def stop_idle(self):
+        custom_print("stop idling")
         self.idling = False
         
         while self.is_running_idling:
             time.sleep(0.1)
         
         self.stand(0.2)
+        custom_print("idling stopped!")
     
     def start_blinking(self):
         self.blinking = True
@@ -200,10 +206,13 @@ class naoRobot(object):
                 time.sleep(interval)
     
     def stop_blinking(self):
+        custom_print("stop blinking!!")
         self.blinking = False
         
         while self.is_running_blinking:
             time.sleep(0.1)
+        
+        custom_print("blinking stopped!!")
     
     def stop(self):
         self.stop_idle()
@@ -214,8 +223,6 @@ def custom_print(message):
     sys.stdout.flush()
 
 def dispenser_rotate(dispenser_lists):
-    pass
-    """
     threads = []
     for dispenser in dispenser_lists:
         dispenser_thread = threading.Thread(target=Dispenser.feed, args=(dispenser, ))
@@ -226,7 +233,6 @@ def dispenser_rotate(dispenser_lists):
     
     for thread in threads:
         thread.join()
-    """
 
 def is_initial_information(command):
     command_list = command.strip().split(DELIMINATOR)
@@ -268,12 +274,12 @@ def run_command(nao, commands, flags, dispensers):
             if command == "start_idle":
                 idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
                 idle_thread.start()
-                idle_thread.join()
             elif command == "stop_idle":
                 nao.stop_idle()
             elif command == "stand":
                 nao.stand(0.3)
             elif command == "dispenser_rotate":
+                time.sleep(2)
                 dispenser_rotate(dispensers)
             else:
                 custom_print("command is not defined")
@@ -327,8 +333,8 @@ if __name__ == "__main__":
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
-    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
+    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "keepondancing")
+    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "keepondancing")
     
     dispensers = [dispenser_1, dispenser_2]
     
