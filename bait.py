@@ -43,4 +43,4 @@ class Dispenser():
             except selenium.common.exceptions.ElementNotVisibleException:
                 print "wait for finishing"
         
-        time.sleep(10)
+        time.sleep(5)
