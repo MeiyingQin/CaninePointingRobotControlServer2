@@ -63,11 +63,11 @@
         "did not learn": {
             "full": {
                 "text": [
-                    "[nb/no_1] | c/No | {\\pau=1000\\} | [nb/point_to_self_2] | c/I did not learn that yet.",
+                    "[nb/no_2] | c/No | {\\pau=1000\\} | [nb/point_to_self_2] | c/I did not learn that yet.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(customanimations-ff193e/no_2) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_did_not_learn_no) ^wait(customanimations-ff193e/no_2) \\pau=1000\\ ^start(Stand/Gestures/Me_7) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_did_not_learn_i_did_not_learn_that_yet) ^wait(Stand/Gestures/Me_7) ",
+                    "^start(customanimations-ff193e/no_6) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_did_not_learn_no) ^wait(customanimations-ff193e/no_6) \\pau=1000\\ ^start(Stand/Gestures/Me_7) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_did_not_learn_i_did_not_learn_that_yet) ^wait(Stand/Gestures/Me_7) ",
                     "stand"
                 ],
                 "flag": [
@@ -4494,12 +4494,12 @@
             "full": {
                 "text": [
                     "[u/stand]",
-                    "[nb/no_2] | d/Oh, no!",
+                    "[nb/no_1] | d/Oh, no!",
                     "[u/stand]"
                 ],
                 "robot": [
                     "stand",
-                    "^start(customanimations-ff193e/no_6) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_praise_not_get_treat_eight_oh_no) ^wait(customanimations-ff193e/no_6) ",
+                    "^start(customanimations-ff193e/no_2) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_praise_not_get_treat_eight_oh_no) ^wait(customanimations-ff193e/no_2) ",
                     "stand"
                 ],
                 "flag": [
