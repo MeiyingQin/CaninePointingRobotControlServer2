@@ -4984,6 +4984,54 @@
                 ]
             }
         },
+		"start blinking": {
+            "full": {
+                "text": [
+                    "[u/start_blinking]"
+                ],
+                "robot": [
+                    "start_blinking"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/start_blinking]"
+                ],
+                "robot": [
+                    "start_blinking"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
+        "stop blinking": {
+            "full": {
+                "text": [
+                    "[u/stop_blinking]"
+                ],
+                "robot": [
+                    "stop_blinking"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/stop_blinking]"
+                ],
+                "robot": [
+                    "stop_blinking"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "wake up": {
             "full": {
                 "text": [

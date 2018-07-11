@@ -131,8 +131,11 @@ class naoRobot(object):
     
         #self._run_movement_unblocking([arm_movements], self.speed)
     
+    def is_idling(self):
+        return self.idling
+    
     def start_idle(self):
-        custom_print("start idle")
+        custom_print("start idling")
         self.idling = True
         while self.idling:
             self.is_running_idling = True
@@ -180,7 +183,11 @@ class naoRobot(object):
         self.stand(0.2)
         custom_print("idling stopped!")
     
+    def is_blinking(self):
+        return self.blinking
+    
     def start_blinking(self):
+        custom_print("start blinking")
         self.blinking = True
         while self.blinking:
             self.is_running_blinking = True
@@ -272,14 +279,25 @@ def run_command(nao, commands, flags, dispensers):
         elif flags[flag_index] == DICT_FLAG_ACTION:
             print "run action command: ", command
             if command == "start_idle":
-                idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
-                idle_thread.start()
+                if not nao.is_idling():
+                    idle_thread = threading.Thread(target=naoRobot.start_idle, args=(nao, ))
+                    idle_thread.start()
+                else:
+                    custom_print("already idling")
             elif command == "stop_idle":
                 nao.stop_idle()
+            elif command == "start_blinking":
+                if not nao.is_blinking():
+                    blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao,))
+                    blinking_thread.start()
+                else:
+                    custom_print("already blinking")
+            elif command == "stop_blinking":
+                nao.stop_blinking()
             elif command == "stand":
                 nao.stand(0.3)
             elif command == "dispenser_rotate":
-                time.sleep(2)
+                time.sleep(0.5)
                 dispenser_rotate(dispensers)
             else:
                 custom_print("command is not defined")
