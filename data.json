@@ -3225,14 +3225,23 @@
         "introduction_owner head down": {
             "full": {
                 "text": [
-                    "[nb/instruction_owner_head_down] | d/Please keep your head down and eyes closed during each trial. | [nb/look_ahead] | d/ Please only look ahead | [nb/point_to_self_1] | d/when you hear me say 'okay'",
+                    "[u/stop_blinking]",
+                    "[nb/instruction_owner_head_down] | d/Please keep your head down and eyes closed during each trial.",
+                    "[u/start_blinking]",
+                    "[nb/look_ahead] | d/ Please only look ahead | [nb/point_to_self_1] | d/when you hear me say 'okay'",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(customanimations-ff193e/instruction_owner_head_down) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^wait(customanimations-ff193e/instruction_owner_head_down) ^start(customanimations-ff193e/look_ahead) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_please_only_look_ahead) ^wait(customanimations-ff193e/look_ahead) ^start(Stand/Gestures/Me_2) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_when_you_hear_me_say_okay) ^wait(Stand/Gestures/Me_2) ",
+                    "stop_blinking",
+                    "^start(customanimations-ff193e/instruction_owner_head_down) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^wait(customanimations-ff193e/instruction_owner_head_down) ",
+                    "start_blinking",
+                    "^start(customanimations-ff193e/look_ahead) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_please_only_look_ahead) ^wait(customanimations-ff193e/look_ahead) ^start(Stand/Gestures/Me_2) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_owner_head_down_when_you_hear_me_say_okay) ^wait(Stand/Gestures/Me_2) ",
                     "stand"
                 ],
                 "flag": [
+                    "action",
+                    "speech",
+                    "action",
                     "speech",
                     "action"
                 ]
@@ -3713,14 +3722,26 @@
         "introduction_eyes close": {
             "full": {
                 "text": [
-                    "c/ Just like in the previous sessions | [nb/instruction_owner_head_down]| d/Please keep your head down and eyes closed during each trial. | {\\pau=1000\\} | [nb/look_ahead]| d/Please only look ahead when you | [nb/point_to_self_1] | d/hear me say 'okay.'",
+                    "c/ Just like in the previous sessions, ",
+                    "[u/stop_blinking]",
+                    "[nb/instruction_owner_head_down]| d/Please keep your head down and eyes closed during each trial.",
+                    "[u/start_blinking]",
+                    "[nb/look_ahead]| d/Please only look ahead when you | [nb/point_to_self_1] | d/hear me say 'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_introduction_eyes_close_just_like_in_the_previous_sessions) ^start(customanimations-ff193e/instruction_owner_head_down) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^wait(customanimations-ff193e/instruction_owner_head_down) \\pau=1000\\ ^start(customanimations-ff193e/look_ahead) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_only_look_ahead_when_you) ^wait(customanimations-ff193e/look_ahead) ^start(Stand/Gestures/Me_2) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_hear_me_say_okay) ^wait(Stand/Gestures/Me_2) ",
+                    "^mode(contextual) ^runSound(CanineStudy/testing_full_introduction_eyes_close_just_like_in_the_previous_sessions) ",
+                    "stop_blinking",
+                    "^start(customanimations-ff193e/instruction_owner_head_down) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^wait(customanimations-ff193e/instruction_owner_head_down) ",
+                    "start_blinking",
+                    "^start(customanimations-ff193e/look_ahead) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_only_look_ahead_when_you) ^wait(customanimations-ff193e/look_ahead) ^start(Stand/Gestures/Me_2) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_hear_me_say_okay) ^wait(Stand/Gestures/Me_2) ",
                     "stand"
                 ],
                 "flag": [
+                    "speech",
+                    "action",
+                    "speech",
+                    "action",
                     "speech",
                     "action"
                 ]
@@ -4984,7 +5005,7 @@
                 ]
             }
         },
-		"start blinking": {
+        "start blinking": {
             "full": {
                 "text": [
                     "[u/start_blinking]"
