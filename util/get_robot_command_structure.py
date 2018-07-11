@@ -36,15 +36,20 @@ for key in actions.keys():
 
 sound_to_record = []
 sound_dict = {}
-target_directory = "./unique/new_all"
-for root, dirs, files in os.walk(target_directory):
-    for name in files:
-        name = name[:-4]
-        if name in sound_dict.keys():
-            print name, "already in recorded"
-        else:
-            #print name
-            sound_dict[name] = 0
+
+target_directories = [
+    "./unique/clipped_July11_all"
+]
+
+for target_directory in target_directories:
+    for root, dirs, files in os.walk(target_directory):
+        for name in files:
+            name = name[:-4]
+            if name in sound_dict.keys():
+                print name, "already in recorded"
+            else:
+                #print name
+                sound_dict[name] = 0
 
 for section in data.keys():
     for keyword in data[section].keys():
