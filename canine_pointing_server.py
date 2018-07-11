@@ -351,8 +351,8 @@ if __name__ == "__main__":
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "keepondancing")
-    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "keepondancing")
+    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
+    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
     
     dispensers = [dispenser_1, dispenser_2]
     
