@@ -234,7 +234,7 @@ def is_initial_information(command):
 
 def set_initial_information(commmand):
     command_list = command.strip().split(DELIMINATOR)
-    return [x.lower() for x in command_list[1:]]
+    return [NAME_TAG + x.lower() for x in command_list[1:]]
 
 def parse_command(command, library, dog, dog_gender, owner, pointer, assistant):
     command_list = command.strip().split(DELIMINATOR)
@@ -300,7 +300,8 @@ if __name__ == "__main__":
     DICT_DOG_TAG = "<dog>"
     DICT_DOG_GENDER_TAG = "<dog_gender>"
     DICT_POINTER_TAG = "<pointer>"
-    DICT_ASSISTANT_TAG = "<assistant>"    
+    DICT_ASSISTANT_TAG = "<assistant>"
+    NAME_TAG = "name_"
     
     json_file='data.json'
     json_data = open(json_file)
