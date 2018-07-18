@@ -59,6 +59,10 @@ class naoRobot(object):
             "customanimations-ff193e/relax_leg"
         ]
         
+        self.sneeze = [
+            "customanimations-ff193e/sneeze"
+        ]
+        
         self.idling = False
         self.is_running_idling = False
         
@@ -134,6 +138,9 @@ class naoRobot(object):
     def is_idling(self):
         return self.idling
     
+    def get_idle_amplitude(self, bpm):
+        return bpm / (-30.0) + 1.0
+    
     def start_idle(self):
         custom_print("start idling")
         self.idling = True
@@ -149,7 +156,24 @@ class naoRobot(object):
                 custom_print("scratch")
                 self._run_behaviour(random.choice(self.scratch))
                 self.stand(0.2)
-            else: 
+            elif mode < 0.045:
+                custom_print("sneeze")
+                self._run_behaviour(random.choice(self.sneeze))
+                self.stand(0.2)
+            elif mode < 0.2:
+                min_bpm = 6
+                max_bpm = 25
+                bpm = random.randint(min_bpm, max_bpm)
+                amplitude = round(random.uniform(self.get_idle_amplitude(min_bpm), self.get_idle_amplitude(bpm)), 1)
+                motionProxy.setBreathConfig([['Bpm', bpm], ['Amplitude', amplitude]])
+                log(file_name, "breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
+                custom_print("breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
+                motionProxy.setBreathEnabled("Body", True)
+                idling_time = random.randint(5, 10)
+                custom_print("idling time is " + str(idling_time))
+                time.sleep(idling_time)
+                motionProxy.setBreathEnabled("Body", False)
+            else:
                 custom_print("random move")
                 joint_lists = []
                 angle_lists = []
