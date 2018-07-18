@@ -38,7 +38,7 @@ sound_to_record = []
 sound_dict = {}
 
 target_directories = [
-    "./unique/clipped_July11_all"
+    "./unique/clipped_July18_all"
 ]
 
 for target_directory in target_directories:
@@ -96,7 +96,7 @@ for section in data.keys():
                             is_speech = False
                             robot_command += command_content
                         else:
-                            print section + "|" + keyword + "|" + command_type + ": has invalid action type"
+                            print section + "|" + keyword + "|" + command_condition + ": has invalid action type - " + command_type
                     elif command.startswith("{"): # direct naoqi command like pause
                         command = command.replace("{", "")
                         command = command.replace("}", "")
@@ -139,7 +139,7 @@ for section in data.keys():
                                 robot_command += to_be_added
                                 to_be_added = ""                        
                         else:
-                            print section + "|" + keyword + "|" + command_type + ": has invalid saying type"
+                            print section + "|" + keyword + "|" + command_condition + ": has invalid saying type - " + command_type
                 data[section][keyword][command_condition]["robot"].append(robot_command)
                 if is_speech:
                     data[section][keyword][command_condition]["flag"].append("speech")
