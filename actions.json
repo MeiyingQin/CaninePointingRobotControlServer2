@@ -1,5 +1,5 @@
 {
-    "look_at_assistant": "customanimations-ff193e/look_at_pointer",
+    "look_at_assistant": "customanimations-ff193e/look_at_assistant",
 	"no_1": "customanimations-ff193e/no_2",
 	"no_2": "customanimations-ff193e/no_6",
     "no_3": "Stand/Gestures/No_9",
@@ -23,7 +23,7 @@
 	"point_to_chair": "Stand/Gestures/You_1",
 	"point_to_lobby": "customanimations-ff193e/point_to_lobby",
 	"point_at_black_square": "customanimations-ff193e/point_to_black_square",
-	"thanks_1": "Stand/Gestures/Confident",
+	"thanks_1": "Stand/Emotions/Positive/Confident_1",
 	"thanks_2": "Stand/Gestures/Yes_1",
 	"yes": "customanimations-ff193e/yes_2",
 	"nice_to_meet_you": "Stand/Gestures/Explain_3",

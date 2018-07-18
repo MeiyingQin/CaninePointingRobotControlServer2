@@ -37,7 +37,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/look_at_pointer) ^mode(disabled) ^runSound(CanineStudy/<assistant>) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/unexpected_full_assistant_explain_could_you_please_explain_this) ",
+                    "^run(customanimations-ff193e/look_at_assistant) ^mode(disabled) ^runSound(CanineStudy/<assistant>) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/unexpected_full_assistant_explain_could_you_please_explain_this) ",
                     "stand"
                 ],
                 "flag": [
@@ -51,7 +51,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/look_at_pointer) ^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_assistant_explain_could_you_please_explain_this) ^mode(contextual) ^runSound(CanineStudy/<assistant>) ",
+                    "^run(customanimations-ff193e/look_at_assistant) ^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_assistant_explain_could_you_please_explain_this) ^mode(contextual) ^runSound(CanineStudy/<assistant>) ",
                     "stand"
                 ],
                 "flag": [
@@ -163,7 +163,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Confident) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_thank_you_thank_you) ^wait(Stand/Gestures/Confident) ",
+                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_thank_you_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -189,11 +189,11 @@
         "sorry": {
             "full": {
                 "text": [
-                    "c/Oh! | {\\pau=1000\\} | [nb/sorry_1] | c/I am sorry.",
+                    "c/Oh! | {\\pau=500\\} | [nb/sorry_1] | c/I am sorry.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_sorry_oh) \\pau=1000\\ ^start(Stand/Gestures/Desperate_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_sorry_i_am_sorry) ^wait(Stand/Gestures/Desperate_1) ",
+                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_sorry_oh) \\pau=500\\ ^start(Stand/Gestures/Desperate_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_sorry_i_am_sorry) ^wait(Stand/Gestures/Desperate_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -372,7 +372,7 @@
                     "d/<dog_excited> "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) "
                 ],
                 "flag": [
                     "speech"
@@ -383,7 +383,7 @@
                     "d/<dog_excited>. "
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) "
                 ],
                 "flag": [
                     "speech"
@@ -421,7 +421,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start() ^mode(contextual) ^runSound(CanineStudy/unexpected_full_maybe_maybe) ^wait() ",
+                    "^start(customanimations-ff193e/puzzled_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_maybe_maybe) ^wait(customanimations-ff193e/puzzled_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -511,7 +511,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_i_will_mention_this_later) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_please_give_me_a_few_minutes_to_get_there) ^start(Stand/Gestures/Confident) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_thank_you) ^wait(Stand/Gestures/Confident) ",
+                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_i_will_mention_this_later) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_please_give_me_a_few_minutes_to_get_there) ^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -571,7 +571,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start() ^mode(contextual) ^runSound(CanineStudy/unexpected_full_funny_hahaha) ^wait() ^mode(contextual) ^runSound(CanineStudy/unexpected_full_funny_thats_very_funny) ",
+                    "^start(customanimations-ff193e/laugh_3) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_funny_hahaha_thats_really_funny) ^wait(customanimations-ff193e/laugh_3) ",
                     "stand"
                 ],
                 "flag": [
@@ -1151,7 +1151,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Confident) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_dog_name_response_thank_you) ^wait(Stand/Gestures/Confident) ",
+                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_dog_name_response_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -2771,7 +2771,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_explore_come_over_come_over) ^wait(Stand/Gestures/Coaxing_1) ",
+                    "^mode(contextual) ^runSound(CanineStudy/<dog_excited>) ^start(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_explore_come_over_come_over) ^wait(Stand/Gestures/Coaxing_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -2785,7 +2785,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_explore_come_over_come_over_here) ^wait(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
+                    "^start(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_explore_come_over_come_over_here) ^wait(Stand/Gestures/Coaxing_1) ^mode(contextual) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2801,7 +2801,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_one_hi) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_one_hi) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2815,7 +2815,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_repeat_explore_close_one_hi) ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_repeat_explore_close_one_hi) ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2831,7 +2831,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_two_hello) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_two_hello) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2845,7 +2845,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_repeat_explore_close_two_hello) ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_repeat_explore_close_two_hello) ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -3317,7 +3317,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_there_will_be_a_lot_of_back_and_forth) ^wait(Stand/Gestures/Explain_9) \\pau=1000\\ ^start(Stand/Gestures/Desperate_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_sorry_about_that_in_advance) ^wait(Stand/Gestures/Desperate_2) \\pau=1000\\ ^start(Stand/Gestures/Confident) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_thanks) ^wait(Stand/Gestures/Confident) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_see_you_soon) ",
+                    "^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_there_will_be_a_lot_of_back_and_forth) ^wait(Stand/Gestures/Explain_9) \\pau=1000\\ ^start(Stand/Gestures/Desperate_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_sorry_about_that_in_advance) ^wait(Stand/Gestures/Desperate_2) \\pau=1000\\ ^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_thanks) ^wait(Stand/Emotions/Positive/Confident_1) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_see_you_soon) ",
                     "stand"
                 ],
                 "flag": [
@@ -4253,7 +4253,7 @@
                     "d/<dog_excited> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_left_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_left_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -4264,7 +4264,7 @@
                     "d/<dog_excited> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_left_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_left_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -4277,7 +4277,7 @@
                     "d/<dog_excited> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_right_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_full_bait_action_point_right_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -4288,7 +4288,7 @@
                     "d/<dog_excited> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_right_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/testing_repeat_bait_action_point_right_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -5064,7 +5064,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/look_at_pointer) ^mode(disabled) ^runSound(CanineStudy/<assistant>) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_dispenser_can_you_check_the_two_dispensers) ",
+                    "^run(customanimations-ff193e/look_at_assistant) ^mode(disabled) ^runSound(CanineStudy/<assistant>) ^mode(contextual) ^runSound(CanineStudy/testing_full_check_dispenser_can_you_check_the_two_dispensers) ",
                     "stand"
                 ],
                 "flag": [
@@ -5094,7 +5094,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/look_at_pointer) ^mode(disabled) ^runSound(CanineStudy/<assistant>) ^mode(disabled) ^runSound(CanineStudy/testing_full_calibration_now_lets_do_the_calibration) ",
+                    "^run(customanimations-ff193e/look_at_assistant) ^mode(disabled) ^runSound(CanineStudy/<assistant>) ^mode(disabled) ^runSound(CanineStudy/testing_full_calibration_now_lets_do_the_calibration) ",
                     "stand"
                 ],
                 "flag": [
@@ -5124,7 +5124,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_great) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_lets_move_on_to_the_next_trial) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/<owner>) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_please_head_down_and_close_your_eyes) ",
+                    "^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_great) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_lets_move_on_to_the_next_trial) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/<owner>) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_full_move_on_please_put_your_head_down_and_close_your_eyes) ",
                     "stand"
                 ],
                 "flag": [
@@ -5198,7 +5198,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Confident) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_transition_finish_thank_you_so_much) ^wait(Stand/Gestures/Confident) ",
+                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_transition_finish_thank_you_so_much) ^wait(Stand/Emotions/Positive/Confident_1) ",
                     "stand"
                 ],
                 "flag": [
@@ -5239,7 +5239,7 @@
                     "d/<dog_excited>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) "
                 ],
                 "flag": [
                     "speech"
@@ -5250,7 +5250,7 @@
                     "d/<dog_excited>"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) "
                 ],
                 "flag": [
                     "speech"
