@@ -28,7 +28,7 @@ if __name__ == "__main__":
     
     robot_ip = "127.0.0.1"
     robot_port = 49244
-    robot_wait = 0.3
+    robot_speed = 0.1
     motionProxy = ALProxy("ALMotion", robot_ip, robot_port)   
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -59,7 +59,7 @@ if __name__ == "__main__":
                         message = str(progress) + LINE_TERMINATOR
                     elif data[0] == SET_HEAD_ANGLE:
                         angle = progressToAngle(data[1])
-                        motionProxy.setAngles("HeadYaw", [angle], robot_wait)
+                        motionProxy.setAngles("HeadYaw", [angle], robot_speed)
                     custom_print("sent: " + message)
                     connection.sendall(message)
                 else:
