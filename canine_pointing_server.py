@@ -148,6 +148,7 @@ class naoRobot(object):
             self.is_running_idling = True
             
             mode = random.random()
+            custom_print("mode = " + str(mode))
             if mode < 0.015: # stretch leg
                 custom_print("stretch leg")
                 self._run_behaviour(self.stretch[0])
@@ -158,21 +159,21 @@ class naoRobot(object):
                 self.stand(0.2)
             elif mode < 0.045:
                 custom_print("sneeze")
-                self._run_behaviour(random.choice(self.sneeze))
+                self._run_behaviour(self.sneeze[0])
                 self.stand(0.2)
             elif mode < 0.2:
                 min_bpm = 6
                 max_bpm = 25
                 bpm = random.randint(min_bpm, max_bpm)
                 amplitude = round(random.uniform(self.get_idle_amplitude(min_bpm), self.get_idle_amplitude(bpm)), 1)
-                motionProxy.setBreathConfig([['Bpm', bpm], ['Amplitude', amplitude]])
+                self.motionProxy.setBreathConfig([['Bpm', bpm], ['Amplitude', amplitude]])
                 log(file_name, "breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
                 custom_print("breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
-                motionProxy.setBreathEnabled("Body", True)
-                idling_time = random.randint(5, 10)
+                self.motionProxy.setBreathEnabled("Body", True)
+                idling_time = random.randint(5, 15)
                 custom_print("idling time is " + str(idling_time))
                 time.sleep(idling_time)
-                motionProxy.setBreathEnabled("Body", False)
+                self.motionProxy.setBreathEnabled("Body", False)
             else:
                 custom_print("random move")
                 joint_lists = []
@@ -269,7 +270,7 @@ def is_initial_information(command):
     command_list = command.strip().split(DELIMINATOR)
     return command_list[0] == INITIAL_INFORMATION
 
-def set_initial_information(commmand):
+def set_initial_information(command):
     command_list = command.strip().split(DELIMINATOR)
     return [NAME_TAG + x.lower() for x in command_list[1:]]
 
@@ -378,8 +379,8 @@ if __name__ == "__main__":
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
-    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
+    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "keepondancing")
+    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "keepondancing")
     
     dispensers = [dispenser_1, dispenser_2]
     
