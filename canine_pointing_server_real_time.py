@@ -26,8 +26,8 @@ if __name__ == "__main__":
     PROGRESS_BAR_RANGE = 100.0
     ROBOT_HEAD_RANGE = 75.0
     
-    robot_ip = "127.0.0.1"
-    robot_port = 49244
+    robot_ip = "192.168.1.102"
+    robot_port = 9559
     robot_speed = 0.1
     motionProxy = ALProxy("ALMotion", robot_ip, robot_port)   
     
