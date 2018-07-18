@@ -270,6 +270,7 @@ def run_command(nao, commands, flags, dispensers):
         command = str(command)
         if flags[flag_index] == DICT_FLAG_SPEECH:
             command = command.replace(DICT_OWNER_TAG, owner)
+            command = command.replace(DICT_DOG_EXCITED_TAG, dog + DICT_DOG_NAME_EXCITED_TAG)
             command = command.replace(DICT_DOG_TAG, dog)
             command = command.replace(DICT_DOG_GENDER_TAG, dog_gender)
             command = command.replace(DICT_POINTER_TAG, pointer)
@@ -322,6 +323,8 @@ if __name__ == "__main__":
     DICT_FLAG_ACTION = "action"
     DICT_OWNER_TAG = "<owner>"
     DICT_DOG_TAG = "<dog>"
+    DICT_DOG_NAME_EXCITED_TAG = "_excited"
+    DICT_DOG_EXCITED_TAG = "<dog_excited>"
     DICT_DOG_GENDER_TAG = "<dog_gender>"
     DICT_POINTER_TAG = "<pointer>"
     DICT_ASSISTANT_TAG = "<assistant>"
