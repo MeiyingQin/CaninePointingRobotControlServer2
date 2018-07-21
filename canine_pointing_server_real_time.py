@@ -32,7 +32,7 @@ if __name__ == "__main__":
     motionProxy = ALProxy("ALMotion", robot_ip, robot_port)   
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_ip = "192.168.1.101"
+    server_ip = "192.168.1.116"
     server_port = 10001
     server_address = (server_ip, server_port)
     socket.bind(server_address)
