@@ -1,10 +1,17 @@
 from bait import Dispenser
 import threading
+import json
 
-dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
-dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
+dispenser_file = 'dispenser_settings.json'
+dispenser_data = open(dispenser_file)
+dispenser_json = json.load(dispenser_data)
+dispenser_data.close()
 
-dispensers = [dispenser_1, dispenser_2]
+dispensers = []
+for dispenser in dispenser_json.keys():
+    user_name = dispenser_json[dispenser][DISPENSER_USER_NAME]
+    password = dispenser_json[dispenser][DISPENSER_PASSWORD]
+    dispensers.append(Dispenser(user_name, password))
 
 def dispenser_rotate(dispenser_lists):
     threads = []

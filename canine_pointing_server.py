@@ -379,10 +379,16 @@ if __name__ == "__main__":
     custom_print("server ip: " + server_ip)
     custom_print("server port: " + str(server_port))
     
-    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "keepondancing")
-    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "keepondancing")
+    dispenser_file = 'dispenser_settings.json'
+    dispenser_data = open(dispenser_file)
+    dispenser_json = json.load(dispenser_data)
+    dispenser_data.close()
     
-    dispensers = [dispenser_1, dispenser_2]
+    dispensers = []
+    for dispenser in dispenser_json.keys():
+        user_name = dispenser_json[dispenser][DISPENSER_USER_NAME]
+        password = dispenser_json[dispenser][DISPENSER_PASSWORD]
+        dispensers.append(Dispenser(user_name, password))
     
     try:
         while True:

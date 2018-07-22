@@ -269,8 +269,9 @@ def run_command(nao, commands, flags, dispensers):
         command = commands[flag_index]
         command = str(command)
         if flags[flag_index] == DICT_FLAG_SPEECH:
-            command = command.replace(DICT_OWNER_TAG, NAME_TAG + owner)
-            command = command.replace(DICT_DOG_EXCITED_TAG, NAME_TAG + dog + DICT_DOG_NAME_EXCITED_TAG)
+            command = command.replace(DICT_OWNER_TAG, owner)
+            #command = command.replace(DICT_DOG_EXCITED_TAG, dog + DICT_DOG_NAME_EXCITED_TAG)
+            command = command.replace(DICT_DOG_EXCITED_TAG, dog)
             command = command.replace(DICT_DOG_TAG, dog)
             command = command.replace(DICT_DOG_GENDER_TAG, dog_gender)
             command = command.replace(DICT_POINTER_TAG, pointer)
@@ -324,27 +325,44 @@ if __name__ == "__main__":
     DICT_ASSISTANT_TAG = "<assistant>"
     NAME_TAG = "name_"
     
-    json_file='data.json'
+    DISPENSER_USER_NAME = "user_name"
+    DISPENSER_PASSWORD = "password"
+    
+    json_file = 'data.json'
     json_data = open(json_file)
     command_library = json.load(json_data, object_pairs_hook=OrderedDict)
-    json_data.close()    
+    json_data.close()
     
     robot_ip = "192.168.1.102"
     robot_port = 9559
     
     nao = naoRobot(robot_ip, robot_port)
     
-    dispenser_1 = Dispenser("robot.pointing.feeder.1@gmail.com", "")
-    dispenser_2 = Dispenser("robot.pointing.feeder.2@gmail.com", "")
+    dispenser_file = 'dispenser_settings.json'
+    dispenser_data = open(dispenser_file)
+    dispenser_json = json.load(dispenser_data)
+    dispenser_data.close()
     
-    dispensers = [dispenser_1, dispenser_2]
+    dispensers = []
+    for dispenser in dispenser_json.keys():
+        user_name = dispenser_json[dispenser][DISPENSER_USER_NAME]
+        password = dispenser_json[dispenser][DISPENSER_PASSWORD]
+        dispensers.append(Dispenser(user_name, password))
     
     blinking_thread = threading.Thread(target=naoRobot.start_blinking, args=(nao, ))
     blinking_thread.start() 
 
     [owner, dog, dog_gender, pointer, assistant] = set_initial_information("start|owner|dog|girl|meiying|ryan")    
 
-    for section in command_library.keys():
+    is_continue = True
+    while is_continue:
+        sections = command_library.keys()
+        print sections
+        section_index = raw_input("please choose from the above, press q to quit:")
+        if section_index == "q":
+            is_continue = False
+            continue
+        section = sections[int(section_index)]
         for keyword in command_library[section].keys():
             for command_condition in command_library[section][keyword].keys():
                 print "------------------------------------------------------"
