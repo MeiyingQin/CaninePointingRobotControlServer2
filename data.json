@@ -93,31 +93,25 @@
         "do not remember": {
             "full": {
                 "text": [
-                    "[nb/loop_thinking] | d/Hmmmmm. | {\\pau=2000\\}",
-                    "[u/stand]",
-                    "[nb/no_2] | c/Sorry | c/I do not remember.",
+                    "[nb/loop_thinking] | d/Hmmmmm. | {\\pau=2000\\} | c/Sorry | [nb/no_2]| c/I do not remember.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_do_not_remember_hmmmmm) \\pau=2000\\ ^stop(Stand/BodyTalk/Thinking/ThinkingLoop_1) ",
-                    "stand",
-                    "^start(customanimations-ff193e/no_6) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_do_not_remember_sorry) ^wait(customanimations-ff193e/no_6) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_do_not_remember_i_do_not_remember) ",
+                    "^start(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_do_not_remember_hmmmmm) \\pau=2000\\ ^stop(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_do_not_remember_sorry) ^start(customanimations-ff193e/no_6) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_do_not_remember_i_do_not_remember) ^wait(customanimations-ff193e/no_6) ",
                     "stand"
                 ],
                 "flag": [
-                    "speech",
-                    "action",
                     "speech",
                     "action"
                 ]
             },
             "repeat": {
                 "text": [
-                    "[nb/no_3] | c/Sorry | c/I do not remember.",
+                    "c/Sorry | [nb/no_3] | c/I do not remember.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/No_9) ^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_do_not_remember_sorry) ^wait(Stand/Gestures/No_9) ^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_do_not_remember_i_do_not_remember) ",
+                    "^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_do_not_remember_sorry) ^start(Stand/Gestures/No_9) ^mode(contextual) ^runSound(CanineStudy/unexpected_repeat_do_not_remember_i_do_not_remember) ^wait(Stand/Gestures/No_9) ",
                     "stand"
                 ],
                 "flag": [
@@ -163,7 +157,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_thank_you_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
+                    "^start(customanimations-ff193e/thanks) ^mode(disabled) ^runSound(CanineStudy/unexpected_full_thank_you_thank_you) ^wait(customanimations-ff193e/thanks) ",
                     "stand"
                 ],
                 "flag": [
@@ -511,7 +505,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_i_will_mention_this_later) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_please_give_me_a_few_minutes_to_get_there) ^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
+                    "^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_i_will_mention_this_later) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_please_give_me_a_few_minutes_to_get_there) ^start(customanimations-ff193e/thanks) ^mode(contextual) ^runSound(CanineStudy/unexpected_full_mention_this_later_thank_you) ^wait(customanimations-ff193e/thanks) ",
                     "stand"
                 ],
                 "flag": [
@@ -659,11 +653,11 @@
         "initial check": {
             "full": {
                 "text": [
-                    "c/<dog> | c/is barking ! | {\\pau=2000\\} | [nb/look_at_owner] |  d/<owner>, | {\\pau=500\\} | c/do you think | d/<dog> | c/needs a break? | {\\pau=500\\} | [nb/question_short] | c/Or I can provide a treat to | {\\pau=200\\} |d/<dog>",
+                    "c/<dog> | c/is barking ! | {\\pau=2000\\} | [nb/look_at_owner] |  d/<owner>, | {\\pau=500\\} | d/do you think | d/<dog> | c/needs a break? | {\\pau=500\\} | [nb/question_short] | d/Or I can provide a treat to | {\\pau=100\\} | d/<dog>",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_is_barking) \\pau=2000\\ ^start(customanimations-ff193e/look_at_owner) ^mode(disabled) ^runSound(CanineStudy/<owner>) ^wait(customanimations-ff193e/look_at_owner) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_do_you_think) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_needs_a_break) \\pau=500\\ ^start(Stand/Gestures/Explain_2) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_or_i_can_provide_a_treat_to) ^wait(Stand/Gestures/Explain_2) \\pau=200\\ ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_is_barking) \\pau=2000\\ ^start(customanimations-ff193e/look_at_owner) ^mode(disabled) ^runSound(CanineStudy/<owner>) ^wait(customanimations-ff193e/look_at_owner) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_initial_check_do_you_think) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_initial_check_needs_a_break) \\pau=500\\ ^start(Stand/Gestures/Explain_2) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_initial_check_or_i_can_provide_a_treat_to) ^wait(Stand/Gestures/Explain_2) \\pau=100\\ ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
@@ -673,11 +667,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/<owner> | {\\pau=1000\\} | c/does | d/<dog> | c/need a break? | {\\pau=500\\} | c/I can provide a treat to | d/<dog>.",
+                    "c/<owner> | {\\pau=1000\\} | d/does | d/<dog> | c/need a break? | {\\pau=500\\} | [nb/question_long] | d/or I can provide a treat to | d/<dog>.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_initial_check_does) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_initial_check_need_a_break) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_initial_check_i_can_provide_a_treat_to) ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
+                    "^mode(contextual) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(disabled) ^runSound(CanineStudy/dog_scared_repeat_initial_check_does) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_initial_check_need_a_break) \\pau=500\\ ^start(Stand/Gestures/Explain_4) ^mode(disabled) ^runSound(CanineStudy/dog_scared_repeat_initial_check_or_i_can_provide_a_treat_to) ^wait(Stand/Gestures/Explain_4) ^mode(disabled) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
@@ -779,11 +773,11 @@
         "dog in position": {
             "full": {
                 "text": [
-                    "d/<owner> | {\\pau=1000\\} | c/please let | c/<dog> | c/stay in the black square.",
+                    "c/<owner> | {\\pau=1000\\} | d/please let | d/<dog> | c/stay in the black square.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_dog_in_position_please_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_dog_in_position_stay_in_the_black_square) ",
+                    "^mode(contextual) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_dog_in_position_please_let) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_dog_in_position_stay_in_the_black_square) ",
                     "stand"
                 ],
                 "flag": [
@@ -793,11 +787,11 @@
             },
             "repeat": {
                 "text": [
-                    "d/<owner> | {\\pau=1000\\} | c/can you please let | c/ <dog> | c/stay in the black square.",
+                    "d/<owner> | {\\pau=1000\\} | d/can you please let | d/ <dog> | c/stay in the black square.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_dog_in_position_can_you_please_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_dog_in_position_stay_in_the_black_square) ",
+                    "^mode(disabled) ^runSound(CanineStudy/<owner>) \\pau=1000\\ ^mode(disabled) ^runSound(CanineStudy/dog_scared_repeat_dog_in_position_can_you_please_let) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_dog_in_position_stay_in_the_black_square) ",
                     "stand"
                 ],
                 "flag": [
@@ -809,11 +803,11 @@
         "instruction to owner": {
             "full": {
                 "text": [
-                    "c/Please only let | c/<dog> | c/approach the dispenser | [nb/two_hand_explain_4] |c/after I say 'okay'",
+                    "c/Please only let | c/<dog> | d/approach the dispenser | [nb/two_hand_explain_4] |c/after I say 'okay'",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_please_only_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_approach_the_dispenser) ^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_after_i_say_okay) ^wait(Stand/Gestures/Explain_9) ",
+                    "^mode(contextual) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_please_only_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_approach_the_dispenser) ^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_instruction_to_owner_after_i_say_okay) ^wait(Stand/Gestures/Explain_9) ",
                     "stand"
                 ],
                 "flag": [
@@ -853,11 +847,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/<dog> | c/looks fine. | {\\pau=1000\\} | c/Let's continue now.",
+                    "d/<dog> | c/looks fine. | {\\pau=1000\\} | c/Let's continue now.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_treat_okay_looks_fine) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_treat_okay_lets_continue_now) ",
+                    "^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_treat_okay_looks_fine) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_repeat_treat_okay_lets_continue_now) ",
                     "stand"
                 ],
                 "flag": [
@@ -869,11 +863,11 @@
         "break": {
             "full": {
                 "text": [
-                    "c/Maybe | c/<dog> | c/needs a break. | {\\pau=1500\\} |[nb/point_to_lobby] | d/ Please take a break in the lobby. | {\\pau=1000\\} |c/We might try other games afterwards.",
+                    "d/Maybe | d/<dog> | c/needs a break. | {\\pau=1500\\} |[nb/point_to_lobby] | d/ Please take a break in the lobby. | {\\pau=1000\\} |c/We might try other games afterwards.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/dog_scared_full_break_maybe) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_break_needs_a_break) \\pau=1500\\ ^start(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_break_please_take_a_break_in_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_break_we_might_try_other_games_afterwards) ",
+                    "^mode(disabled) ^runSound(CanineStudy/dog_scared_full_break_maybe) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_break_needs_a_break) \\pau=1500\\ ^start(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_break_please_take_a_break_in_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/dog_scared_full_break_we_might_try_other_games_afterwards) ",
                     "stand"
                 ],
                 "flag": [
@@ -899,12 +893,12 @@
         "bait": {
             "full": {
                 "text": [
-                    "[b/bait] | d/please bait",
+                    "[b/bait_look] | [nb/bait] | d/please bait",
                     "[u/dispenser_rotate]",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_bait_please_bait) ",
+                    "^run(customanimations-ff193e/bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/dog_scared_full_bait_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -916,12 +910,12 @@
             },
             "repeat": {
                 "text": [
-                    "[b/bait] | d/please bait",
+                    "[b/bait_look] | [nb/bait] | d/please bait",
                     "[u/dispenser_rotate]",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/dog_scared_repeat_bait_please_bait) ",
+                    "^run(customanimations-ff193e/bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/dog_scared_repeat_bait_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -971,7 +965,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Hey_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_greeting_hello) ^wait(Stand/Gestures/Hey_1) \\pau=500\\ ^start(customanimations-ff193e/gestures_enthusiastic_5) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_greeting_welcome_back_to_the_dog_lab) ^wait(customanimations-ff193e/gestures_enthusiastic_5) ",
+                    "^start(customanimations-ff193e/welcome_wave) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_greeting_hello) ^wait(customanimations-ff193e/welcome_wave) \\pau=500\\ ^start(customanimations-ff193e/gestures_enthusiastic_5) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_greeting_welcome_back_to_the_dog_lab) ^wait(customanimations-ff193e/gestures_enthusiastic_5) ",
                     "stand"
                 ],
                 "flag": [
@@ -997,11 +991,11 @@
         "initial_robot name": {
             "full": {
                 "text": [
-                    "[nb/point_to_self_1] | c/I am Niffi. | {\\pau=1000\\} | c/N_I_F_F_I | {\\pau=1000\\} | c/niffi",
+                    "[nb/point_to_self_1] | c/I am Niffi. | {\\pau=200\\} | c/N_I_F_F_I | {\\pau=200\\} | c/niffi",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_i_am_niffi) ^wait(Stand/Gestures/Me_2) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_n_i_f_f_i) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_niffi) ",
+                    "^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_i_am_niffi) ^wait(Stand/Gestures/Me_2) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_n_i_f_f_i) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_robot_name_niffi) ",
                     "stand"
                 ],
                 "flag": [
@@ -1027,7 +1021,7 @@
         "initial_experimenter one name": {
             "full": {
                 "text": [
-                    "c/And | [nb/look_at_pointer] | c/this is |c/<pointer>.",
+                    "c/and | [nb/look_at_pointer] | c/this is | c/<pointer>.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -1151,7 +1145,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_dog_name_response_thank_you) ^wait(Stand/Emotions/Positive/Confident_1) ",
+                    "^start(customanimations-ff193e/thanks) ^mode(contextual) ^runSound(CanineStudy/introduction_full_initial_dog_name_response_thank_you) ^wait(customanimations-ff193e/thanks) ",
                     "stand"
                 ],
                 "flag": [
@@ -1731,11 +1725,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/No big deal.| {\\pau=1000\\} | c/Let's move on.",
+                    "c/No big deal.| {\\pau=200\\} | c/Let's move on.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_not_sit_no_big_deal) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_not_sit_lets_move_on) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_not_sit_no_big_deal) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_not_sit_lets_move_on) ",
                     "stand"
                 ],
                 "flag": [
@@ -1837,11 +1831,11 @@
         "dog_robot ask to see tricks": {
             "full": {
                 "text": [
-                    "[nb/excited] | c/I am excited to see that | {\\pau=1000\\} | c/Could you please | [nb/point_to_self_2] | d/show them to me?",
+                    "[nb/excited] | c/I am excited to see that | {\\pau=200\\} | c/Could you please | [nb/point_to_self_2] | d/show them to me?",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_i_am_excited_to_see_that) ^wait(customanimations-ff193e/excited) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_could_you_please) ^start(Stand/Gestures/Me_7) ^mode(disabled) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_show_them_to_me) ^wait(Stand/Gestures/Me_7) ",
+                    "^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_i_am_excited_to_see_that) ^wait(customanimations-ff193e/excited) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_could_you_please) ^start(Stand/Gestures/Me_7) ^mode(disabled) ^runSound(CanineStudy/introduction_full_dog_robot_ask_to_see_tricks_show_them_to_me) ^wait(Stand/Gestures/Me_7) ",
                     "stand"
                 ],
                 "flag": [
@@ -2107,11 +2101,11 @@
         "dog_together length reply short": {
             "full": {
                 "text": [
-                    "[nb/two_hand_explain_2] | c/That's not too long| {\\pau=1000\\} | c/but I believe | [nb/look_at_owner] | c/you will have a great time with | c/<dog>.",
+                    "[nb/two_hand_explain_2] | c/That's not too long| {\\pau=200\\} | c/but I believe | [nb/look_at_owner] | c/you will have a great time with | c/<dog>.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_thats_not_too_long) ^wait(Stand/Gestures/Explain_3) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_but_i_believe) ^start(customanimations-ff193e/look_at_owner) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_you_will_have_a_great_time_with) ^wait(customanimations-ff193e/look_at_owner) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
+                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_thats_not_too_long) ^wait(Stand/Gestures/Explain_3) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_but_i_believe) ^start(customanimations-ff193e/look_at_owner) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_together_length_reply_short_you_will_have_a_great_time_with) ^wait(customanimations-ff193e/look_at_owner) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2151,11 +2145,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/That's a really long time. | {\\pau=1000\\} | c/You two must be very close.",
+                    "c/That's a really long time. | {\\pau=200\\} | c/You two must be very close.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_together_length_reply_long_thats_a_really_long_time) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_together_length_reply_long_you_two_must_be_very_close) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_together_length_reply_long_thats_a_really_long_time) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_dog_together_length_reply_long_you_two_must_be_very_close) ",
                     "stand"
                 ],
                 "flag": [
@@ -2287,11 +2281,11 @@
         "dog_food motivation reply like": {
             "full": {
                 "text": [
-                    "[nb/happy] | d/That's great! | {\\pau=1000\\} | c/<dog> | [nb/excited] | c/will get a lot of treats today.",
+                    "[nb/happy] | d/That's great! | {\\pau=200\\} | c/<dog> | [nb/excited] | c/will get a lot of treats today.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Joy_1) ^mode(disabled) ^runSound(CanineStudy/introduction_full_dog_food_motivation_reply_like_thats_great) ^wait(Stand/Gestures/Joy_1) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_food_motivation_reply_like_will_get_a_lot_of_treats_today) ^wait(customanimations-ff193e/excited) ",
+                    "^start(Stand/Gestures/Joy_1) ^mode(disabled) ^runSound(CanineStudy/introduction_full_dog_food_motivation_reply_like_thats_great) ^wait(Stand/Gestures/Joy_1) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_food_motivation_reply_like_will_get_a_lot_of_treats_today) ^wait(customanimations-ff193e/excited) ",
                     "stand"
                 ],
                 "flag": [
@@ -2347,11 +2341,11 @@
         "dog_previous robot experience": {
             "full": {
                 "text": [
-                    "c/Has | c/<dog> | c/ever interacted with a robot before? | [nb/loop_thinking] | c/Like | {\\pau=2000\\} | c/roombas | c/or robot toys?",
+                    "c/Has | c/<dog> | c/ever interacted with a robot before? | [nb/loop_thinking] | c/Like | {\\pau=1000\\} | c/roombas | c/or robot toys?",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_has) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_ever_interacted_with_a_robot_before) ^start(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_like) \\pau=2000\\ ^stop(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_roombas) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_or_robot_toys) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_has) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_ever_interacted_with_a_robot_before) ^start(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_like) \\pau=1000\\ ^stop(Stand/BodyTalk/Thinking/ThinkingLoop_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_roombas) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_previous_robot_experience_or_robot_toys) ",
                     "stand"
                 ],
                 "flag": [
@@ -2467,11 +2461,11 @@
         "study_exploration": {
             "full": {
                 "text": [
-                    "c/<dog> | c/will have some time to get familiar with | [nb/other] | c/this environment | {\\pau=400\\} | [nb/point_to_self_1] | c/and me !",
+                    "c/<dog> | c/will have some time to get familiar with | [nb/other] | c/this environment | [nb/point_to_self_1] | c/and me !",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_will_have_some_time_to_get_familiar_with) ^start(Stand/Gestures/Everything_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_this_environment) ^wait(Stand/Gestures/Everything_1) \\pau=400\\ ^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_and_me) ^wait(Stand/Gestures/Me_2) ",
+                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_will_have_some_time_to_get_familiar_with) ^start(Stand/Gestures/Everything_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_this_environment) ^wait(Stand/Gestures/Everything_1) ^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_exploration_and_me) ^wait(Stand/Gestures/Me_2) ",
                     "stand"
                 ],
                 "flag": [
@@ -2557,11 +2551,11 @@
         "study_warmup": {
             "full": {
                 "text": [
-                    "c/There will be two warmup sessions | {\\pau=500\\} | [nb/point_to_self_2] | d/one with me | {\\pau=500\\} | [nb/look_at_pointer] | d/and one with | c/<pointer>",
+                    "c/There will be two warmup sessions | {\\pau=500\\} | [nb/point_to_self_2] | d/one with me | [nb/look_at_pointer] | d/and one with | c/<pointer>",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_warmup_there_will_be_two_warmup_sessions) \\pau=500\\ ^start(Stand/Gestures/Me_7) ^mode(disabled) ^runSound(CanineStudy/introduction_full_study_warmup_one_with_me) ^wait(Stand/Gestures/Me_7) \\pau=500\\ ^start(customanimations-ff193e/look_at_pointer) ^mode(disabled) ^runSound(CanineStudy/introduction_full_study_warmup_and_one_with) ^wait(customanimations-ff193e/look_at_pointer) ^mode(contextual) ^runSound(CanineStudy/<pointer>) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_warmup_there_will_be_two_warmup_sessions) \\pau=500\\ ^start(Stand/Gestures/Me_7) ^mode(disabled) ^runSound(CanineStudy/introduction_full_study_warmup_one_with_me) ^wait(Stand/Gestures/Me_7) ^start(customanimations-ff193e/look_at_pointer) ^mode(disabled) ^runSound(CanineStudy/introduction_full_study_warmup_and_one_with) ^wait(customanimations-ff193e/look_at_pointer) ^mode(contextual) ^runSound(CanineStudy/<pointer>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2587,11 +2581,11 @@
         "study_test": {
             "full": {
                 "text": [
-                    "c/The warmup sessions will be followed by two testing sessions | {\\pau=1000\\} |  c/also one with | [nb/point_to_self_1] | c/me | c/and one with | [nb/look_at_pointer] | c/<pointer>.",
+                    "c/The warmup sessions will be followed by two testing sessions | {\\pau=500\\} |  c/also one with | [nb/point_to_self_1] | c/me | c/and one with | [nb/look_at_pointer] | c/<pointer>.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_the_warmup_sessions_will_be_followed_by_two_testing_sessions) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_also_one_with) ^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_me) ^wait(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_and_one_with) ^start(customanimations-ff193e/look_at_pointer) ^mode(contextual) ^runSound(CanineStudy/<pointer>) ^wait(customanimations-ff193e/look_at_pointer) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_the_warmup_sessions_will_be_followed_by_two_testing_sessions) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_also_one_with) ^start(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_me) ^wait(Stand/Gestures/Me_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_test_and_one_with) ^start(customanimations-ff193e/look_at_pointer) ^mode(contextual) ^runSound(CanineStudy/<pointer>) ^wait(customanimations-ff193e/look_at_pointer) ",
                     "stand"
                 ],
                 "flag": [
@@ -2617,11 +2611,11 @@
         "study_session break": {
             "full": {
                 "text": [
-                    "c/Between each session, | {\\pau=500\\} | c/you and | c/<dog> | c/will get a quick break | [nb/point_to_lobby] | c/in the lobby | {\\pau=500\\} | c/so we can get set up for the next session.",
+                    "c/Between each session, | {\\pau=100\\} | c/you and | c/<dog> | c/will get a quick break | [nb/point_to_lobby] | c/in the lobby | {\\pau=500\\} | c/so we can get set up for the next session.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_between_each_session) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_you_and) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_will_get_a_quick_break) ^start(customanimations-ff193e/point_to_lobby) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_in_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_so_we_can_get_set_up_for_the_next_session) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_between_each_session) \\pau=100\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_you_and) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_will_get_a_quick_break) ^start(customanimations-ff193e/point_to_lobby) ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_in_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_study_session_break_so_we_can_get_set_up_for_the_next_session) ",
                     "stand"
                 ],
                 "flag": [
@@ -2797,11 +2791,11 @@
         "explore_close one": {
             "full": {
                 "text": [
-                    "d/Hi | {\\pau=500\\} | d/<dog_excited>!",
+                    "d/Hi | d/<dog_excited>!",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_one_hi) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_one_hi) ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2827,11 +2821,11 @@
         "explore_close two": {
             "full": {
                 "text": [
-                    "d/Hello | {\\pau=500\\} |d/<dog_excited>!",
+                    "d/Hello | d/<dog_excited>!",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_two_hello) \\pau=500\\ ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
+                    "^mode(disabled) ^runSound(CanineStudy/introduction_full_explore_close_two_hello) ^mode(disabled) ^runSound(CanineStudy/<dog_excited>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2947,11 +2941,11 @@
         "bait_start": {
             "full": {
                 "text": [
-                    "[b/time_up] | d/Time is up! | {\\pau=1000\\} | c/Now I will provide a treat to | c/<dog>.",
+                    "[b/time_up] | d/Time is up! | {\\pau=500\\} | c/Now I will provide a treat to | c/<dog>.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/time_up) ^mode(disabled) ^runSound(CanineStudy/introduction_full_bait_start_time_is_up) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_start_now_i_will_provide_a_treat_to) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
+                    "^run(customanimations-ff193e/time_up) ^mode(disabled) ^runSound(CanineStudy/introduction_full_bait_start_time_is_up) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_start_now_i_will_provide_a_treat_to) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
@@ -2961,11 +2955,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/Exploration time is up! | {\\pau=1000\\} | c/Now I will give | c/<dog> | c/a treat.",
+                    "c/Exploration time is up! | {\\pau=200\\} | c/Now I will give | c/<dog> | c/a treat.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_exploration_time_is_up) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_now_i_will_give) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_a_treat) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_exploration_time_is_up) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_now_i_will_give) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_start_a_treat) ",
                     "stand"
                 ],
                 "flag": [
@@ -3037,11 +3031,11 @@
         "bait_dog back reply big dog": {
             "full": {
                 "text": [
-                    "[nb/no_big_deal] | c/That's good. | {\\pau=500\\} | c/The square is too small for | c/<dog>",
+                    "[nb/no_big_deal] | c/That's good. | c/The square is too small for | c/<dog>",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Reject_6) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_dog_back_reply_big_dog_thats_good) ^wait(Stand/Gestures/Reject_6) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_dog_back_reply_big_dog_the_square_is_too_small_for) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
+                    "^start(Stand/Gestures/Reject_6) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_dog_back_reply_big_dog_thats_good) ^wait(Stand/Gestures/Reject_6) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_dog_back_reply_big_dog_the_square_is_too_small_for) ^mode(contextual) ^runSound(CanineStudy/<dog>) ",
                     "stand"
                 ],
                 "flag": [
@@ -3097,11 +3091,11 @@
         "bait_introduction dispenser": {
             "full": {
                 "text": [
-                    "[nb/two_hand_explain_2] | c/This is the equipment that we will use in this study to provide the yummy treat. | c/It can be noisy",
+                    "[nb/two_hand_explain_2] | c/This is the equipment that we will use in this study to provide the yummy treat. | {\\pau=500\\} | c/It can be noisy",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_introduction_dispenser_this_is_the_equipment_that_we_will_use_in_this_study_to_provide_the_yummy_treat) ^wait(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_introduction_dispenser_it_can_be_noisy) ",
+                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_introduction_dispenser_this_is_the_equipment_that_we_will_use_in_this_study_to_provide_the_yummy_treat) ^wait(Stand/Gestures/Explain_3) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_bait_introduction_dispenser_it_can_be_noisy) ",
                     "stand"
                 ],
                 "flag": [
@@ -3171,11 +3165,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/Only release | c/<dog> | c/when I say | {\\pau=300\\} | d/'okay.'",
+                    "c/Only release | c/<dog> | c/when I say | d/'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_only_release) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_when_i_say) \\pau=300\\ ^mode(disabled) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_okay) ",
+                    "^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_only_release) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_when_i_say) ^mode(disabled) ^runSound(CanineStudy/introduction_repeat_bait_instruction_release_okay) ",
                     "stand"
                 ],
                 "flag": [
@@ -3217,12 +3211,12 @@
         "bait_action_bait treat": {
             "full": {
                 "text": [
-                    "[b/bait] | d/please bait",
+                    "[b/introduction_bait_look] | [nb/bait] | d/please bait",
                     "[u/dispenser_rotate]",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/introduction_full_bait_action_bait_treat_please_bait) ",
+                    "^run(customanimations-ff193e/introduction_bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/introduction_full_bait_action_bait_treat_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -3234,12 +3228,12 @@
             },
             "repeat": {
                 "text": [
-                    "[b/bait] | d/please bait",
+                    "[b/introduction_bait_look] | [nb/bait] | d/please bait",
                     "[u/dispenser_rotate]",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/introduction_repeat_bait_action_bait_treat_please_bait) ",
+                    "^run(customanimations-ff193e/introduction_bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/introduction_repeat_bait_action_bait_treat_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -3283,11 +3277,11 @@
         "transition_lobby": {
             "full": {
                 "text": [
-                    "[nb/excited] | c/Nice! | {\\pau=500\\} | [nb/two_hand_explain_1] | c/We will now prepare for the warm-up session.| {\\pau=500\\} | c/Could you please take | c/<dog> | [nb/point_to_lobby] | d/to the lobby?",
+                    "[nb/excited] | c/Nice! | [nb/two_hand_explain_1] | c/We will now prepare for the warm-up session.| {\\pau=500\\} | c/Could you please take | c/<dog> | [nb/point_to_lobby] | d/to the lobby?",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_nice) ^wait(customanimations-ff193e/excited) \\pau=500\\ ^start(Stand/Gestures/Explain_4) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_we_will_now_prepare_for_the_warmup_session) ^wait(Stand/Gestures/Explain_4) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_could_you_please_take) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/introduction_full_transition_lobby_to_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) ",
+                    "^start(customanimations-ff193e/excited) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_nice) ^wait(customanimations-ff193e/excited) ^start(Stand/Gestures/Explain_4) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_we_will_now_prepare_for_the_warmup_session) ^wait(Stand/Gestures/Explain_4) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_could_you_please_take) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/point_to_lobby) ^mode(disabled) ^runSound(CanineStudy/introduction_full_transition_lobby_to_the_lobby) ^wait(customanimations-ff193e/point_to_lobby) ",
                     "stand"
                 ],
                 "flag": [
@@ -3313,11 +3307,11 @@
         "transition_lobby explain": {
             "full": {
                 "text": [
-                    "[nb/two_hand_explain_4] | c/There will be a lot of back and forth | {\\pau=1000\\} | [nb/sorry_2] | c/Sorry about that in advance! | {\\pau=1000\\} | [nb/thanks_1] | c/Thanks, | {\\pau=500\\} | c/see you soon! ",
+                    "[nb/two_hand_explain_4] | c/There will be a lot of back and forth | {\\pau=200\\} | [nb/sorry_2] | c/Sorry about that in advance! | {\\pau=200\\} | [nb/thanks_1] | c/Thanks, | c/see you soon! ",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_there_will_be_a_lot_of_back_and_forth) ^wait(Stand/Gestures/Explain_9) \\pau=1000\\ ^start(Stand/Gestures/Desperate_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_sorry_about_that_in_advance) ^wait(Stand/Gestures/Desperate_2) \\pau=1000\\ ^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_thanks) ^wait(Stand/Emotions/Positive/Confident_1) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_see_you_soon) ",
+                    "^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_there_will_be_a_lot_of_back_and_forth) ^wait(Stand/Gestures/Explain_9) \\pau=200\\ ^start(Stand/Gestures/Desperate_2) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_sorry_about_that_in_advance) ^wait(Stand/Gestures/Desperate_2) \\pau=200\\ ^start(customanimations-ff193e/thanks) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_thanks) ^wait(customanimations-ff193e/thanks) ^mode(contextual) ^runSound(CanineStudy/introduction_full_transition_lobby_explain_see_you_soon) ",
                     "stand"
                 ],
                 "flag": [
@@ -3327,11 +3321,11 @@
             },
             "repeat": {
                 "text": [
-                    "[nb/two_hand_explain_2] | c/You will be moving between this room and the lobby many times during the study. | {\\pau=1000\\} | c/Sorry in advance! | {\\pau=500\\} | [nb/thanks_2] | c/Thanks | {\\pau=500\\} | c/see you soon!",
+                    "[nb/two_hand_explain_2] | c/You will be moving between this room and the lobby many times during the study. | {\\pau=200\\} | c/Sorry in advance! | {\\pau=500\\} | [nb/thanks_2] | c/Thanks | c/see you soon!",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_you_will_be_moving_between_this_room_and_the_lobby_many_times_during_the_study) ^wait(Stand/Gestures/Explain_3) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_sorry_in_advance) \\pau=500\\ ^start(Stand/Gestures/Yes_1) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_thanks) ^wait(Stand/Gestures/Yes_1) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_see_you_soon) ",
+                    "^start(Stand/Gestures/Explain_3) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_you_will_be_moving_between_this_room_and_the_lobby_many_times_during_the_study) ^wait(Stand/Gestures/Explain_3) \\pau=200\\ ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_sorry_in_advance) \\pau=500\\ ^start(Stand/Gestures/Yes_1) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_thanks) ^wait(Stand/Gestures/Yes_1) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_transition_lobby_explain_see_you_soon) ",
                     "stand"
                 ],
                 "flag": [
@@ -3349,7 +3343,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Hey_1) ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_hi) ^wait(Stand/Gestures/Hey_1) ^start(customanimations-ff193e/gestures_enthusiastic_5) ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_welcome_back) ^wait(customanimations-ff193e/gestures_enthusiastic_5) ",
+                    "^start(customanimations-ff193e/welcome_wave) ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_hi) ^wait(customanimations-ff193e/welcome_wave) ^start(customanimations-ff193e/gestures_enthusiastic_5) ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_welcome_back) ^wait(customanimations-ff193e/gestures_enthusiastic_5) ",
                     "stand"
                 ],
                 "flag": [
@@ -5198,7 +5192,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Emotions/Positive/Confident_1) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_transition_finish_thank_you_so_much) ^wait(Stand/Emotions/Positive/Confident_1) ",
+                    "^start(customanimations-ff193e/thanks) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_transition_finish_thank_you_so_much) ^wait(customanimations-ff193e/thanks) ",
                     "stand"
                 ],
                 "flag": [
