@@ -6,23 +6,29 @@ import os.path
 import string
 
 def save_segment(file_name, new_name):
-    raw_audio_file = AudioSegment.from_ogg("unique/"+ file_name + ".wav")
+    raw_audio_file = AudioSegment.from_wav("unique/"+ file_name + ".wav")
     print("slicing video...")
-    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-35, keep_silence=270)
+    chunks = pydub.silence.split_on_silence(raw_audio_file, min_silence_len=650, silence_thresh=-35, keep_silence=500)
     print("slicing audio to " + str(len(chunks)))
     if len(chunks) != 2:
         print("video not sliced correctly")
     else:
         print("save segment")
         # save to unique
-        print("save to unique folder")
-        chunks[1].export("unique/" + new_name + ".wav", format="wav")
-        # save to all
-        print("save to all folder")
-        all_new_file_name = get_non_repetitve_name("all/" + new_name, ".wav")
-        chunks[1].export(all_new_file_name, format="wav")
-        print("play segment...")
-        play(chunks[1])
+        blank = AudioSegment.silent(duration=3000)
+        segment = blank + chunks[1] + blank
+        chunks = pydub.silence.split_on_silence(segment, min_silence_len=650, silence_thresh=-60, keep_silence=120)
+        if len(chunks) == 1
+            print("save to unique folder")
+            chunks[0].export("unique/" + new_name + ".wav", format="wav")
+            # save to all
+            print("save to all folder")
+            all_new_file_name = get_non_repetitve_name("all/" + new_name, ".wav")
+            chunks[0].export(all_new_file_name, format="wav")
+            print("play segment...")
+            play(chunks[0])
+        else:
+            print("video not sliced correctly")
 
 def get_non_repetitve_name(file_name, file_type):
     file_to_check = file_name + file_type
