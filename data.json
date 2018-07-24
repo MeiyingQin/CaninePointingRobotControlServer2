@@ -1,5 +1,29 @@
 {
     "Unexpected": {
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "pointer explain": {
             "full": {
                 "text": [
@@ -650,6 +674,30 @@
         }
     },
     "Dog scared": {
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "initial check": {
             "full": {
                 "text": [
@@ -958,6 +1006,30 @@
         }
     },
     "Introduction": {
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "initial_greeting": {
             "full": {
                 "text": [
@@ -3336,6 +3408,30 @@
         }
     },
     "Warmup": {
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "introduction_welcome back": {
             "full": {
                 "text": [
@@ -3965,6 +4061,30 @@
         }
     },
     "Testing": {
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "introduction_seat": {
             "full": {
                 "text": [
@@ -5434,6 +5554,30 @@
                 ]
             }
         },
+        "refresh dispensers": {
+            "full": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            },
+            "repeat": {
+                "text": [
+                    "[u/refresh_dispensers]"
+                ],
+                "robot": [
+                    "refresh_dispensers"
+                ],
+                "flag": [
+                    "action"
+                ]
+            }
+        },
         "bait": {
             "full": {
                 "text": [
@@ -5442,7 +5586,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_full_bait_please_bait) ",
+                    "^run(customanimations-ff193e/bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_full_bait_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -5459,7 +5603,7 @@
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^run(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_bait_please_bait) ",
+                    "^run(customanimations-ff193e/bait_look) ^start(customanimations-ff193e/bait) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_bait_please_bait) ^wait(customanimations-ff193e/bait) ",
                     "dispenser_rotate",
                     "stand"
                 ],
@@ -5473,10 +5617,10 @@
         "point left": {
             "full": {
                 "text": [
-                    "d/<dog> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
+                    "d/<dog_excited> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_left_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -5484,10 +5628,10 @@
             },
             "repeat": {
                 "text": [
-                    "d/<dog> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
+                    "d/<dog_excited> | {\\pau=500\\} | [nb/point_left] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_left) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_look) ^wait(customanimations-ff193e/point_left) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_left_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -5497,10 +5641,10 @@
         "point right": {
             "full": {
                 "text": [
-                    "d/<dog> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
+                    "d/<dog_excited> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_full_point_right_okay) "
                 ],
                 "flag": [
                     "speech"
@@ -5508,10 +5652,10 @@
             },
             "repeat": {
                 "text": [
-                    "d/<dog> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
+                    "d/<dog_excited> | {\\pau=500\\} | [nb/point_right] | d/look! | {\\pau=4000\\} | d/okay."
                 ],
                 "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/<dog>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_okay) "
+                    "^mode(disabled) ^runSound(CanineStudy/<dog_excited>) \\pau=500\\ ^start(customanimations-ff193e/point_right) ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_look) ^wait(customanimations-ff193e/point_right) \\pau=4000\\ ^mode(disabled) ^runSound(CanineStudy/test_system_repeat_point_right_okay) "
                 ],
                 "flag": [
                     "speech"

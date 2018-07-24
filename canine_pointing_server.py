@@ -254,7 +254,23 @@ def custom_print(message):
     print message
     sys.stdout.flush()
 
+def refresh_dispensers(dispenser_lists, is_refresh_page=False):
+    setup_threads = []
+
+    for dispenser in dispenser_lists:
+        dispenser.setup_page()
+        setup_dispenser_thread = threading.Thread(target=Dispenser.setup_page, args=(dispenser, is_refresh_page))
+        setup_threads.append(setup_dispenser_thread)
+    
+    for thread in setup_threads:
+        thread.start()
+    
+    for thread in setup_threads:
+        thread.join()
+
 def dispenser_rotate(dispenser_lists):
+    refresh_dispensers(False)
+
     threads = []
     for dispenser in dispenser_lists:
         dispenser_thread = threading.Thread(target=Dispenser.feed, args=(dispenser, ))
@@ -325,6 +341,8 @@ def run_command(nao, commands, flags, dispensers):
             elif command == "dispenser_rotate":
                 time.sleep(0.5)
                 dispenser_rotate(dispensers)
+            elif command == "refresh_dispensers":
+                refresh_dispensers(dispensers, True)
             else:
                 custom_print("command is not defined")
         else:
@@ -354,6 +372,9 @@ if __name__ == "__main__":
     DICT_POINTER_TAG = "<pointer>"
     DICT_ASSISTANT_TAG = "<assistant>"
     NAME_TAG = "name_"
+
+    DISPENSER_USER_NAME = "user_name"
+    DISPENSER_PASSWORD = "password"
     
     json_file='data.json'
     json_data = open(json_file)
@@ -364,9 +385,9 @@ if __name__ == "__main__":
     robot_port = 9559
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    #server_ip = "192.168.1.101"
-    server_ip = "192.168.1.116"
-    server_port = 10000
+    server_ip = "192.168.1.101"
+    # server_ip = "192.168.1.116"
+    server_port = 10001
     server_address = (server_ip, server_port)
     socket.bind(server_address)
     socket.listen(1)

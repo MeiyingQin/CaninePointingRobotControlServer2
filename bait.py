@@ -13,34 +13,62 @@ class Dispenser():
         email.send_keys(user_email)
         password.send_keys(user_password)
         submit_button.click()
+
+    def setup_page(self, is_refresh=False):
+        self.driver.maximize_window()
+        if is_refresh:
+            self.driver.refresh()
+
+    # def cleanup_page(self):
+    #     self.driver.refresh()
     
     def feed(self):
-        is_found = False
-        while not is_found:
-            try:
-                feedNowButton = self.driver.find_element_by_partial_link_text("Feed Now")
-                feedNowButton.click()
-                is_found = True
-            except selenium.common.exceptions.ElementNotVisibleException:
-                print "wait for logging in..."
         
-        is_found = False
-        while not is_found:
-            try:
-                feedConfirmButton = self.driver.find_element_by_id("feed-yes")
-                feedConfirmButton.click()
-                is_found = True
-            except selenium.common.exceptions.ElementNotVisibleException:
-                print "wait for loading"
-        
-        is_found = False
-        while not is_found:
-            try:
-                buttonParent = self.driver.find_element_by_id("callPetOver")
-                cancelWebcamButton = buttonParent.find_element_by_css_selector(".btn.btn-default.left")
-                cancelWebcamButton.click()
-                is_found = True
-            except selenium.common.exceptions.ElementNotVisibleException:
-                print "wait for finishing"
+        self.driver.execute_script("window.focus();")
+        count = 0
+        max_count = 4
+
+        has_rotated = False
+        while not has_rotated:
+            print "round"
+            is_found = False
+            while count < max_count and not is_found:
+                try:
+                    feedNowButton = self.driver.find_element_by_partial_link_text("Feed Now")
+                    feedNowButton.click()
+                    is_found = True
+                except selenium.common.exceptions.ElementNotVisibleException:
+                    count += 1
+                    print "wait for logging in..."
+            print "first count ", count
+            
+            count = 0
+            is_found = False
+            while count < max_count and not is_found:
+                try:
+                    feedConfirmButton = self.driver.find_element_by_id("feed-yes")
+                    feedConfirmButton.click()
+                    is_found = True
+                except selenium.common.exceptions.ElementNotVisibleException:
+                    count += 1
+                    print "wait for loading"
+            print "second count ", count
+            
+            count = 0
+            is_found = False
+            while count < max_count and not is_found:
+                try:
+                    buttonParent = self.driver.find_element_by_id("callPetOver")
+                    cancelWebcamButton = buttonParent.find_element_by_css_selector(".btn.btn-default.left")
+                    cancelWebcamButton.click()
+                    is_found = True
+                    has_rotated = True
+                except selenium.common.exceptions.ElementNotVisibleException:
+                    count += 1
+                    print "wait for finishing"
+            print "third count ", count
         
         time.sleep(5)
+
+    def close(self):
+        self.driver.quit()
