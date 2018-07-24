@@ -90,9 +90,11 @@ class naoRobot(object):
         return [x * almath.TO_RAD for x in deg_lsts]
     
     def _run_behaviour(self, behaviour):
+        custom_print("run: " + behaviour)
         self.behaviourProxy.startBehavior(behaviour)
         
         while self.behaviourProxy.isBehaviorRunning(behaviour):
+            custom_print(self.behaviourProxy.isBehaviorRunning(behaviour))
             time.sleep(0.5)
     
     def _joint_move_blocking(self, joint_lsts, angle_lsts, speed):
@@ -142,7 +144,6 @@ class naoRobot(object):
                 bpm = random.randint(min_bpm, max_bpm)
                 amplitude = round(random.uniform(self.get_idle_amplitude(min_bpm), self.get_idle_amplitude(bpm)), 1)
                 self.motionProxy.setBreathConfig([['Bpm', bpm], ['Amplitude', amplitude]])
-                log(file_name, "breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
                 custom_print("breath config: bpm = " + str(bpm) + ", amplitude = " + str(amplitude))
                 self.motionProxy.setBreathEnabled("Body", True)
                 idling_time = random.randint(5, 15)
