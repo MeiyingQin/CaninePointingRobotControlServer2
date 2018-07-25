@@ -49,7 +49,7 @@ if __name__ == "__main__":
     postureProxy = ALProxy("ALRobotPosture", robot_ip, robot_port)
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_ip = "192.168.1.112"
+    server_ip = "192.168.1.101"
     server_port = 10001
     server_address = (server_ip, server_port)
     socket.bind(server_address)
@@ -104,6 +104,5 @@ if __name__ == "__main__":
                     is_connected = False
             connection.close()
     except KeyboardInterrupt:
-        socket.shutdown()
         socket.close()
         custom_print("real time server receive keyboard interruption, close socket and shut server down")    
