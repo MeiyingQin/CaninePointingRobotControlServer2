@@ -8,7 +8,7 @@ def get_data(path):
     return data
     
 server_data = get_data("../data.json")
-gui_data = get_data("../../../UserInterface/app/src/main/assets/data.json")
+gui_data = get_data("../../GUI/CaninePointingGuiProgressController2/app/src/main/assets/data.json")
 
 server_data_extract = {}
 gui_data_extract = {}
