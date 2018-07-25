@@ -20,7 +20,7 @@ class naoRobot(object):
         
         self.animatedSpeechProxy = ALProxy("ALAnimatedSpeech", ip, port)
         self.postureProxy = ALProxy("ALRobotPosture", ip, port)
-        self.behaviourProxy = ALProxy("ALBehaviorManager", ip, 9559)
+        self.behaviourProxy = ALProxy("ALBehaviorManager", ip, port)
         self.ledProxy = ALProxy("ALLeds", ip, port)
         
         self.motionProxy = ALProxy("ALMotion", ip, port)
