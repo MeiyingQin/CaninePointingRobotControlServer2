@@ -264,6 +264,20 @@ def parse_command(command, library, dog, dog_gender, owner, pointer, assistant):
     
     return command_content, flag
 
+def refresh_dispensers(dispenser_lists, is_refresh_page=False):
+    setup_threads = []
+
+    for dispenser in dispenser_lists:
+        dispenser.setup_page()
+        setup_dispenser_thread = threading.Thread(target=Dispenser.setup_page, args=(dispenser, is_refresh_page))
+        setup_threads.append(setup_dispenser_thread)
+    
+    for thread in setup_threads:
+        thread.start()
+    
+    for thread in setup_threads:
+        thread.join()
+
 def run_command(nao, commands, flags, dispensers):
     print commands
     for flag_index in range(len(flags)):
@@ -271,8 +285,7 @@ def run_command(nao, commands, flags, dispensers):
         command = str(command)
         if flags[flag_index] == DICT_FLAG_SPEECH:
             command = command.replace(DICT_OWNER_TAG, owner)
-            #command = command.replace(DICT_DOG_EXCITED_TAG, dog + DICT_DOG_NAME_EXCITED_TAG)
-            command = command.replace(DICT_DOG_EXCITED_TAG, dog)
+            command = command.replace(DICT_DOG_EXCITED_TAG, dog + DICT_DOG_NAME_EXCITED_TAG)
             command = command.replace(DICT_DOG_TAG, dog)
             command = command.replace(DICT_DOG_GENDER_TAG, dog_gender)
             command = command.replace(DICT_POINTER_TAG, pointer)
@@ -302,6 +315,8 @@ def run_command(nao, commands, flags, dispensers):
             elif command == "dispenser_rotate":
                 time.sleep(0.5)
                 dispenser_rotate(dispensers)
+            elif command == "refresh_dispensers":
+                refresh_dispensers(dispensers, True)
             else:
                 custom_print("command is not defined")
         else:
