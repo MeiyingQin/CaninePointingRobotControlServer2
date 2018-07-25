@@ -25,18 +25,25 @@ punctuation = punctuation.replace("_", "")
 punctuation = punctuation.replace("=", "")
 
 def get_json_file_data(file_name):
-	json_file = '../actions.json'
-    json_data = open(json_file)
+    json_data = open(file_name)
     data = json.load(json_data)
     json_data.close()
     return data
 
-def add_names(names, target_dict, category):
+def check_names(names, target_dict, category):
 	for name in names:
-		if name in target_dict.keys():
-			print category, " name ", name, " already in recorded"
+		role_name = "name_" + name
+		if role_name not in target_dict.keys():
+			print "need to record ", category, " name: ", name
 		else:
-			target_dict[name] = 0
+			target_dict[role_name] += 1
+
+		if category == "dog":
+			role_name += "_excited"
+			if role_name not in target_dict.keys():
+				print "need to record ", category, " name : ", name, " excited"
+			else:
+				target_dict[role_name] += 1
 
 actions = get_json_file_data("../actions.json")
 names = get_json_file_data("./names.json")
@@ -54,20 +61,22 @@ target_directories = [
     "../../NaoBehaviours/NaoSoundLibraries"
 ]
 
-add_names(names["owners"], sound_dict, "owner")
-add_names(names["dogs"], sound_dict, "dog")
-add_names(names["assistants"], sound_dict, "assistant")
-
 for target_directory in target_directories:
     for root, dirs, files in os.walk(target_directory):
         for name in files:
-        	if name.endswith("\.ogg")
+        	if name.endswith(".ogg"):
 	            name = name[:-4]
+	            # print "add: ", name
 	            if name in sound_dict.keys():
 	                print name, "already in recorded"
 	            else:
 	                #print name
 	                sound_dict[name] = 0
+
+check_names(names["owners"], sound_dict, "owner")
+check_names(names["dogs"], sound_dict, "dog")
+check_names(names["assistants"], sound_dict, "assistant")
+check_names(names["dog gender"], sound_dict, "dog gender")
 
 for section in data.keys():
     for keyword in data[section].keys():
