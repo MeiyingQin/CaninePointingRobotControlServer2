@@ -1557,11 +1557,11 @@
             },
             "repeat": {
                 "text": [
-                    "[nb/two_hand_explain_3] | c/I work at the | c/Social Robotics Lab at Yale.",
+                    "[nb/two_hand_explain_3] | c/I work at the Social Robotics Lab at Yale.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_11) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_robot_work_place_i_work_at_the) ^wait(Stand/Gestures/Explain_11) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_robot_work_place_social_robotics_lab_at_yale) ",
+                    "^start(Stand/Gestures/Explain_11) ^mode(contextual) ^runSound(CanineStudy/introduction_repeat_robot_work_place_i_work_at_the_social_robotics_lab_at_yale) ^wait(Stand/Gestures/Explain_11) ",
                     "stand"
                 ],
                 "flag": [
@@ -1573,11 +1573,11 @@
         "robot_focus on current": {
             "full": {
                 "text": [
-                    "[nb/left_hand_explain] | c/After this study is done | {\\pau=500\\} | [nb/two_hand_explain_4] | c/I can talk more about what studies I was involved in | {\\pau=1000\\} | [nb/two_hand_explain_1] | c/ Let's now focus on | c/this study.",
+                    "[nb/left_hand_explain] | c/After this study is done | {\\pau=500\\} | [nb/two_hand_explain_4] | c/I can talk more about what studies I was involved in | {\\pau=1000\\} | [nb/two_hand_explain_1] | c/ Let's now focus on this study.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Explain_5) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_after_this_study_is_done) ^wait(Stand/Gestures/Explain_5) \\pau=500\\ ^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_i_can_talk_more_about_what_studies_i_was_involved_in) ^wait(Stand/Gestures/Explain_9) \\pau=1000\\ ^start(Stand/Gestures/Explain_4) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_lets_now_focus_on) ^wait(Stand/Gestures/Explain_4) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_this_study) ",
+                    "^start(Stand/Gestures/Explain_5) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_after_this_study_is_done) ^wait(Stand/Gestures/Explain_5) \\pau=500\\ ^start(Stand/Gestures/Explain_9) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_i_can_talk_more_about_what_studies_i_was_involved_in) ^wait(Stand/Gestures/Explain_9) \\pau=1000\\ ^start(Stand/Gestures/Explain_4) ^mode(contextual) ^runSound(CanineStudy/introduction_full_robot_focus_on_current_lets_now_focus_on_this_study) ^wait(Stand/Gestures/Explain_4) ",
                     "stand"
                 ],
                 "flag": [
@@ -1813,11 +1813,11 @@
         "dog_does not know sit": {
             "full": {
                 "text": [
-                    "[nb/no_big_deal] | c/That's totally fine. | {\\pau=500\\} | c/<dog> | c/doesn't need | c/to know this command to participate in this study.",
+                    "[nb/no_big_deal] | c/That's totally fine. | {\\pau=500\\} | c/<dog> | c/doesn't need to know this command to participate in this study.",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^start(Stand/Gestures/Reject_6) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_does_not_know_sit_thats_totally_fine) ^wait(Stand/Gestures/Reject_6) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_does_not_know_sit_doesnt_need) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_does_not_know_sit_to_know_this_command_to_participate_in_this_study) ",
+                    "^start(Stand/Gestures/Reject_6) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_does_not_know_sit_thats_totally_fine) ^wait(Stand/Gestures/Reject_6) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/introduction_full_dog_does_not_know_sit_doesnt_need_to_know_this_command_to_participate_in_this_study) ",
                     "stand"
                 ],
                 "flag": [
@@ -3608,11 +3608,11 @@
             },
             "repeat": {
                 "text": [
-                    "c/Please keep your head down and eyes closed during each trial | c/until you hear me say 'okay.'",
+                    "c/Please keep your head down and eyes closed during each trial until you hear me say 'okay.'",
                     "[u/stand]"
                 ],
                 "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/warmup_repeat_introduction_owner_head_down_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^mode(contextual) ^runSound(CanineStudy/warmup_repeat_introduction_owner_head_down_until_you_hear_me_say_okay) ",
+                    "^mode(contextual) ^runSound(CanineStudy/warmup_repeat_introduction_owner_head_down_please_keep_your_head_down_and_eyes_closed_during_each_trial_until_you_hear_me_say_okay) ",
                     "stand"
                 ],
                 "flag": [
