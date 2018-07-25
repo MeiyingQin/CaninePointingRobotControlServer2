@@ -24,10 +24,23 @@ punctuation = punctuation.replace("|", "")
 punctuation = punctuation.replace("_", "")
 punctuation = punctuation.replace("=", "")
 
-actions_json_file = '../actions.json'
-actions_json_data = open(actions_json_file)
-actions = json.load(actions_json_data)
-actions_json_data.close()
+def get_json_file_data(file_name):
+	json_file = '../actions.json'
+    json_data = open(json_file)
+    data = json.load(json_data)
+    json_data.close()
+    return data
+
+def add_names(names, target_dict, category):
+	for name in names:
+		if name in target_dict.keys():
+			print category, " name ", name, " already in recorded"
+		else:
+			target_dict[name] = 0
+
+actions = get_json_file_data("../actions.json")
+names = get_json_file_data("./names.json")
+
 is_loop = False
 
 action_dict = {}
@@ -38,18 +51,23 @@ sound_to_record = []
 sound_dict = {}
 
 target_directories = [
-    "./unique/clipped_July18_all"
+    "../../NaoBehaviours/NaoSoundLibraries"
 ]
+
+add_names(names["owners"], sound_dict, "owner")
+add_names(names["dogs"], sound_dict, "dog")
+add_names(names["assistants"], sound_dict, "assistant")
 
 for target_directory in target_directories:
     for root, dirs, files in os.walk(target_directory):
         for name in files:
-            name = name[:-4]
-            if name in sound_dict.keys():
-                print name, "already in recorded"
-            else:
-                #print name
-                sound_dict[name] = 0
+        	if name.endswith("\.ogg")
+	            name = name[:-4]
+	            if name in sound_dict.keys():
+	                print name, "already in recorded"
+	            else:
+	                #print name
+	                sound_dict[name] = 0
 
 for section in data.keys():
     for keyword in data[section].keys():
