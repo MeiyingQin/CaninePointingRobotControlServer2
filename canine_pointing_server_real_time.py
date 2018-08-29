@@ -11,7 +11,7 @@ def progressToAngle(progress):
 def angleToProgress(angle):
     return int(round((angle / almath.TO_RAD) * PROGRESS_BAR_RANGE / ROBOT_HEAD_RANGE, 1))
 
-def walk(motion, x, y, z, speed=0.5):
+def walk(motion, x, y, z, speed=0.8):
     # x: forward is x, backward is y
     # y: side way, left is +, right is -
     # z: turn, left is +, right is -
