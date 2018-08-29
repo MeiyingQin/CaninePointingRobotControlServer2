@@ -269,7 +269,8 @@ def refresh_dispensers(dispenser_lists, is_refresh_page=False):
         thread.join()
 
 def dispenser_rotate(dispenser_lists):
-    refresh_dispensers(False)
+    print dispenser_lists
+    refresh_dispensers(dispenser_lists, False)
 
     threads = []
     for dispenser in dispenser_lists:
@@ -386,8 +387,7 @@ if __name__ == "__main__":
     
     socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_ip = "192.168.1.101"
-    # server_ip = "192.168.1.116"
-    server_port = 10001
+    server_port = 10000
     server_address = (server_ip, server_port)
     socket.bind(server_address)
     socket.listen(1)
