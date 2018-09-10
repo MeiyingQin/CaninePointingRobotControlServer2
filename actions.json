@@ -64,7 +64,9 @@
 	"start_blinking": "start_blinking",
 	"stop_blinking": "stop_blinking",
 	"dispenser_rotate": "dispenser_rotate",
-	"refresh_dispensers": "refresh_dispensers"
+	"refresh_dispensers": "refresh_dispensers",
+	
+	"point_to_corner": ""
 
 }
 
