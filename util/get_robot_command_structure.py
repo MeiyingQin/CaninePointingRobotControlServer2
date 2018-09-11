@@ -5,7 +5,7 @@ import string
 import os
 from collections import OrderedDict
 
-json_file='../data.json'
+json_file='../shortened_data.json'
 json_data = open(json_file)
 data = json.load(json_data, object_pairs_hook=OrderedDict)
 json_data.close()
@@ -31,19 +31,19 @@ def get_json_file_data(file_name):
     return data
 
 def check_names(names, target_dict, category):
-	for name in names:
-		role_name = "name_" + name
-		if role_name not in target_dict.keys():
-			print "need to record ", category, " name: ", name
-		else:
-			target_dict[role_name] += 1
+    for name in names:
+        role_name = "name_" + name
+        if role_name not in target_dict.keys():
+            print "need to record ", category, " name: ", name
+        else:
+            target_dict[role_name] += 1
 
-		if category == "dog":
-			role_name += "_excited"
-			if role_name not in target_dict.keys():
-				print "need to record ", category, " name : ", name, " excited"
-			else:
-				target_dict[role_name] += 1
+        if category == "dog":
+            role_name += "_excited"
+            if role_name not in target_dict.keys():
+                print "need to record ", category, " name : ", name, " excited"
+            else:
+                target_dict[role_name] += 1
 
 actions = get_json_file_data("../actions.json")
 names = get_json_file_data("./names.json")
@@ -58,20 +58,20 @@ sound_to_record = []
 sound_dict = {}
 
 target_directories = [
-    "../../NaoBehaviours/NaoSoundLibraries"
+    "../../nao_behaviours/Meiying_canine_study_audio/SoundSet"
 ]
 
 for target_directory in target_directories:
     for root, dirs, files in os.walk(target_directory):
         for name in files:
-        	if name.endswith(".ogg"):
-	            name = name[:-4]
-	            # print "add: ", name
-	            if name in sound_dict.keys():
-	                print name, "already in recorded"
-	            else:
-	                #print name
-	                sound_dict[name] = 0
+            if name.endswith(".ogg"):
+                name = name[:-4]
+                # print "add: ", name
+                if name in sound_dict.keys():
+                    print name, "already in recorded"
+                else:
+                    #print name
+                    sound_dict[name] = 0
 
 check_names(names["owners"], sound_dict, "owner")
 check_names(names["dogs"], sound_dict, "dog")
@@ -136,7 +136,6 @@ for section in data.keys():
                         # remember to replace <owner>, <pointer>, <dog>, <dog_gender>, <assistant>, later
                         # speech
                         detailed_command = command.split("/")
-                        #print detailed_command
                         command_type = detailed_command[0]
                         if "<" in detailed_command[1]:
                             command_content = detailed_command[1].strip().replace(" ", "_")
