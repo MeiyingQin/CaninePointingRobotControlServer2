@@ -3331,66 +3331,6 @@
                 ]
             }
         },
-        "introduction_welcome back": {
-            "full": {
-                "text": [
-                    "[nb/welcome_wave] | {\\pau=1000\\} | c/Hi! | [nb/welcome] | c/Welcome back.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^start(customanimations-ff193e/welcome_wave) \\pau=1000\\ ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_hi) ^wait(customanimations-ff193e/welcome_wave) ^start(customanimations-ff193e/gestures_enthusiastic_5) ^mode(contextual) ^runSound(CanineStudy/warmup_full_introduction_welcome_back_welcome_back) ^wait(customanimations-ff193e/gestures_enthusiastic_5) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/Welcome back!",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/warmup_repeat_introduction_welcome_back_welcome_back) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "introduction_seat": {
-            "full": {
-                "text": [
-                    "[nb/point_to_chair] | d/Please take a seat.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^start(customanimations-ff193e/you_1) ^mode(disabled) ^runSound(CanineStudy/warmup_full_introduction_seat_please_take_a_seat) ^wait(customanimations-ff193e/you_1) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/Take a seat, please.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/warmup_repeat_introduction_seat_take_a_seat_please) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
         "introduction_start": {
             "full": {
                 "text": [
@@ -3718,7 +3658,7 @@
         "transition_lobby": {
             "full": {
                 "text": [
-                    "[nb/impressive] | {\\pau=1000\\} | d/break time now! | {\\pau=500\\} | c/<owner> | {\\pau=500\\} | [nb/point_to_lobby] | d/please take | d/<dog> | d/to the lobby | {\\pau=200\\} | c/and we will prepare for the next session.",
+                    "[nb/impressive] | {\\pau=1000\\} | d/break time now! | {\\pau=500\\} | c/<owner> | {\\pau=500\\} | [nb/point_to_corner] | d/please take | d/<dog> | d/to the corner | {\\pau=200\\} | c/and we will prepare for the next session.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3771,10 +3711,10 @@
                 ]
             }
         },
-        "introduction_seat": {
+        "introduction_start": {
             "full": {
                 "text": [
-                    "[nb/point_to_chair] | d/Please take a seat.",
+                    "c/Good to see you again!",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -3788,86 +3728,11 @@
             },
             "repeat": {
                 "text": [
-                    "[nb/point_to_chair] | d/Take a seat, please.",
+                    "c/ I'm happy to see you again.",
                     "[u/stand]"
                 ],
                 "robot": [
                     "^start(customanimations-ff193e/you_1) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_introduction_seat_take_a_seat_please) ^wait(customanimations-ff193e/you_1) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "introduction_square": {
-            "full": {
-                "text": [
-                    "c/And please let | c/<dog> | [nb/point_at_black_square] | d/stay in the black square.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_introduction_square_and_please_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/point_to_black_square) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_square_stay_in_the_black_square) ^wait(customanimations-ff193e/point_to_black_square) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/<dog> | c/should stay in the black square.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_square_should_stay_in_the_black_square) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "introduction_eyes close": {
-            "full": {
-                "text": [
-                    "c/ Just like in the previous sessions, ",
-                    "[u/stand]",
-                    "[u/stop_blinking]",
-                    "[nb/instruction_owner_head_down]| d/Please keep your head down and eyes closed during each trial. | {\\pau=1000\\}",
-                    "[u/start_blinking]",
-                    "[nb/look_ahead]| d/Please only look ahead when you | [nb/point_to_self_1] | d/hear me say 'okay.'",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_full_introduction_eyes_close_just_like_in_the_previous_sessions) ",
-                    "stand",
-                    "stop_blinking",
-                    "^start(customanimations-ff193e/instruction_owner_head_down) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_keep_your_head_down_and_eyes_closed_during_each_trial) ^wait(customanimations-ff193e/instruction_owner_head_down) \\pau=1000\\ ",
-                    "start_blinking",
-                    "^start(customanimations-ff193e/look_ahead) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_please_only_look_ahead_when_you) ^wait(customanimations-ff193e/look_ahead) ^start(Stand/Gestures/Me_2) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_eyes_close_hear_me_say_okay) ^wait(Stand/Gestures/Me_2) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action",
-                    "action",
-                    "speech",
-                    "action",
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/Please keep your head down and eyes closed during each trial | {\\pau=500\\} | c/until you hear me say 'okay.'",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_eyes_close_please_keep_your_head_down_and_eyes_closed_during_each_trial) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_eyes_close_until_you_hear_me_say_okay) ",
                     "stand"
                 ],
                 "flag": [
@@ -3898,66 +3763,6 @@
                 ],
                 "robot": [
                     "^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_release_instruction_remember) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_release_instruction_only_release) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_release_instruction_when_you_hear) ^mode(disabled) ^runSound(CanineStudy/testing_repeat_introduction_release_instruction_okay) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "introduction_back to owner": {
-            "full": {
-                "text": [
-                    "d/And let | d/<dog> | [nb/point_to_chair] | d/go back to you after each trial",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_back_to_owner_and_let) ^mode(disabled) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/you_1) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_back_to_owner_go_back_to_you_after_each_trial) ^wait(customanimations-ff193e/you_1) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/After the trial | {\\pau=500\\} | c/let | c/<dog> | c/return to you immediately.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_back_to_owner_after_the_trial) \\pau=500\\ ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_back_to_owner_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_back_to_owner_return_to_you_immediately) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            }
-        },
-        "introduction_not other container": {
-            "full": {
-                "text": [
-                    "[nb/no_1] | d/Please do not let | c/<dog> | [nb/look_ahead] | c/go to the other container.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^start(customanimations-ff193e/no_2) ^mode(disabled) ^runSound(CanineStudy/testing_full_introduction_not_other_container_please_do_not_let) ^wait(customanimations-ff193e/no_2) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^start(customanimations-ff193e/look_ahead) ^mode(contextual) ^runSound(CanineStudy/testing_full_introduction_not_other_container_go_to_the_other_container) ^wait(customanimations-ff193e/look_ahead) ",
-                    "stand"
-                ],
-                "flag": [
-                    "speech",
-                    "action"
-                ]
-            },
-            "repeat": {
-                "text": [
-                    "c/Do not let | c/<dog> | c/go to the other container.",
-                    "[u/stand]"
-                ],
-                "robot": [
-                    "^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_not_other_container_do_not_let) ^mode(contextual) ^runSound(CanineStudy/<dog>) ^mode(contextual) ^runSound(CanineStudy/testing_repeat_introduction_not_other_container_go_to_the_other_container) ",
                     "stand"
                 ],
                 "flag": [
@@ -4977,7 +4782,7 @@
         "transition_lobby": {
             "full": {
                 "text": [
-                    "c/It is time for | c/<dog> | c/to take another break. | {\\pau=1000\\} | [nb/look_at_owner] | d/<owner> | {\\pau=500\\} | d/please take | d/<dog> | [nb/point_to_lobby] | d/to the lobby.",
+                    "c/It is time for | c/<dog> | c/to take another break. | {\\pau=1000\\} | [nb/look_at_owner] | d/<owner> | {\\pau=500\\} | d/please take | d/<dog> | [nb/point_to_corner] | d/to the other corner of the room.",
                     "[u/stand]"
                 ],
                 "robot": [
@@ -4991,7 +4796,7 @@
             },
             "repeat": {
                 "text": [
-                    "c/Please take | c/<dog> | c/to the lobby.",
+                    "c/Please take | c/<dog> | c/to the corner.",
                     "[u/stand]"
                 ],
                 "robot": [
