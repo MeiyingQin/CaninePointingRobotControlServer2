@@ -7,8 +7,9 @@ def get_data(path):
     json_data.close()
     return data
     
-server_data = get_data("../data.json")
-gui_data = get_data("../../GUI/CaninePointingGuiProgressController2/app/src/main/assets/data.json")
+server_data = get_data("../shortened_data.json")
+gui_data = get_data("../../../UserInterface/app/src/main/assets/data_shortened.json")
+
 
 server_data_extract = {}
 gui_data_extract = {}
@@ -44,4 +45,4 @@ for session in server_data.keys():
     print
     print "in gui but not in server: "
     for element in current_gui_data_extract.difference(current_server_data_extract):
-        print element    
+        print element  
