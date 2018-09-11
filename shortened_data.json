@@ -520,7 +520,7 @@
                     "speech",
                     "action"
                 ]
-            },
+            }
         },
         "mention this later": {
             "full": {
@@ -3304,7 +3304,7 @@
                     "action"
                 ]
             }
-        },
+        }
     },
     "Warmup": {
         "refresh dispensers": {
